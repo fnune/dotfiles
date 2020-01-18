@@ -10,16 +10,10 @@
 cd ~/.dotfiles
 ```
 
-To symlink everything:
+Then symlink the packages you need:
 
 ```bash
-stow *
-```
-
-To symlink only some packages:
-
-```bash
-stow zsh fzf
+stow zsh fzf git
 ```
 
 ###  Environment variables used:
