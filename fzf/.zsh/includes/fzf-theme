@@ -1,0 +1,8 @@
+if [ ! -d ~/.config/base16-fzf ]; then
+  echo 'base16-fzf is not installed' >&2
+  echo 'Install it using git clone https://github.com/nicodebo/base16-fzf.git ~/.config/base16-fzf'
+  exit 1
+fi
+
+source ~/.config/base16-fzf/bash/base16-${THEME-default-dark}.config
+

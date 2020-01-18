@@ -1,0 +1,14 @@
+source ~/.zsh/aliases
+source ~/.zsh/plugins
+source ~/.zsh/themes
+source ~/.zsh/env
+
+# Allow other configuration files to add files
+# to this directory for them to be sourced later
+export ZSH_INCLUDES=~/.zsh/includes
+
+mkdir -p $ZSH_INCLUDES
+
+for file in $ZSH_INCLUDES/*; do
+  source "$file"
+done

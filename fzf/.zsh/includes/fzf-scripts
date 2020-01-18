@@ -1,0 +1,8 @@
+if ! [ -x "$(command -v fzf)" ]; then
+  echo 'Error: fzf is not installed' >&2
+  echo 'Install fzf using trizen -S fzf'
+  exit 1
+fi
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh

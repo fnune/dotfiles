@@ -1,0 +1,13 @@
+if ! [ -f /usr/share/zsh/share/antigen.zsh ]; then
+  echo 'Error: antigen is not installed.' >&2
+  echo 'Install antigen using trizen -S antigen on Arch.'
+  exit 1
+fi
+
+source /usr/share/zsh/share/antigen.zsh
+
+antigen use oh-my-zsh
+antigen bundle vi-mode
+antigen theme robbyrussell
+
+antigen apply
