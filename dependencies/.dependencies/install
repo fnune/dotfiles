@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+export DEPENDENCIES_INCLUDES=~/.dependencies/includes
+
+echo "Running dependencies scripts for your stowed packages."
+echo "The scripts can be found in $DEPENDENCIES_INCLUDES"
+echo "Distribution-dependent scripts live in in $DEPENDENCIES_INCLUDES/<arch|ubuntu>"
+
+for file in $DEPENDENCIES_INCLUDES/*; do
+  if [ -f "$file" ]; then
+    "$file"
+  fi
+done
+
+IS_ARCH=$(grep -R "Arch" /etc/*-release)
+IS_UBUNTU=$(grep -R "Ubuntu" /etc/*-release)
+
+if grep -Rq "Arch" /etc/*-release; then
+  for file in $DEPENDENCIES_INCLUDES/arch/*; do
+    "$file"
+  done
+fi
+
+if grep -Rq "Ubuntu" /etc/*-release; then
+  for file in $DEPENDENCIES_INCLUDES/ubuntu/*; do
+    "$file"
+  done
+fi
+

@@ -1,2 +1,4 @@
 export VOLTA_HOME="/home/$(whoami)/.volta"
+
 grep --silent "$VOLTA_HOME/bin" <<< $PATH || export PATH="$VOLTA_HOME/bin:$PATH"
+
