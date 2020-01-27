@@ -1,0 +1,30 @@
+FROM archlinux
+
+# Install dependencies to run as a regular user
+RUN pacman -Syu --noconfirm && pacman -S sudo git stow --noconfirm
+
+# Create non-root user with a home directory
+RUN useradd -m archie && \
+  echo "archie ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/archie && \
+  chmod 0440 /etc/sudoers.d/archie && \
+  echo "Set disable_coredump false" > /etc/sudo.conf
+
+# All commands from now on will be done by the non-root user
+USER archie
+
+# Otherwise WORKDIR makes root the owner
+RUN mkdir -p /home/archie/.dotfiles
+
+WORKDIR /home/archie/.dotfiles
+
+# This would be the git clone step for the user
+COPY --chown=archie:archie . .
+
+# This is the main installation step
+RUN stow dependencies editorconfig fzf git volta zsh
+
+# Run the repository dependency scripts
+RUN ~/.dependencies/install
+
+CMD ["/usr/bin/zsh"]
+

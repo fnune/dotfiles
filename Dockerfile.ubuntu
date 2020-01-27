@@ -1,0 +1,30 @@
+FROM ubuntu:rolling
+
+# Install dependencies to run as a regular user
+RUN apt-get update -y && apt-get upgrade -y && apt-get install -y sudo curl git stow
+
+# Create non-root user with a home directory
+RUN sudo adduser --disabled-password --gecos "" ubuntie && \
+  sudo mkdir -p /etc/sudoers.d && \
+  sudo sh -c -c 'echo "ubuntie ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/ubuntie' && \
+  sudo chmod 0440 /etc/sudoers.d/ubuntie
+
+# All commands from now on will be done by the non-root user
+USER ubuntie
+
+# Otherwise WORKDIR makes root the owner
+RUN mkdir -p /home/ubuntie/.dotfiles
+
+WORKDIR /home/ubuntie/.dotfiles
+
+# This would be the git clone step for the user
+COPY --chown=ubuntie:ubuntie . .
+
+# This is the main installation step
+RUN stow dependencies editorconfig fzf git volta zsh
+
+# Run the repository dependency scripts
+RUN ~/.dependencies/install
+
+CMD ["/usr/bin/zsh"]
+

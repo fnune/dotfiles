@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+git clone https://github.com/nicodebo/base16-fzf.git ~/.config/base16-fzf
+
