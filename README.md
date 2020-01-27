@@ -24,7 +24,7 @@ cd ~/.dotfiles
 stow zsh fzf git tmux
 ```
 
-Finally, you can run the `install` script, which will bootstrap dependencies for stowed packages only. For example, it will install `fzf` and `tmux` if you've stowed their packages.
+Finally, you can run [the install script](dependencies/.dependencies/install), which will bootstrap dependencies for stowed packages only. For example, it will install `fzf` and `tmux` if you've stowed their packages.
 
 ```bash
 ~/.dotfiles/install
@@ -42,8 +42,8 @@ Requirements of the install script: `git` and other basics such as `bash`, `sudo
 
 Some packages source files in drop-in directories, inspired by [systemd drop-in units](https://coreos.com/os/docs/latest/using-systemd-drop-in-units.html). Here's a summary of them:
 
-- The `zsh` package creates a `~/.zsh/includes` directory in which other packages can add files. They are sourced at the end of `~/.zshrc`.
-- The `dependencies` package creates a `~/.dependencies/includes` directory. Files in it are run from the install script and should be executable.
+- The [zsh](zsh) package creates a `~/.zsh/includes` directory in which other packages can add files. They are sourced at the end of `~/.zshrc`.
+- The [dependencies](dependencies) package creates a `~/.dependencies/includes` directory. Files in it are run from the install script and should be executable.
 
 For example, after stowing some packages, these directories look like this:
 
@@ -54,7 +54,7 @@ fzf  fzf-theme  volta
 antigen  arch  base16-fzf  base16-shell  fzf  tpm  ubuntu  volta
 ```
 
-For example, the `fzf` package adds files to both the `zsh` and `dependencies` drop-in directories:
+For example, the [fzf](fzf) package adds files to both the `zsh` and `dependencies` drop-in directories:
 
 ```
 fzf
