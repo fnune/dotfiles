@@ -12,9 +12,6 @@ for file in $DEPENDENCIES_INCLUDES/*; do
   fi
 done
 
-IS_ARCH=$(grep -R "Arch" /etc/*-release)
-IS_UBUNTU=$(grep -R "Ubuntu" /etc/*-release)
-
 if grep -Rq "Arch" /etc/*-release; then
   for file in $DEPENDENCIES_INCLUDES/arch/*; do
     "$file"
