@@ -21,7 +21,7 @@ WORKDIR /home/archie/.dotfiles
 COPY --chown=archie:archie . .
 
 # This is the main installation step
-RUN stow dependencies editorconfig fzf git volta zsh tmux
+RUN stow dependencies editorconfig fzf git volta zsh tmux neovim
 
 # Run the repository dependency scripts
 RUN ~/.dependencies/install
