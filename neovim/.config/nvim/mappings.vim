@@ -32,6 +32,13 @@ nnoremap gp `[v`]
 nnoremap <silent> <Leader>l :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 " https://github.com/tomhoule/gitmoji-selector
 nmap <Leader>e "=system('gitmoji-selector')<C-M>P<Paste>
 
