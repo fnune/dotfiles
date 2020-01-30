@@ -1,5 +1,8 @@
 # Dotfiles
 
+![Install on Arch](https://github.com/fnune/dotfiles/workflows/Install%20on%20Arch/badge.svg)
+![Install on Ubuntu](https://github.com/fnune/dotfiles/workflows/Install%20on%20Ubuntu/badge.svg)
+
 My dotfiles, built to work with GNU stow in a `~/.dotfiles` directory.
 
 ## Installation
