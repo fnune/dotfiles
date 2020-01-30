@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+set -euxo pipefail
+
 export DEPENDENCIES_INCLUDES=~/.dependencies/includes
 
 echo "Running dependencies scripts for your stowed packages."
