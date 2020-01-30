@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# binutils and fakeroot are in base-devel, but we want to avoid installing all of it
+sudo pacman -S fakeroot binutils pacutils perl-libwww perl-term-ui perl-json perl-data-dump perl-lwp-protocol-https perl-term-readline-gnu --noconfirm
+
+git clone https://aur.archlinux.org/trizen.git ~/.trizen
+cd ~/.trizen
+makepkg -si --noconfirm
+cd -
+
