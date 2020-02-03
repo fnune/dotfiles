@@ -24,7 +24,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-swap'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'

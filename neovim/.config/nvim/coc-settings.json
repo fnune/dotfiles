@@ -1,0 +1,16 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "sass",
+    "scss",
+    "css",
+    "Markdown",
+    "typescript",
+    "typescript.tsx",
+    "javascript",
+    "javascriptreact",
+    "typescriptreact",
+    "json",
+    "graphql"
+  ],
+  "prettier.disableSuccessMessage": true
+}
