@@ -1,4 +1,9 @@
+set t_Co=256
+set background=dark
+let base16colorspace=256
 colorscheme base16-horizon-dark
+
+syntax enable
 filetype plugin indent on
 hi Normal guibg=NONE ctermbg=NONE
 hi link xmlEndTag xmlTag
@@ -7,10 +12,8 @@ highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
-let base16colorspace=256
 set autoindent
 set autoread
-set background=dark
 set backupcopy=yes
 set cursorline
 set encoding=utf-8
@@ -38,7 +41,6 @@ set smarttab
 set softtabstop=2
 set splitbelow
 set splitright
-set t_Co=256
 set tabstop=2
 set textwidth=0
 set ttimeout
@@ -46,4 +48,4 @@ set ttimeoutlen=100
 set updatetime=300
 set wildmenu
 set wrap
-syntax enable
+
