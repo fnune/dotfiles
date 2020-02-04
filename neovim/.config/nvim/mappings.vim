@@ -41,8 +41,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-" https://github.com/tomhoule/gitmoji-selector
-nmap <leader>e "=system('gitmoji-selector')<C-M>P<Paste>
 
 "******* Specific to coc.nvim ********"
 
