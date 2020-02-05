@@ -2,3 +2,7 @@
   name = Fausto Núñez Alberro
   email = fausto.nunez@mailbox.org
   editor = nvim
+[push]
+  default = current
+[oh-my-zsh]
+  hide-status = 1
