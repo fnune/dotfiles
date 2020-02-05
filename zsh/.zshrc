@@ -1,6 +1,7 @@
 source ~/.zsh/aliases
 source ~/.zsh/plugins
 source ~/.zsh/hist
+source ~/.zsh/prompt
 source ~/.zsh/themes
 source ~/.zsh/env
 

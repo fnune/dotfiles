@@ -8,6 +8,5 @@ source /usr/share/zsh/share/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle vi-mode
-antigen theme lambda
 
 antigen apply

@@ -1,0 +1,1 @@
+PROMPT=" %{$fg[yellow]%}λ %{$FG[244]%}%(5~|…/%3~|%~)%{$reset_color%} "
