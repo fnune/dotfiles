@@ -1,0 +1,9 @@
+# See https://unix.stackexchange.com/a/392710
+# This is usually ~/.local/bin
+USER_BINARIES_DIR=$(systemd-path user-binaries)
+
+# Add $USER_BINARIES_DIR to your $PATH if not already there
+if [[ $UID -ge 1000 && -d $USER_BINARIES_DIR && -z $(echo $PATH | grep -o $USER_BINARIES_DIR) ]]; then
+  export PATH="${PATH}:$USER_BINARIES_DIR"
+fi
+

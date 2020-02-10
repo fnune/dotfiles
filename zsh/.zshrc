@@ -4,6 +4,7 @@ source ~/.zsh/hist
 source ~/.zsh/prompt
 source ~/.zsh/themes
 source ~/.zsh/env
+source ~/.zsh/path
 
 # Allow other configuration files to add files
 # to this directory for them to be sourced later
