@@ -6,3 +6,10 @@
   default = current
 [oh-my-zsh]
   hide-status = 1
+[commit]
+  gpgsign = true
+[include]
+  # Device-specific configuration goes here
+  # That way it does not need to be in the dotfiles repository
+  # For example: signing keys
+  path = ~/.local/gitconfig
