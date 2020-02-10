@@ -48,4 +48,6 @@ set ttimeoutlen=100
 set updatetime=300
 set wildmenu
 set wrap
+set number relativenumber
+set nu rnu
 
