@@ -60,16 +60,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Checkout a branch in fzf
-function! s:open_branch_fzf(line)
-  let l:parser = split(a:line)
-  let l:branch = l:parser[0]
-  if l:branch ==? '*'
-    let l:branch = l:parser[1]
-  endif
-  execute '!git checkout ' . l:branch
-endfunction
-
 command! -bang -nargs=0 GCheckout
   \ call fzf#vim#grep(
   \   'git branch --sort=-committerdate', 0,
@@ -78,8 +68,6 @@ command! -bang -nargs=0 GCheckout
   \   },
   \   <bang>0
   \ )
-
-nnoremap <silent> <leader>co :GCheckout<CR>
 
 " Use <c-space> to trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -93,3 +81,23 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gD <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Checkout a branch in fzf
+function! s:open_branch_fzf(line)
+  let l:parser = split(a:line)
+  let l:branch = l:parser[0]
+  if l:branch ==? '*'
+    let l:branch = l:parser[1]
+  endif
+  execute '!git checkout ' . l:branch
+endfunction
+
+autocmd Filetype fugitive call SetFugitiveMappings()
+function SetFugitiveMappings()
+  nnoremap <silent> <buffer> Fu :Gpull<cr>
+  nnoremap <silent> <buffer> pp :Gpush<cr>
+  nnoremap <silent> <buffer> p-fp :Gpush -f<cr>
+  nnoremap <silent> <buffer> gr :Git sync<cr>
+  nnoremap <silent> <buffer> bb :GCheckout<cr>
+  nnoremap <buffer> bc :Git checkout -b<space>
+endfunction
