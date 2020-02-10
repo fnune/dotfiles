@@ -7,6 +7,7 @@ vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 " Move a line of text using ALT+[jk]
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
+nnoremap Q <nop>
 nnoremap <leader>f :FZF<CR>
 nnoremap <leader>F :Ag<SPACE>
 nnoremap <leader>g :Gstatus<CR>
