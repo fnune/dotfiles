@@ -1,0 +1,2 @@
+eval "$(hub alias -s)"
+
