@@ -23,7 +23,6 @@ set hidden
 set hlsearch
 set ignorecase smartcase
 set incsearch
-set laststatus=2
 set lazyredraw
 set linebreak
 set list
