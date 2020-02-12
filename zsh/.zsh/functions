@@ -1,0 +1,10 @@
+# Change to a git repository's root directory from anywhere inside it
+function cdb() {
+  inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
+  if [ $inside_git_repo ]; then
+    cd `git rev-parse --show-toplevel`
+  else
+    echo "Not a git project"
+  fi
+}
+
