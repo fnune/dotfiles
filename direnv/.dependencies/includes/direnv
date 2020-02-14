@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo sh -c 'curl -sfL https://direnv.net/install.sh | PATH=/usr/bin bash'
+

@@ -21,7 +21,7 @@ WORKDIR /home/ubuntie/.dotfiles
 COPY --chown=ubuntie:ubuntie . .
 
 # This is the main installation step
-RUN stow dependencies editorconfig fzf git volta zsh tmux neovim rustup kitty
+RUN stow dependencies editorconfig fzf git volta zsh tmux neovim rustup kitty direnv
 
 # Run the repository dependency scripts
 RUN ~/.dependencies/install
