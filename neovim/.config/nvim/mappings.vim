@@ -61,15 +61,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-command! -bang -nargs=0 GCheckout
-  \ call fzf#vim#grep(
-  \   'git branch --sort=-committerdate', 0,
-  \   {
-  \     'sink': function('s:open_branch_fzf')
-  \   },
-  \   <bang>0
-  \ )
-
 " Use <c-space> to trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -93,14 +84,43 @@ function! s:open_branch_fzf(line)
   execute '!git checkout ' . l:branch
 endfunction
 
+command! -bang -nargs=0 GCheckout
+  \ call fzf#vim#grep(
+  \   'git branch --sort=-committerdate', 0,
+  \   {
+  \     'sink': function('s:open_branch_fzf')
+  \   },
+  \   <bang>0
+  \ )
+
+" Make a PR from the current branch,
+" based on an fzf-selected branch
+function! s:pull_request_branch_fzf(line)
+  let l:parser = split(a:line)
+  let l:branch = l:parser[0]
+  if l:branch ==? '*'
+    let l:branch = l:parser[1]
+  endif
+  execute 'Git pull-request -b ' . l:branch
+endfunction
+
+command! -bang -nargs=0 GPullRequest
+  \ call fzf#vim#grep(
+  \   'git branch --sort=-committerdate', 0,
+  \   {
+  \     'sink': function('s:pull_request_branch_fzf')
+  \   },
+  \   <bang>0
+  \ )
+
 autocmd Filetype fugitive call SetFugitiveMappings()
 function SetFugitiveMappings()
   nnoremap <silent> <buffer> bb :GCheckout<cr>
+  nnoremap <buffer> pr :GPullRequest<cr>
   nnoremap <buffer> Fu :Gpull<cr>
   nnoremap <buffer> pp :Gpush<cr>
   nnoremap <buffer> p-fp :Gpush -f<cr>
   nnoremap <buffer> gr :Git sync<cr>
   nnoremap <buffer> fa :Git fetch --all<cr>
   nnoremap <buffer> bc :Git checkout -b<space>
-  nnoremap <buffer> pr :Git pull-request -b<space>
 endfunction
