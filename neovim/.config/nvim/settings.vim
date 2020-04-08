@@ -1,7 +1,11 @@
 set t_Co=256
 set background=dark
-let base16colorspace=256
-colorscheme base16-horizon-dark
+set termguicolors
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 syntax enable
 filetype plugin indent on
