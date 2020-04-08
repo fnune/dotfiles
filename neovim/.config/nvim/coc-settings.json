@@ -1,4 +1,5 @@
 {
+  "coc.preferences.colorSupport": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "sass",
     "scss",

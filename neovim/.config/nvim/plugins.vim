@@ -24,6 +24,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-swap'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -40,4 +41,4 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 call plug#end()
 
-let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-yaml', 'coc-eslint', 'coc-tslint-plugin', 'coc-highlight']
+let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-yaml', 'coc-eslint', 'coc-tslint-plugin']
