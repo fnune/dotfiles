@@ -21,7 +21,3 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 $HOME/.config/polybar/launch.sh
-
-setxkbmap es -option "caps:escape"
-xset r rate 220 50
-xrandr --dpi 96
