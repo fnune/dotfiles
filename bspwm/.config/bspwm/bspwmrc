@@ -1,5 +1,7 @@
 #! /bin/sh
 
+source $HOME/.xsettings
+
 sxhkd &
 nm-applet &
 cbatticon &
