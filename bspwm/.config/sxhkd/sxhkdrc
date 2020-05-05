@@ -10,6 +10,10 @@ super + Return
 super + d
   rofi -modi drun -show drun -theme base16-classic-dark -show-icons -font "Fira Code 12"
 
+# emoji picker from https://gist.github.com/Tadly/0741821d3694deaec1ee454a95c591fa
+super + e
+  $HOME/.local/bin/emoji
+
 # make sxhkd reload its configuration files:
 super + Escape
   pkill -USR1 -x sxhkd
