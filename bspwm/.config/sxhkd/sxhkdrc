@@ -18,6 +18,14 @@ super + e
 super + Escape
   pkill -USR1 -x sxhkd
 
+# full screen screenshot
+Print
+  maim | tee >(xclip -selection clipboard -t image/png) > ~/Storage/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d-%H%M%S).png
+
+# area or window selection screenshot
+shift + @Print
+  maim --select | tee >(xclip -selection clipboard -t image/png) > ~/Storage/Pictures/Screenshots/Screenshot-$(date +%Y-%m-%d-%H%M%S).png
+
 #
 # bspwm hotkeys
 #
