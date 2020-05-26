@@ -3,6 +3,9 @@ FROM ubuntu:rolling
 # Install dependencies to run as a regular user
 RUN apt-get update -y && apt-get upgrade -y && apt-get install -y sudo curl git stow
 
+# https://askubuntu.com/questions/909277/avoiding-user-interaction-with-tzdata-when-installing-certbot-in-a-docker-contai
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+
 # Create non-root user with a home directory
 RUN sudo adduser --disabled-password --gecos "" ubuntie && \
   sudo mkdir -p /etc/sudoers.d && \
