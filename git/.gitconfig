@@ -13,3 +13,5 @@
   # That way it does not need to be in the dotfiles repository
   # For example: signing keys
   path = ~/.local/gitconfig
+[pull]
+  ff = only
