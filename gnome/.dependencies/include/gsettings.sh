@@ -46,5 +46,11 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-side-s "['<Super><Shift>J
 gsettings set org.gnome.desktop.wm.keybindings move-to-side-n "['<Super><Shift>K']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-side-e "['<Super><Shift>L']"
 
+# Moving windows to a different monitor using hjkl
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left "['<Ctrl><Shift>H']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-down "['<Ctrl><Shift>J']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-up "['<Ctrl><Shift>K']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right "['<Ctrl><Shift>L']"
+
 # Set the user theme to "Inter", defined in gnome/.themes
 gsettings set org.gnome.shell.extensions.user-theme name "Inter"
