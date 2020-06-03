@@ -52,5 +52,8 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-down "['<Ctrl><Sh
 gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-up "['<Ctrl><Shift>K']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right "['<Ctrl><Shift>L']"
 
+# Make it so that windows gain focus by clicking instead of hovering
+gsettings set org.gnome.desktop.wm.preferences focus-mode 'click'
+
 # Set the user theme to "Inter", defined in gnome/.themes
 gsettings set org.gnome.shell.extensions.user-theme name "Inter"
