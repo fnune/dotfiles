@@ -57,3 +57,6 @@ gsettings set org.gnome.desktop.wm.preferences focus-mode 'click'
 
 # Set the user theme to "Inter", defined in gnome/.themes
 gsettings set org.gnome.shell.extensions.user-theme name "Inter"
+
+# Activate edge tiling
+gsettings set org.gnome.mutter edge-tiling true
