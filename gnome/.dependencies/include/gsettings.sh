@@ -60,3 +60,8 @@ gsettings set org.gnome.shell.extensions.user-theme name "Inter"
 
 # Activate edge tiling
 gsettings set org.gnome.mutter edge-tiling true
+
+# Set the keyboard repeat delay and interval
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15
+gsettings set org.gnome.desktop.peripherals.keyboard delay 200
+
