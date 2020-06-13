@@ -11,6 +11,7 @@ syntax enable
 filetype plugin indent on
 hi Normal guibg=NONE ctermbg=NONE
 hi link xmlEndTag xmlTag
+let &fcs='eob: '
 highlight Comment cterm=italic gui=italic
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
