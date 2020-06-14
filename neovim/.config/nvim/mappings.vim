@@ -124,3 +124,11 @@ function SetFugitiveMappings()
   nnoremap <buffer> fa :Git fetch --all<cr>
   nnoremap <buffer> bc :Git checkout -b<space>
 endfunction
+
+nmap f <Plug>(coc-smartf-forward)
+nmap F <Plug>(coc-smartf-backward)
+
+augroup Smartf
+  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
+  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
+augroup end
