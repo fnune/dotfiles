@@ -65,3 +65,5 @@ gsettings set org.gnome.mutter edge-tiling true
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15
 gsettings set org.gnome.desktop.peripherals.keyboard delay 200
 
+# A text scaling factor that works great on my monitor
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.05
