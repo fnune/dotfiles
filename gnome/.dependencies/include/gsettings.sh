@@ -55,9 +55,6 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right "['<Ctrl><S
 # Make it so that windows gain focus by clicking instead of hovering
 gsettings set org.gnome.desktop.wm.preferences focus-mode 'click'
 
-# Set the user theme to "Inter", defined in gnome/.themes
-gsettings set org.gnome.shell.extensions.user-theme name "Inter"
-
 # Activate edge tiling
 gsettings set org.gnome.mutter edge-tiling true
 
