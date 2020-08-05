@@ -22,6 +22,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
+Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'machakann/vim-swap'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -43,3 +44,4 @@ Plug 'leafOfTree/vim-svelte-plugin'
 call plug#end()
 
 let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-yaml', 'coc-eslint', 'coc-tslint-plugin', 'coc-rust-analyzer', 'coc-tsserver', 'coc-git', 'coc-smartf', 'coc-svelte']
+let g:vim_svelte_plugin_load_full_syntax = 1

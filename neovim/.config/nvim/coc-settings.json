@@ -1,17 +1,18 @@
 {
   "coc.preferences.colorSupport": false,
   "coc.preferences.formatOnSaveFiletypes": [
-    "sass",
-    "scss",
-    "css",
     "Markdown",
-    "typescript",
-    "typescript.tsx",
+    "css",
+    "graphql",
     "javascript",
     "javascriptreact",
-    "typescriptreact",
     "json",
-    "graphql"
+    "sass",
+    "scss",
+    "svelte",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact"
   ],
   "prettier.disableSuccessMessage": true
 }
