@@ -12,8 +12,8 @@ nnoremap <leader>f :FZF<CR>
 nnoremap <leader>F :Ag<SPACE>
 nnoremap <leader>g :Gstatus<CR>
 nnoremap <leader>q :q<CR>
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-nnoremap <leader>p :Prettier<CR>
+command! -nargs=0 Format :call CocAction('format')
+nnoremap <leader>p :Format<CR>
 nnoremap <leader>w :w!<CR>
 nnoremap <leader>wq :wq!<CR>
 nnoremap <leader>b :Buffers<CR>
