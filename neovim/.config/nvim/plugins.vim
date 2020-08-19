@@ -37,9 +37,10 @@ Plug 'tpope/vim-surround'
 " Language-specific
 Plug 'ianks/vim-tsx'
 Plug 'jparise/vim-graphql'
-Plug 'leafgarland/typescript-vim'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'leafOfTree/vim-svelte-plugin'
+Plug 'leafgarland/typescript-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 call plug#end()
 
