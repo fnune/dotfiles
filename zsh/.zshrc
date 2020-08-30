@@ -1,9 +1,9 @@
+source ~/.zsh/env
 source ~/.zsh/aliases
 source ~/.zsh/plugins
 source ~/.zsh/hist
 source ~/.zsh/prompt
 source ~/.zsh/themes
-source ~/.zsh/env
 source ~/.zsh/path
 source ~/.zsh/functions
 
