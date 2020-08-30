@@ -13,7 +13,8 @@ exec --no-startup-id nitrogen --restore
 floating_modifier $mod
 hide_edge_borders both
 new_window none
-bindsym $mod+x move workspace to output up
+bindsym $mod+x move workspace to output left
+bindsym $mod+y move workspace to output up
 
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
