@@ -32,6 +32,7 @@
       <property name="mode" type="uint" value="0"/>
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="leave-opacity" type="uint" value="100"/>
+      <property name="output-name" type="string" value="Primary"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -59,6 +60,7 @@
     </property>
     <property name="plugin-6" type="string" value="systray">
       <property name="names-ordered" type="array">
+        <value type="string" value="network"/>
         <value type="string" value="flameshot"/>
         <value type="string" value="reminders"/>
         <value type="string" value="redshift-gtk"/>
