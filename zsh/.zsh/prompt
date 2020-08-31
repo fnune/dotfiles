@@ -1,1 +1,1 @@
-PROMPT=" %{$fg[yellow]%}λ %{$reset_color%}%(5~|…/%3~|%~) "
+PROMPT=$' %{$FG[255]%}%(5~|…/%3~|%~) %(?.%{$fg[green]%}.%{$fg[red]%}[%?] )=>%{$reset_color%} '
