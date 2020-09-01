@@ -7,7 +7,6 @@ exec --no-startup-id xset r rate 180 45
 exec --no-startup-id setxkbmap -layout es -option caps:escape
 exec --no-startup-id unclutter --timeout 1 --fork
 exec --no-startup-id redshift-gtk -l 52.5166667:13.4
-exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore
 
 floating_modifier $mod
