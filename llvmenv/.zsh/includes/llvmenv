@@ -1,0 +1,2 @@
+export LLVMENV_RUST_BINDING=1
+source <(llvmenv zsh)
