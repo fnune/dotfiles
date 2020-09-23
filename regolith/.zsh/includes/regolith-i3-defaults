@@ -1,0 +1,2 @@
+cat /etc/regolith/i3/config | grep -v bindsym > ~/.config/regolith/i3/config
+cat ~/.config/regolith/i3/config.overrides >> ~/.config/regolith/i3/config
