@@ -1,3 +1,6 @@
+exec --no-startup-id xset r rate 180 45
+exec --no-startup-id setxkbmap -layout es -option caps:escape
+
 focus_follows_mouse yes
 
 bindsym $mod+d exec $i3-wm.program.launcher.app
