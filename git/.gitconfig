@@ -4,6 +4,8 @@
   editor = nvim
 [push]
   default = current
+[core]
+  excludesfile = ~/.config/git/gitignore
 [oh-my-zsh]
   hide-status = 1
 [commit]
