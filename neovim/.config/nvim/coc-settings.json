@@ -15,5 +15,7 @@
     "typescript.tsx",
     "typescriptreact"
   ],
-  "prettier.disableSuccessMessage": true
+  "prettier.disableSuccessMessage": true,
+  "python.jediEnabled": false,
+  "python.linting.enabled": true
 }
