@@ -87,3 +87,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym --release Print exec "flameshot full -p ~/Pictures/Screenshots"
+bindsym --release Shift+Print exec "flameshot gui"
+bindsym --release Ctrl+Print exec "flameshot full -c"
