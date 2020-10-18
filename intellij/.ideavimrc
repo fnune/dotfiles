@@ -1,0 +1,26 @@
+let mapleader = " "
+
+map 0 ^
+
+# A fix for `gq` that needs this plugin to work:
+# https://plugins.jetbrains.com/plugin/7234-wrap-to-column
+nmap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+
+# The action to open links in browsers is, interestingly, also `GotoDeclaration`,
+# which is mapped to `gd`. In Vim, delegating opening paths to the operating system
+# is done with `gx`, so we map this to `GotoDeclaration` too.
+nmap gx :action GotoDeclaration<CR>
+
+nmap <A-j> :action MoveLineDown<CR>
+nmap <A-k> :action MoveLineUp<CR>
+vmap <A-j> :action MoveLineDown<CR>
+vmap <A-k> :action MoveLineUp<CR>
+
+nnoremap <leader>w :w!<CR>
+nnoremap <leader>wq :wq!<CR>
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>e :action Synchronize<CR>
+nnoremap <leader>f :action SearchEverywhere<CR>
+nnoremap <leader>F :action FindInPath<CR>
+nnoremap <leader>p :action ReformatCode<CR>
