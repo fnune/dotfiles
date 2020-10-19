@@ -5,6 +5,7 @@ focus_follows_mouse yes
 
 bindsym $mod+d exec $i3-wm.program.launcher.app
 bindsym $mod+n exec $i3-wm.program.notification_ui
+bindsym $mod+e exec rofimoji
 
 bindsym $mod+x move workspace to output left
 bindsym $mod+y move workspace to output up
@@ -36,10 +37,6 @@ bindsym $mod+a split h
 bindsym $mod+v split v
 
 bindsym $mod+f fullscreen toggle
-
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 bindsym $mod+Shift+space floating toggle
 
