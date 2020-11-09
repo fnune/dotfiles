@@ -4,6 +4,7 @@ set hlsearch
 set incsearch
 set commentary
 set surround
+set ignorecase smartcase
 
 map 0 ^
 
@@ -16,6 +17,10 @@ vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 " which is mapped to `gd`. In Vim, delegating opening paths to the operating system
 " is done with `gx`, so we map this to `GotoDeclaration` too.
 nmap gx :action GotoDeclaration<CR>
+
+" <Ctrl-u> and <Ctrl-d> also center the screen
+nnoremap <silent> <C-u> <C-u>zz
+nnoremap <silent> <C-d> <C-d>zz
 
 nmap <A-j> :action MoveLineDown<CR>
 nmap <A-k> :action MoveLineUp<CR>
