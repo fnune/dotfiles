@@ -16,6 +16,7 @@ endif
 call plug#begin()
 
 " Generic
+Plug 'AndrewRadev/tagalong.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
