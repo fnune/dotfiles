@@ -1,5 +1,7 @@
 exec --no-startup-id xset r rate 180 45
 exec --no-startup-id setxkbmap -layout es -option caps:escape
+exec --no-startup-id dbus-launch nm-applet
+exec --no-startup-id dbus-launch redshift-gtk -l 52.52437:13.41053
 
 focus_follows_mouse yes
 
