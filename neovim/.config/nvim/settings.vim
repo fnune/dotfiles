@@ -19,7 +19,8 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 set autoindent
 set autoread
-set backupcopy=yes
+set nobackup
+set nowritebackup
 set cursorline
 set encoding=utf-8
 set expandtab
