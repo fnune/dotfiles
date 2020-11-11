@@ -8,6 +8,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 syntax enable
+syntax sync minlines=10000
 filetype plugin indent on
 hi Normal guibg=NONE ctermbg=NONE
 hi link xmlEndTag xmlTag
@@ -55,4 +56,5 @@ set wildmenu
 set wrap
 set number relativenumber
 set nu rnu
+set redrawtime=10000
 
