@@ -32,7 +32,10 @@ nnoremap gF gd/'<CR>:noh<CR>gf
 " Visual select last pasted text
 nnoremap gp `[v`]
 " Use <leader>l to clear the highlighting of :set hlsearch.
-nnoremap <silent> <leader>l :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+nnoremap <silent> <leader>l :nohlsearch<CR>
+
+"******* Specific to coc.nvim ********"
+
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -45,9 +48,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-"******* Specific to coc.nvim ********"
-
-" Use <c-space> to trigger completion
 nnoremap <silent> <space>j :<C-u>call       CocActionAsync('diagnosticNext',     'error')<CR>
 nnoremap <silent> <space>k :<C-u>call       CocActionAsync('diagnosticPrevious', 'error')<CR>
 nmap <leader>rn <Plug>(coc-rename)
@@ -65,6 +65,11 @@ endfunction
 
 " Use <c-space> to trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position
 " Coc only does snippet and additional edit on confirm
