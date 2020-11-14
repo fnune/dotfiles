@@ -23,6 +23,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'machakann/vim-swap'
 Plug 'mcchrish/nnn.vim'
@@ -35,6 +36,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
+Plug 'vim-test/vim-test'
 
 " Language-specific
 Plug 'ianks/vim-tsx'
