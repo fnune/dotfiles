@@ -48,7 +48,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 call plug#end()
 
-let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-yaml', 'coc-eslint', 'coc-tslint-plugin', 'coc-rust-analyzer', 'coc-tsserver', 'coc-git', 'coc-svelte', 'coc-python']
+let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-yaml', 'coc-eslint', 'coc-tslint-plugin', 'coc-rust-analyzer', 'coc-tsserver', 'coc-git', 'coc-svelte', 'coc-python', 'coc-actions']
 let g:vim_svelte_plugin_load_full_syntax = 1
 let g:nnn#command = 'nnn -H'
 let g:nnn#layout = { 'window': { 'width': 0.6, 'height': 0.6, 'highlight': 'Debug' } }

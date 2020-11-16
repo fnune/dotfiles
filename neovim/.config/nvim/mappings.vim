@@ -33,10 +33,13 @@ nnoremap gF gd/'<CR>:noh<CR>gf
 nnoremap gp `[v`]
 " Use <leader>l to clear the highlighting of :set hlsearch.
 nnoremap <silent> <leader>l :nohlsearch<CR>
+" Navigate the completion list with <C-jk> in addition to <C-NP>
+inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 
 "******* Specific to coc.nvim ********"
 
-" Use K for show documentation in preview window
+" Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -52,11 +55,18 @@ nnoremap <silent> <space>j :<C-u>call       CocActionAsync('diagnosticNext',    
 nnoremap <silent> <space>k :<C-u>call       CocActionAsync('diagnosticPrevious', 'error')<CR>
 nmap <leader>rn <Plug>(coc-rename)
 
+" Use tab to trigger completion with characters ahead and navigate
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
   \ <SID>check_back_space() ? "\<TAB>" :
   \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Scroll the floating diagnostic window
+nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -74,6 +84,13 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position
 " Coc only does snippet and additional edit on confirm
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
