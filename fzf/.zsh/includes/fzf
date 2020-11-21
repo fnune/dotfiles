@@ -6,5 +6,5 @@ fi
 
 source "/home/$(whoami)/.fzf/shell/key-bindings.zsh"
 
-export FZF_DEFAULT_COMMAND='rg --hidden --files --follow -g "!{.git,node_modles}/*" 2> /dev/null'
+export FZF_DEFAULT_COMMAND='rg --hidden --files --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
