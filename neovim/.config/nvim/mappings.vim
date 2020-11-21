@@ -36,6 +36,8 @@ nnoremap <silent> <leader>l :nohlsearch<CR>
 " Navigate the completion list with <C-jk> in addition to <C-NP>
 inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
+" Reload the config
+nnoremap <leader>rc :source $MYVIMRC<CR>
 
 "******* Specific to coc.nvim ********"
 
