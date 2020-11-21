@@ -20,6 +20,7 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 set autoindent
 set autoread
+set cmdheight=2
 set nobackup
 set nowritebackup
 set cursorline
