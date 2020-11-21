@@ -27,6 +27,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'machakann/vim-swap'
 Plug 'mcchrish/nnn.vim'
+Plug 'mkitt/tabline.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'tmhedberg/matchit'
