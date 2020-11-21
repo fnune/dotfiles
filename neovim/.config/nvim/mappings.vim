@@ -9,7 +9,7 @@ nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 nnoremap Q <nop>
 nnoremap <leader>f :FZF<CR>
-nnoremap <leader>F :Rg<SPACE>
+nnoremap <leader>F :Rg<CR>
 nnoremap <leader>g :Gstatus<CR>
 nnoremap <leader>q :q<CR>
 command! -nargs=0 Format :call CocAction('format')
