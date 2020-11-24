@@ -1,5 +1,6 @@
 {
   "coc.preferences.colorSupport": false,
+  "coc.preferences.jumpCommand": "tab drop",
   "coc.preferences.formatOnSaveFiletypes": [
     "Markdown",
     "css",
