@@ -22,9 +22,8 @@ nnoremap k gk
 " <Ctrl-u> and <Ctrl-d> also center the screen
 nnoremap <silent> <C-u> <C-u>zz
 nnoremap <silent> <C-d> <C-d>zz
-" Comfy mappings for buffer-previous and buffer-next
-nnoremap <silent> <leader>> :bn<CR>
-nnoremap <silent> <leader>< :bp<CR>
+" Toggle between the last and the current buffer
+nnoremap <silent> <leader>< <C-^>
 " Go to file in a vertical split
 nnoremap vgf <C-w>v gf
 " GD (uppercase) from an imported variable to go to the file that defines it
