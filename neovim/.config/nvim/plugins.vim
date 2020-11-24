@@ -20,6 +20,8 @@ Plug 'AndrewRadev/tagalong.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'fnune/vim-test'
+Plug 'jgdavey/tslime.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
@@ -37,7 +39,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-test/vim-test'
 
 " Language-specific
 Plug 'jparise/vim-graphql'
@@ -53,3 +54,9 @@ let g:vim_svelte_plugin_load_full_syntax = 1
 let g:nnn#command = 'nnn -H'
 let g:nnn#layout = { 'window': { 'width': 0.6, 'height': 0.6, 'highlight': 'Debug' } }
 let g:nnn#action = { '<c-x>': 'split', '<c-v>': 'vsplit' }
+
+let test#strategy = "tslime"
+let test#filename_modifier = ':p'
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+let g:tslime_autoset_pane = 1
