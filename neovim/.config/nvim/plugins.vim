@@ -40,16 +40,15 @@ Plug 'tpope/vim-surround'
 Plug 'vim-test/vim-test'
 
 " Language-specific
-Plug 'ianks/vim-tsx'
 Plug 'jparise/vim-graphql'
 Plug 'leafOfTree/vim-svelte-plugin'
-Plug 'leafgarland/typescript-vim'
-Plug 'rust-lang/rust.vim'
+Plug 'herringtondarkholme/yats.vim'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
-let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-yaml', 'coc-eslint', 'coc-tslint-plugin', 'coc-rust-analyzer', 'coc-tsserver', 'coc-git', 'coc-svelte', 'coc-python', 'coc-actions', 'coc-sh']
+let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-yaml', 'coc-eslint', 'coc-tslint-plugin', 'coc-rust-analyzer', 'coc-tsserver', 'coc-git', 'coc-svelte', 'coc-python', 'coc-actions', 'coc-sh', 'coc-styled-components']
 let g:vim_svelte_plugin_load_full_syntax = 1
 let g:nnn#command = 'nnn -H'
 let g:nnn#layout = { 'window': { 'width': 0.6, 'height': 0.6, 'highlight': 'Debug' } }
