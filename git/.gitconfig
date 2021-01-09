@@ -6,6 +6,9 @@
   default = current
 [core]
   excludesfile = ~/.config/git/gitignore
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
 [oh-my-zsh]
   hide-status = 1
 [commit]
