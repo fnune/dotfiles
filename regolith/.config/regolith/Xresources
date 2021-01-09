@@ -1,2 +1,7 @@
+Xcursor.theme: Arc
 i3-wm.bar.trayoutput: primary
+i3-wm.bar.position: top
+rofi.font: Inter Medium 14
+gnome.icon.theme: Arc
 gnome.wallpaper:
+
