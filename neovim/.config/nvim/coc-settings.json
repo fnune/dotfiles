@@ -1,6 +1,7 @@
 {
   "coc.preferences.colorSupport": false,
   "coc.preferences.jumpCommand": "tab drop",
+  "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "Markdown",
     "css",
