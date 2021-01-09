@@ -23,6 +23,11 @@ set autoread
 set cmdheight=2
 set nobackup
 set nowritebackup
+set noundofile
+set noswapfile
+" This is OK if noswapfile is 1 because we won't be writing to the swap file
+" the whole time, ruining the SSD.
+set updatetime=100
 set cursorline
 set encoding=utf-8
 set expandtab
@@ -52,7 +57,6 @@ set tabstop=2
 set textwidth=0
 set ttimeout
 set ttimeoutlen=100
-set updatetime=300
 set wildmenu
 set wrap
 set nu
