@@ -87,3 +87,7 @@ bindsym $mod+r mode "resize"
 bindsym --release Print exec "flameshot full -p ~/Pictures/Screenshots"
 bindsym --release Shift+Print exec "flameshot gui"
 bindsym --release Ctrl+Print exec "flameshot full -c"
+
+for_window [class="evolution-alarm-notify"] floating enable
+for_window [class="Gnome-calendar"] floating enable
+for_window [class="zoom"] floating enable

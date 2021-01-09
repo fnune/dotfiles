@@ -1,0 +1,14 @@
+# Disable Shadows
+shadow = false;
+
+# Disable Opacity
+inactive-opacity = 1;
+frame-opacity = 1;
+
+# Disable Fading
+fade-in-step = 1;
+fade-out-step = 1;
+
+# GLX and VSync
+backend = "glx";
+vsync = true;
