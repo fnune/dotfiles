@@ -10,10 +10,12 @@ nmap <M-k> mz:m-2<cr>`z
 nnoremap Q <nop>
 nnoremap <leader>f :FZF<CR>
 nnoremap <leader>F :Rg<space>
-nnoremap <leader>g :Gstatus<CR>
+nnoremap <leader>g :Git<CR>
 nnoremap <leader>q :q<CR>
 command! -nargs=0 Format :call CocAction('format')
 nnoremap <leader>p :Format<CR>
+command! -nargs=0 OrganizeImports :call CocAction('runCommand', 'editor.action.organizeImport')
+nnoremap <leader>o :OrganizeImports<CR>
 nnoremap <leader>w :w!<CR>
 nnoremap <leader>wq :wq!<CR>
 nnoremap <leader>b :Buffers<CR>
@@ -55,24 +57,26 @@ endfunction
 nnoremap <silent> <space>j :<C-u>call       CocActionAsync('diagnosticNext',     'error')<CR>
 nnoremap <silent> <space>k :<C-u>call       CocActionAsync('diagnosticPrevious', 'error')<CR>
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>re <Plug>(coc-refactor)
+nmap <leader>c :CocCommand<CR>
 
-" Use tab to trigger completion with characters ahead and navigate
+" Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ coc#refresh()
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " Scroll the floating diagnostic window
 nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
 inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 " Use <c-space> to trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -86,12 +90,15 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " Coc only does snippet and additional edit on confirm
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <silent> <leader>a  <Plug>(coc-codeaction-selected)
+nmap <silent> <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <silent> <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <silent> <leader>af  <Plug>(coc-fix-current)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -160,3 +167,6 @@ noremap <M-7> 7gt
 noremap <M-8> 8gt
 noremap <M-9> 9gt
 noremap <silent> <M-0> :tablast<cr>
+
+nnoremap <leader>n :NnnPicker<CR>
+nnoremap <leader>N :NnnPicker %:p:h<CR>
