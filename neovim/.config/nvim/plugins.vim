@@ -17,6 +17,7 @@ call plug#begin()
 
 " Generic
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
@@ -49,14 +50,16 @@ Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
-let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-yaml', 'coc-eslint', 'coc-tslint-plugin', 'coc-rust-analyzer', 'coc-tsserver', 'coc-git', 'coc-svelte', 'coc-python', 'coc-actions', 'coc-sh', 'coc-styled-components']
+let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-yaml', 'coc-eslint', 'coc-tslint-plugin', 'coc-rust-analyzer', 'coc-tsserver', 'coc-svelte', 'coc-python', 'coc-sh', 'coc-styled-components']
 let g:vim_svelte_plugin_load_full_syntax = 1
 let g:nnn#command = 'nnn -H'
 let g:nnn#layout = { 'window': { 'width': 0.6, 'height': 0.6, 'highlight': 'Debug' } }
-let g:nnn#action = { '<c-x>': 'split', '<c-v>': 'vsplit' }
+let g:nnn#action = { '<c-x>': 'split', '<c-v>': 'vsplit', '<c-t>': 'tab split' }
 
 let test#strategy = "tslime"
 let test#filename_modifier = ':p'
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
 let g:tslime_autoset_pane = 1
+
+let g:gitgutter_grep = 'rg'
