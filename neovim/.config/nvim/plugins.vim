@@ -29,6 +29,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'machakann/vim-swap'
+Plug 'markonm/traces.vim'
 Plug 'mcchrish/nnn.vim'
 Plug 'mkitt/tabline.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
