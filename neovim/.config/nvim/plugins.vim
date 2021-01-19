@@ -18,9 +18,9 @@ call plug#begin()
 " Generic
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'fnune/base16-vim'
 Plug 'fnune/vim-test'
 Plug 'jgdavey/tslime.vim'
 Plug 'jiangmiao/auto-pairs'
