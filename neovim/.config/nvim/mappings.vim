@@ -54,8 +54,8 @@ function! s:show_documentation()
   endif
 endfunction
 
-nnoremap <silent> <space>j :<C-u>call       CocActionAsync('diagnosticNext',     'error')<CR>
-nnoremap <silent> <space>k :<C-u>call       CocActionAsync('diagnosticPrevious', 'error')<CR>
+nnoremap <silent> <leader>j :<C-u>call       CocActionAsync('diagnosticNext',     'error')<CR>
+nnoremap <silent> <leader>k :<C-u>call       CocActionAsync('diagnosticPrevious', 'error')<CR>
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>re <Plug>(coc-refactor)
 nmap <leader>c :CocCommand<CR>
