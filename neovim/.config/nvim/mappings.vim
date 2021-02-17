@@ -149,9 +149,9 @@ autocmd Filetype fugitive call SetFugitiveMappings()
 function SetFugitiveMappings()
   nnoremap <silent> <buffer> bb :GCheckout<cr>
   nnoremap <buffer> pr :GPullRequest<cr>
-  nnoremap <buffer> Fu :Gpull<cr>
-  nnoremap <buffer> pp :Gpush<cr>
-  nnoremap <buffer> p-fp :Gpush -f<cr>
+  nnoremap <buffer> Fu :Git pull<cr>
+  nnoremap <buffer> pp :Git push<cr>
+  nnoremap <buffer> p-fp :Git push -f<cr>
   nnoremap <buffer> gr :Git sync<cr>
   nnoremap <buffer> fa :Git fetch --all<cr>
   nnoremap <buffer> bc :Git checkout -b<space>
