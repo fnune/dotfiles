@@ -7,6 +7,6 @@ fi
 source /usr/share/zsh/share/antigen.zsh
 
 antigen use oh-my-zsh
-antigen bundle vi-mode
+antigen bundle jeffreytse/zsh-vi-mode
 
 antigen apply

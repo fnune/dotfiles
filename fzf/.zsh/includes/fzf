@@ -1,10 +1,12 @@
-if [[ ! "$PATH" == */home/$(whoami)/.fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/home/$(whoami)/.fzf/bin"
-fi
+function zvm_after_init() {
+  if [[ ! "$PATH" == */home/$(whoami)/.fzf/bin* ]]; then
+    export PATH="${PATH:+${PATH}:}/home/$(whoami)/.fzf/bin"
+  fi
 
-[[ $- == *i* ]] && source "/home/$(whoami)/.fzf/shell/completion.zsh" 2> /dev/null
+  [[ $- == *i* ]] && source "/home/$(whoami)/.fzf/shell/completion.zsh" 2> /dev/null
 
-source "/home/$(whoami)/.fzf/shell/key-bindings.zsh"
+  source "/home/$(whoami)/.fzf/shell/key-bindings.zsh"
 
-export FZF_DEFAULT_COMMAND='rg --hidden --files --follow -g "!{.git,node_modules}/*" 2> /dev/null'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_DEFAULT_COMMAND='rg --hidden --files --follow -g "!{.git,node_modules}/*" 2> /dev/null'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+}
