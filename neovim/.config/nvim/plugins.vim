@@ -51,7 +51,24 @@ Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
-let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-yaml', 'coc-eslint', 'coc-tslint-plugin', 'coc-rust-analyzer', 'coc-tsserver', 'coc-svelte', 'coc-python', 'coc-sh', 'coc-styled-components']
+let g:coc_global_extensions = [
+  \'coc-css',
+  \'coc-html',
+  \'coc-json',
+  \'coc-prettier',
+  \'coc-tsserver',
+  \'coc-yaml',
+  \'coc-eslint',
+  \'coc-tslint-plugin',
+  \'coc-rust-analyzer',
+  \'coc-tsserver',
+  \'coc-svelte',
+  \'coc-pyright',
+  \'coc-sh',
+  \'coc-styled-components',
+  \'coc-actions',
+\]
+
 let g:vim_svelte_plugin_load_full_syntax = 1
 let g:nnn#command = 'nnn -H'
 let g:nnn#layout = { 'window': { 'width': 0.6, 'height': 0.6, 'highlight': 'Debug' } }
