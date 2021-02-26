@@ -34,6 +34,7 @@ Plug 'mcchrish/nnn.vim'
 Plug 'mkitt/tabline.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'sheerun/vim-polyglot'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -41,13 +42,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-
-" Language-specific
-Plug 'jparise/vim-graphql'
-Plug 'leafOfTree/vim-svelte-plugin'
-Plug 'herringtondarkholme/yats.vim'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
