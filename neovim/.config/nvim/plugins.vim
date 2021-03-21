@@ -36,6 +36,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
@@ -75,3 +76,5 @@ let g:tslime_always_current_window = 1
 let g:tslime_autoset_pane = 1
 
 let g:gitgutter_grep = 'rg'
+
+let g:traces_abolish_integration = 1
