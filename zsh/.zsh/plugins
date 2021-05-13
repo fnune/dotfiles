@@ -10,3 +10,5 @@ antigen use oh-my-zsh
 antigen bundle jeffreytse/zsh-vi-mode
 
 antigen apply
+
+export ZVM_CURSOR_STYLE_ENABLED=false
