@@ -170,3 +170,7 @@ noremap <silent> <M-0> :tablast<cr>
 
 nnoremap <leader>n :NnnPicker<CR>
 nnoremap <leader>N :NnnPicker %:p:h<CR>
+
+" Indent after inserting a new line
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
