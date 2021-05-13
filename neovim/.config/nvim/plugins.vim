@@ -83,3 +83,5 @@ let g:tslime_autoset_pane = 1
 let g:gitgutter_grep = 'rg'
 
 let g:traces_abolish_integration = 1
+
+let g:fugitive_git_executable = 'hub'
