@@ -1,7 +1,6 @@
 {
   "coc.preferences.colorSupport": false,
   "coc.preferences.jumpCommand": "tab drop",
-  "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "Markdown",
     "css",
@@ -18,5 +17,7 @@
     "typescript.tsx",
     "typescriptreact"
   ],
-  "prettier.disableSuccessMessage": true
+  "prettier.disableSuccessMessage": true,
+  "eslint.autoFixOnSave": true,
+  "graphql.filetypes": ["graphql"]
 }
