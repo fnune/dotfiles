@@ -18,16 +18,14 @@ call plug#begin()
 " Generic
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'brooth/far.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fnune/base16-vim'
-Plug 'fnune/vim-test'
 Plug 'jgdavey/tslime.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'machakann/vim-swap'
 Plug 'markonm/traces.vim'
 Plug 'mcchrish/nnn.vim'
@@ -43,25 +41,32 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
+Plug 'vim-test/vim-test'
+
+" Technology-specific
+Plug 'jparise/vim-graphql'
+Plug 'evanleck/vim-svelte'
+Plug 'pantharshit00/vim-prisma'
 
 call plug#end()
 
 let g:coc_global_extensions = [
+  \'coc-actions',
   \'coc-css',
+  \'coc-eslint',
   \'coc-html',
   \'coc-json',
+  \'coc-pairs',
   \'coc-prettier',
-  \'coc-tsserver',
-  \'coc-yaml',
-  \'coc-eslint',
-  \'coc-tslint-plugin',
-  \'coc-rust-analyzer',
-  \'coc-tsserver',
-  \'coc-svelte',
+  \'coc-prisma',
   \'coc-pyright',
+  \'coc-rust-analyzer',
   \'coc-sh',
   \'coc-styled-components',
-  \'coc-actions',
+  \'coc-svelte',
+  \'coc-tslint-plugin',
+  \'coc-tsserver',
+  \'coc-yaml',
 \]
 
 let g:vim_svelte_plugin_load_full_syntax = 1
