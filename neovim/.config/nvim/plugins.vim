@@ -26,6 +26,7 @@ Plug 'jgdavey/tslime.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/vim-peekaboo'
 Plug 'machakann/vim-swap'
 Plug 'markonm/traces.vim'
 Plug 'mcchrish/nnn.vim'
