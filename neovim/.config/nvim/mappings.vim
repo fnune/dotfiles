@@ -12,10 +12,7 @@ nnoremap <leader>f :FZF<CR>
 nnoremap <leader>F :Rg<space>
 nnoremap <leader>g :Git<CR>
 nnoremap <leader>q :q<CR>
-command! -nargs=0 Format :call CocAction('format')
 nnoremap <leader>p :Format<CR>
-command! -nargs=0 OrganizeImports :call CocAction('runCommand', 'editor.action.organizeImport')
-nnoremap <leader>o :OrganizeImports<CR>
 nnoremap <leader>w :w!<CR>
 nnoremap <leader>wq :wq!<CR>
 nnoremap <leader>b :Buffers<CR>
@@ -39,72 +36,6 @@ inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 " Reload the config
 nnoremap <leader>rc :source $MYVIMRC<CR>
-
-"******* Specific to coc.nvim ********"
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-nnoremap <silent> <leader>j :<C-u>call       CocActionAsync('diagnosticNext',     'error')<CR>
-nnoremap <silent> <leader>k :<C-u>call       CocActionAsync('diagnosticPrevious', 'error')<CR>
-nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>re <Plug>(coc-refactor)
-nmap <leader>c :CocCommand<CR>
-
-" Use tab for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Scroll the floating diagnostic window
-nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-
-" Use <c-space> to trigger completion
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position
-" Coc only does snippet and additional edit on confirm
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <silent> <leader>a  <Plug>(coc-codeaction-selected)
-nmap <silent> <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current buffer.
-nmap <silent> <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <silent> <leader>af  <Plug>(coc-fix-current)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gD <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 
 " Checkout a branch in fzf
 function! s:open_branch_fzf(line)
@@ -170,7 +101,3 @@ noremap <silent> <M-0> :tablast<cr>
 
 nnoremap <leader>n :NnnPicker<CR>
 nnoremap <leader>N :NnnPicker %:p:h<CR>
-
-" Indent after inserting a new line
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"

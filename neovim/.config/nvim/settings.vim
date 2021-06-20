@@ -14,6 +14,7 @@ highlight Comment cterm=italic gui=italic
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 set autoindent
+set smartindent
 set autoread
 set cmdheight=2
 set nobackup
@@ -40,7 +41,7 @@ set scrolloff=6
 set secure
 set shiftwidth=2
 set shortmess+=c
-set shortmess=I
+" set shortmess=I
 set showcmd
 set showmatch
 set signcolumn=yes
