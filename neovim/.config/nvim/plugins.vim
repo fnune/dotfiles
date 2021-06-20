@@ -16,12 +16,12 @@ endif
 call plug#begin()
 
 " Generic
+Plug 'folke/tokyonight.nvim'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'brooth/far.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fnune/base16-vim'
 Plug 'jgdavey/tslime.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'

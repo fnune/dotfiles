@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-  rofi -modi drun -show drun -theme base16-classic-dark -show-icons -font "Fira Code 12"
+  rofi -modi drun -show drun -show-icons -font "Fira Code 12"
 
 # emoji picker from https://gist.github.com/Tadly/0741821d3694deaec1ee454a95c591fa
 super + e

@@ -2,20 +2,15 @@ set t_Co=256
 set background=dark
 set termguicolors
 
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+let g:tokyonight_style = 'night'
+colorscheme tokyonight
 
 syntax enable
 syntax sync minlines=10000
 filetype plugin indent on
-hi Normal guibg=NONE ctermbg=NONE
 hi link xmlEndTag xmlTag
 let &fcs='eob: '
 highlight Comment cterm=italic gui=italic
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 set autoindent
