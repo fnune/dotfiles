@@ -7,16 +7,3 @@ function cdb() {
     echo "Not a git project"
   fi
 }
-
-# Select a base16 theme and also use its base16-fzf counterpart
-function theme() {
-  if [ -z $1 ]; then
-    echo 'Please pass one argument: the name of the base16 theme you want to use.'
-    echo 'For example: `theme tomorrow`'
-    return 1
-  fi
-  eval "base16_$1"
-  eval "source ~/.config/base16-fzf/bash/base16-$1.config"
-  eval "echo 'export THEME=$1' > ~/.zsh/includes/00_theme"
-}
-

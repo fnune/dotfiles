@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-git clone https://github.com/fnune/base16-fzf.git ~/.config/base16-fzf
-

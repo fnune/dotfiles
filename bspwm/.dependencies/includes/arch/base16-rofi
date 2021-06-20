@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-git clone https://github.com/0xdec/base16-rofi.git $HOME/.config/base16-rofi
-
-mkdir -p $HOME/.local/share/rofi
-ln -s $HOME/.config/base16-rofi/themes $HOME/.local/share/rofi/themes
-

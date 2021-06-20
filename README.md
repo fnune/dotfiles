@@ -35,12 +35,6 @@ Finally, you can run [the install script](dependencies/.dependencies/install), w
 
 Requirements of the install script: `git` and other basics such as `bash`, `sudo` and `wget`.
 
-## Environment variables used:
-
-| Name    | Description                                                 | Default        |
-| ------- | ----------------------------------------------------------- | -------------- |
-| `THEME` | The Base16 theme that will be used for Base16 Shell and FZF | `default-dark` |
-
 ## Interaction between packages
 
 Some packages source files in drop-in directories, inspired by [systemd drop-in units](https://coreos.com/os/docs/latest/using-systemd-drop-in-units.html). Here's a summary of them:
