@@ -13,8 +13,8 @@ exec --no-startup-id /usr/libexec/geoclue-2.0/demos/agent
 
 exec_always xset r rate 180 45
 exec_always setxkbmap -layout es -option caps:escape
-exec_always ~/Documents/.screenlayout.sh
-exec_always ~/.config/i3/gnome-keyring.sh
+exec_always ~/.config/i3/scripts/screenlayout.sh
+exec_always ~/.config/i3/scripts/gnome-keyring.sh
 
 floating_modifier $mod
 bindsym $mod+x move workspace to output left
