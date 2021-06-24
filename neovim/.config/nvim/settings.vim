@@ -2,8 +2,8 @@ set t_Co=256
 set background=dark
 set termguicolors
 
-let g:tokyonight_style = 'night'
-colorscheme tokyonight
+let g:falcon_inactive = 1
+colorscheme falcon
 
 syntax enable
 syntax sync minlines=10000
