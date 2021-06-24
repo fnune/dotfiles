@@ -101,3 +101,6 @@ noremap <silent> <M-0> :tablast<cr>
 
 nnoremap <leader>n :NnnPicker<CR>
 nnoremap <leader>N :NnnPicker %:p:h<CR>
+
+" https://github.com/vim/vim/issues/4738
+nnoremap <silent> gx :call netrw#BrowseX(netrw#GX(),0)<cr>
