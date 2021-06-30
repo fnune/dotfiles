@@ -86,6 +86,7 @@ bindsym $mod+Shift+r restart
 bar {
   output primary
   tray_output primary
+  tray_padding 4
   status_command i3status
   position top
 }
