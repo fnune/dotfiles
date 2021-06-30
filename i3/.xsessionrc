@@ -1,0 +1,1 @@
+export XDG_DATA_DIRS="~/.local/share/applications:$XDG_DATA_DIRS"
