@@ -23,9 +23,7 @@ bindsym $mod+Return exec ~/.local/bin/kitty
 bindsym --release $mod+Shift+p exec slock
 bindsym $mod+Shift+q kill
 
-for_window [class="Xfce4-appfinder"] floating enable
-for_window [class="Xfce4-appfinder"] border pixel 0
-bindsym $mod+d exec xfce4-appfinder
+bindsym $mod+d exec j4-dmenu-desktop --dmenu='dmenu_run -l 8 -fn "Cascadia Code:12"'
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
