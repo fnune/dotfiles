@@ -15,6 +15,9 @@ exec_always setxkbmap -layout es -option caps:escape
 exec_always ~/.config/i3/scripts/screenlayout.sh
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
 
+hide_edge_borders smart
+title_align center
+
 floating_modifier $mod
 bindsym $mod+x move workspace to output left
 bindsym $mod+y move workspace to output up
