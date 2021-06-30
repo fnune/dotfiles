@@ -6,7 +6,6 @@ font pango:$font 12
 exec --no-startup-id unclutter --timeout 1 --fork
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xcompmgr
 exec --no-startup-id hsetroot -solid "#000000"
 exec --no-startup-id /usr/libexec/geoclue-2.0/demos/agent
@@ -21,7 +20,7 @@ bindsym $mod+x move workspace to output left
 bindsym $mod+y move workspace to output up
 
 bindsym $mod+Return exec ~/.local/bin/kitty
-bindsym $mod+Shift+p exec i3lock -c 000000 && sleep 60 && xset s activate
+bindsym --release $mod+Shift+p exec slock
 bindsym $mod+Shift+q kill
 
 for_window [class="Xfce4-appfinder"] floating enable
