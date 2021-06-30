@@ -23,7 +23,7 @@ bindsym $mod+Return exec ~/.local/bin/kitty
 bindsym --release $mod+Shift+p exec slock
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec j4-dmenu-desktop --dmenu='dmenu_run -l 8 -fn "Cascadia Code:12"'
+bindsym $mod+d exec j4-dmenu-desktop --display-binary --dmenu='dmenu -i -l 8 -fn "Cascadia Code:12"'
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
