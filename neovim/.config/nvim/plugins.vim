@@ -33,7 +33,6 @@ Plug 'markonm/traces.vim'
 Plug 'mcchrish/nnn.vim'
 Plug 'mhartington/formatter.nvim'
 Plug 'mkitt/tabline.vim'
-Plug 'rcarriga/vim-ultest'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-abolish'
