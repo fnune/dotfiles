@@ -95,7 +95,7 @@ bar {
 }
 
 bar {
-  output eDP-1
+  output nonprimary
   tray_output none
   position top
 }
