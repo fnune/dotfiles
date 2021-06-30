@@ -84,8 +84,15 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bar {
+  output primary
   tray_output primary
   status_command i3status
+  position top
+}
+
+bar {
+  output eDP-1
+  tray_output none
   position top
 }
 
