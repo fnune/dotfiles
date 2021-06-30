@@ -207,6 +207,7 @@ filetype = {
       javascript = prettier,
       typescript = prettier,
       typescriptreact = prettier,
+      json = prettier,
       markdown = prettier,
       html = prettier,
       ["markdown.mdx"] = prettier,
