@@ -46,6 +46,7 @@ Plug 'vim-test/vim-test'
 
 " Technology-specific
 Plug 'NoahTheDuke/vim-just'
+Plug 'fladson/vim-kitty'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'pantharshit00/vim-prisma'
