@@ -1,6 +1,6 @@
 set $mod Mod4
 
-set $font Cascadia Code
+set $font Cascadia Code SemiLight
 font pango:$font 12
 
 exec --no-startup-id unclutter --timeout 1 --fork
