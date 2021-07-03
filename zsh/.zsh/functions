@@ -7,3 +7,8 @@ function cdb() {
     echo "Not a git project"
   fi
 }
+
+function untilfail() {
+  while "$@"; do :; done
+}
+
