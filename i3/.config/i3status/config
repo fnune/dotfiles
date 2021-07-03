@@ -20,7 +20,7 @@ load {
 }
 
 memory {
-        format = "[RAM %percentage_used%]"
+        format = "[RAM %percentage_used]"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
