@@ -7,9 +7,9 @@ exec --no-startup-id unclutter --timeout 1 --fork
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec --no-startup-id xcompmgr
-exec --no-startup-id hsetroot -solid "#000000"
 exec --no-startup-id /usr/libexec/geoclue-2.0/demos/agent
 
+exec_always hsetroot -solid "#000000"
 exec_always xset r rate 180 45
 exec_always setxkbmap -layout es -option caps:escape
 exec_always ~/.config/i3/scripts/screenlayout.sh
@@ -150,7 +150,9 @@ for_window [window_type="menu"]                         floating enable
 
 assign [class="^zoom$"] → 8
 assign [title="^DevTools"] → 3
+assign [instance="Devtools"] → 3
 for_window [title="^DevTools"] floating disable
+for_window [title="^Developer Tools"] floating disable
 for_window [class="^Pavucontrol$"] floating enable
 for_window [class="^Pavucontrol$"] border pixel 0
 for_window [class="^1Password$"] floating enable
