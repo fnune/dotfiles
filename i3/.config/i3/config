@@ -3,11 +3,12 @@ set $mod Mod4
 set $font Cascadia Code SemiLight
 font pango:$font 12
 
-exec --no-startup-id unclutter --timeout 1 --fork
-exec --no-startup-id pasystray
-exec --no-startup-id nm-applet
-exec --no-startup-id xcompmgr
 exec --no-startup-id /usr/libexec/geoclue-2.0/demos/agent
+exec --no-startup-id indicator-cpufreq
+exec --no-startup-id nm-applet
+exec --no-startup-id pasystray -m 100
+exec --no-startup-id unclutter --timeout 1 --fork
+exec --no-startup-id xcompmgr
 
 exec_always hsetroot -solid "#000000"
 exec_always xset r rate 180 45
