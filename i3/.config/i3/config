@@ -90,7 +90,7 @@ bar {
   output primary
   tray_output primary
   tray_padding 4
-  status_command i3status
+  status_command ~/.config/i3/scripts/i3status.sh
   position top
 }
 
@@ -121,6 +121,14 @@ mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
   bindsym l exec i3-msg exit
   bindsym r exec systemctl reboot
   bindsym s exec systemctl poweroff
+  bindsym Escape mode "default"
+  bindsym Return mode "default"
+}
+
+bindsym $mod+Shift+o mode "do not disturb: [e]nable, [d]isable"
+mode "do not disturb: [e]nable, [d]isable" {
+  bindsym e exec dunstctl set-paused true; mode "default"
+  bindsym d exec dunstctl set-paused false; mode "default"
   bindsym Escape mode "default"
   bindsym Return mode "default"
 }
