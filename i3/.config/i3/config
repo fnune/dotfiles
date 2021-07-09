@@ -87,6 +87,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bar {
+  mode hide
   output primary
   tray_output primary
   tray_padding 4
@@ -95,6 +96,7 @@ bar {
 }
 
 bar {
+  mode hide
   output nonprimary
   tray_output none
   position top
