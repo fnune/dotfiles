@@ -158,9 +158,10 @@ for_window [window_role="Preferences"]                  floating enable
 for_window [window_type="dialog"]                       floating enable
 for_window [window_type="menu"]                         floating enable
 
-assign [class="^zoom$"] → 8
 assign [title="^DevTools"] → 3
 assign [instance="Devtools"] → 3
+assign [class="^Slack$"] → 7
+assign [class="^zoom$"] → 8
 for_window [title="^DevTools"] floating disable
 for_window [title="^Developer Tools"] floating disable
 for_window [class="^Pavucontrol$"] floating enable
