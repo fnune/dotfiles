@@ -127,7 +127,7 @@ end
 nvim_lsp.rust_analyzer.setup { on_attach = on_attach, capabilities = lsp_status.capabilities }
 nvim_lsp.tsserver.setup { on_attach = on_attach, capabilities = lsp_status.capabilities }
 nvim_lsp.ccls.setup { on_attach = on_attach, capabilities = lsp_status.capabilities }
-nvim_lsp.pyls.setup {
+nvim_lsp.pylsp.setup {
   on_attach = on_attach,
   capabilities = lsp_status.capabilities,
   pyls = { plugins = { pyls_mypy = { enabled = true }, pyls_black = { enabled = true } } },
@@ -172,9 +172,7 @@ require('lspkind').init({
       Struct = ''
     },
 })
-EOF
 
-lua <<EOF
 vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
 vim.lsp.handlers['textDocument/references'] = require'lsputil.locations'.references_handler
 vim.lsp.handlers['textDocument/definition'] = require'lsputil.locations'.definition_handler
@@ -183,13 +181,7 @@ vim.lsp.handlers['textDocument/typeDefinition'] = require'lsputil.locations'.typ
 vim.lsp.handlers['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
 vim.lsp.handlers['textDocument/documentSymbol'] = require'lsputil.symbols'.document_handler
 vim.lsp.handlers['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
-EOF
 
-if isdirectory($PWD .'/node_modules')
-      let $PATH .= ':' . $PWD . '/node_modules/.bin'
-endif
-
-lua <<EOF
 local prettier = {
       function()
             return {
@@ -325,3 +317,7 @@ inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 inoremap <silent><expr> <C-b>     compe#scroll({ 'delta': -4 })
 
 set shortmess+=c
+
+if isdirectory($PWD .'/node_modules')
+      let $PATH .= ':' . $PWD . '/node_modules/.bin'
+endif
