@@ -168,6 +168,7 @@ for_window [class="^Pavucontrol$"] border pixel 0
 for_window [class="^1Password$"] floating enable
 for_window [class="^1Password$"] border pixel 0
 for_window [class="^Org.gnome.Nautilus$"] floating enable
+for_window [class="^File-roller$"] floating enable
 
 workspace 1 output secondary
 workspace 2 output primary
