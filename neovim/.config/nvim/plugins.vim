@@ -47,6 +47,7 @@ Plug 'vim-test/vim-test'
 " Technology-specific
 Plug 'NoahTheDuke/vim-just'
 Plug 'fladson/vim-kitty'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'pantharshit00/vim-prisma'
@@ -98,7 +99,8 @@ local nvim_lsp = require('lspconfig')
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  require("nvim-lsp-ts-utils").setup {}
+  require("null-ls").setup {}
+  require("nvim-lsp-ts-utils").setup { eslint_enable_diagnostics = true, eslint_bin = "eslint_d" }
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
