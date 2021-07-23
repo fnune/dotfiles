@@ -133,6 +133,7 @@ nvim_lsp.rust_analyzer.setup { on_attach = on_attach, capabilities = lsp_status.
 nvim_lsp.tsserver.setup { on_attach = on_attach, capabilities = lsp_status.capabilities }
 nvim_lsp.ccls.setup { on_attach = on_attach, capabilities = lsp_status.capabilities }
 nvim_lsp.pylsp.setup {
+  cmd = { "pyls" },
   on_attach = on_attach,
   capabilities = lsp_status.capabilities,
   pyls = { plugins = { pyls_mypy = { enabled = true }, pyls_black = { enabled = true } } },
