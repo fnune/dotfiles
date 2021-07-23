@@ -96,11 +96,14 @@ lsp_status.register_progress()
 
 local nvim_lsp = require('lspconfig')
 
+require("null-ls").setup {}
+nvim_lsp["null-ls"].setup {}
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  require("null-ls").setup {}
   require("nvim-lsp-ts-utils").setup { eslint_enable_diagnostics = true, eslint_bin = "eslint_d" }
+
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
