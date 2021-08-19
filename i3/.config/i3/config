@@ -22,7 +22,7 @@ floating_modifier $mod
 bindsym $mod+x move workspace to output left
 bindsym $mod+y move workspace to output up
 
-bindsym $mod+Return exec ~/.local/bin/kitty
+bindsym $mod+Return exec kitty
 bindsym --release $mod+Shift+p exec slock
 bindsym $mod+Shift+q kill
 
