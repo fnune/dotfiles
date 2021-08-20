@@ -1,1 +1,2 @@
 alias icat="kitty +kitten icat"
+alias sudo='sudo '
