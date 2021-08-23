@@ -161,6 +161,7 @@ assign [class="^Slack$"] → 7
 assign [class="^zoom$"] → 8
 for_window [title="^DevTools"] floating disable
 for_window [title="^Developer Tools"] floating disable
+for_window [class="^Arandr$"] floating enable
 for_window [class="^Pavucontrol$"] floating enable
 for_window [class="^Pavucontrol$"] border pixel 0
 for_window [class="^1Password$"] floating enable
