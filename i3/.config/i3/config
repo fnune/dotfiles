@@ -4,7 +4,6 @@ set $font Cascadia Code SemiLight
 font pango:$font 12
 
 exec --no-startup-id /usr/libexec/geoclue-2.0/demos/agent
-exec --no-startup-id indicator-cpufreq
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray -m 100
 exec --no-startup-id unclutter --timeout 1 --fork
@@ -26,7 +25,7 @@ bindsym $mod+Return exec kitty
 bindsym --release $mod+Shift+p exec slock
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec j4-dmenu-desktop --display-binary --dmenu='dmenu -i -l 8 -fn "$font:12"'
+bindsym $mod+d exec j4-dmenu-desktop --display-binary --dmenu='dmenu --insensitive --render_minheight 42 --font "$font:12"'
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
