@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-sudo pacman -S ttf-cascadia-code network-manager-applet geoclue pasystray unclutter xcompmgr hsetroot xorg-xset xorg-setxkbmap arandr autorandr gnome-keyring libsecret seahorse slock --noconfirm
+sudo pacman -S ttf-cascadia-code network-manager-applet geoclue pasystray unclutter xcompmgr hsetroot xorg-xset xorg-setxkbmap arandr autorandr gnome-keyring libsecret seahorse slock dunst --noconfirm
 
 trizen --noedit -S dmenu-rs j4-dmenu-desktop
