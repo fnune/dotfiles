@@ -11,6 +11,7 @@ exec --no-startup-id xcompmgr
 
 exec_always hsetroot -solid "#000000"
 exec_always xset r rate 180 45
+exec_always xset -b # Disable the system bell
 exec_always setxkbmap -layout es -option caps:escape
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
 
