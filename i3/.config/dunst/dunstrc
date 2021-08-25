@@ -14,7 +14,7 @@
     separator_height = 2
     padding = 8
     horizontal_padding = 8
-    text_icon_padding = 0
+    text_icon_padding = 8
     frame_width = 3
     frame_color = "#aaaaaa"
     separator_color = frame
@@ -25,7 +25,7 @@
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
-    vertical_alignment = center
+    vertical_alignment = top
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
@@ -34,13 +34,14 @@
     hide_duplicate_count = false
     show_indicators = yes
     icon_position = left
-    min_icon_size = 0
-    max_icon_size = 32
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    min_icon_size = 64
+    max_icon_size = 128
+    icon_path = /usr/share/icons/Papirus-Dark/64x64/status/:/usr/share/icons/Papirus-Dark/64x64/devices/:/usr/share/icons/Papirus-Dark/64x64/categories/:/usr/share/icons/Papirus-Dark/64x64/apps/:/usr/share/icons/Papirus-Dark/64x64/places/:/usr/share/icons/Papirus-Dark/64x64/mimetypes/:/usr/share/icons/Papirus-Dark/64x64/status/:/usr/share/icons/Papirus-Dark/32x32/actions/:/usr/share/icons/Papirus-Dark/64x64/apps/:/usr/share/icons/Papirus-Dark/32x32/emblems/:/usr/share/icons/Papirus-Dark/64x64/panel/:/usr/share/icons/Papirus-Dark/32x32/emotes/
+
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/firefox --new-tab
     always_run_script = true
     title = Dunst
     class = Dunst
