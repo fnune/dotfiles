@@ -6,6 +6,7 @@ font pango:$font 12
 exec --no-startup-id /usr/libexec/geoclue-2.0/demos/agent
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray -m 100
+exec --no-startup-id blueman-applet
 exec --no-startup-id unclutter --timeout 1 --fork
 exec --no-startup-id xcompmgr
 
@@ -149,26 +150,27 @@ bindsym XF86AudioPrev exec playerctl previous
 bindysm XF86MonBrightnessUp exec light -A 5
 bindysm XF86MonBrightnessDown exec light -U 5
 
-for_window [window_role="pop-up"]                       floating enable
-for_window [window_role="bubble"]                       floating enable
-for_window [window_role="task_dialog"]                  floating enable
-for_window [window_role="Preferences"]                  floating enable
-for_window [window_type="dialog"]                       floating enable
-for_window [window_type="menu"]                         floating enable
+for_window [class="^1Password$"] border pixel 0
+for_window [class="^1Password$"] floating enable
+for_window [class="^Arandr$"] floating enable
+for_window [class="^Blueman-manager$"] floating enable, resize set 1000px 800px, move position center
+for_window [class="^File-roller$"] floating enable
+for_window [class="^Org.gnome.Nautilus$"] floating enable
+for_window [class="^Pavucontrol$"] border pixel 0
+for_window [class="^Pavucontrol$"] floating enable
+for_window [title="^DevTools"] floating disable
+for_window [title="^Developer Tools"] floating disable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 
 assign [title="^DevTools"] → 3
 assign [instance="Devtools"] → 3
 assign [class="^Slack$"] → 7
 assign [class="^zoom$"] → 8
-for_window [title="^DevTools"] floating disable
-for_window [title="^Developer Tools"] floating disable
-for_window [class="^Arandr$"] floating enable
-for_window [class="^Pavucontrol$"] floating enable
-for_window [class="^Pavucontrol$"] border pixel 0
-for_window [class="^1Password$"] floating enable
-for_window [class="^1Password$"] border pixel 0
-for_window [class="^Org.gnome.Nautilus$"] floating enable
-for_window [class="^File-roller$"] floating enable
 
 workspace 1 output secondary
 workspace 2 output primary
