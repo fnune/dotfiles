@@ -90,7 +90,6 @@ bindsym $mod+Shift+r restart
 bar {
   output primary
   tray_output primary
-  tray_padding 4
   status_command ~/.config/i3/scripts/i3status.sh
   position top
 }
