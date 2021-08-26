@@ -166,10 +166,11 @@ for_window [window_role="task_dialog"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
-assign [title="^DevTools"] → 3
-assign [instance="Devtools"] → 3
+assign [class="^Signal$"] → 6
 assign [class="^Slack$"] → 7
 assign [class="^zoom$"] → 8
+assign [instance="Devtools"] → 3
+assign [title="^DevTools"] → 3
 
 workspace 1 output secondary
 workspace 2 output primary
