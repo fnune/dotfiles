@@ -16,6 +16,7 @@ endif
 call plug#begin()
 
 " Generic
+Plug 'APZelos/blamer.nvim'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'airblade/vim-gitgutter'
@@ -336,3 +337,7 @@ set shortmess+=c
 if isdirectory($PWD .'/node_modules')
       let $PATH .= ':' . $PWD . '/node_modules/.bin'
 endif
+
+let g:blamer_enabled = 1
+let g:blamer_delay = 750
+let g:blamer_relative_time = 1
