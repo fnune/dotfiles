@@ -211,6 +211,7 @@ filetype = {
       json = prettier,
       markdown = prettier,
       html = prettier,
+      yaml = prettier,
       ["markdown.mdx"] = prettier,
       python = {
             function()
