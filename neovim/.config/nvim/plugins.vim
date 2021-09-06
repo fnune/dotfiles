@@ -50,6 +50,7 @@ Plug 'fladson/vim-kitty'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'jxnblk/vim-mdx-js'
+Plug 'kergoth/vim-bitbake'
 Plug 'pantharshit00/vim-prisma'
 
 " Treesitter
