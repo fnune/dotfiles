@@ -102,6 +102,7 @@ lsp_status.register_progress()
 
 local nvim_lsp = require('lspconfig')
 
+-- Enables e.g. eslint diagnostics to integrate with the lsp
 require("null-ls").setup {}
 nvim_lsp["null-ls"].setup {}
 
