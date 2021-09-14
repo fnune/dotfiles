@@ -1,40 +1,28 @@
 general {
-        colors = true
-        interval = 1
-        separator = "  "
+  colors = true
+  interval = 1
+  separator = "  "
 }
 
 order += "battery all"
-order += "load"
-order += "memory"
 order += "tztime pst"
 order += "tztime est"
 order += "tztime local"
 
 battery all {
-        format = "🔋 %status %percentage %remaining"
-}
-
-load {
-        format = "🔲 CPU %1min"
-}
-
-memory {
-        format = "🐏 RAM %percentage_used"
-        threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
+  format = "🔋 %status %percentage %remaining"
 }
 
 tztime pst {
-        format = "🌎 PST %H:%M"
-        timezone = "US/Pacific"
+  format = "PST %H:%M"
+  timezone = "US/Pacific"
 }
 
 tztime est {
-        format = "🌎 EST %H:%M"
-        timezone = "America/New_York"
+  format = "EST %H:%M"
+  timezone = "America/New_York"
 }
 
 tztime local {
-        format = "🗓️ %Y-%m-%d %H:%M:%S"
+  format = "🗓️ %Y-%m-%d %H:%M:%S"
 }
