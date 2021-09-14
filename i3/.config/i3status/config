@@ -4,14 +4,9 @@ general {
   separator = "  "
 }
 
-order += "battery all"
 order += "tztime pst"
 order += "tztime est"
 order += "tztime local"
-
-battery all {
-  format = "🔋 %status %percentage %remaining"
-}
 
 tztime pst {
   format = "PST %H:%M"
