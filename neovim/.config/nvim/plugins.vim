@@ -57,12 +57,16 @@ Plug 'pantharshit00/vim-prisma'
 " Treesitter
 Plug 'nvim-treesitter/completion-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
 
 " LSP
-Plug 'RishabhRD/nvim-lsputils'
 Plug 'RishabhRD/popfix'
-Plug 'hrsh7th/nvim-compe'
+Plug 'RishabhRD/nvim-lsputils'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
+Plug 'ray-x/cmp-treesitter'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -113,14 +117,13 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
-
   buf_set_keymap('n', '<leader>o', ':TSLspOrganize<CR>', opts)
   buf_set_keymap('n', '<leader>af', ':TSLspFixCurrent<CR>', opts)
   buf_set_keymap('n', '<leader>rf', ':TSLspRenameFile<CR>', opts)
   buf_set_keymap('n', '<leader>O', ':TSLspImportAll<CR>', opts)
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
@@ -131,55 +134,19 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>j', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 end
 
-nvim_lsp.rust_analyzer.setup { on_attach = on_attach, capabilities = lsp_status.capabilities }
-nvim_lsp.tsserver.setup { on_attach = on_attach, capabilities = lsp_status.capabilities }
-nvim_lsp.ccls.setup { on_attach = on_attach, capabilities = lsp_status.capabilities }
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
+
+nvim_lsp.rust_analyzer.setup { on_attach = on_attach, capabilities = capabilities }
+nvim_lsp.tsserver.setup { on_attach = on_attach, capabilities = capabilities }
+nvim_lsp.ccls.setup { on_attach = on_attach, capabilities = capabilities }
 nvim_lsp.pylsp.setup {
   cmd = { "pyls" },
   on_attach = on_attach,
-  capabilities = lsp_status.capabilities,
+  capabilities = capabilities,
   pyls = { plugins = { pyls_mypy = { enabled = true }, pyls_black = { enabled = true } } },
 }
-
-require('lspkind').init({
-    -- enables text annotations
-    --
-    -- default: true
-    with_text = true,
-
-    -- default symbol map
-    -- can be either 'default' or
-    -- 'codicons' for codicon preset (requires vscode-codicons font installed)
-    --
-    -- default: 'default'
-    preset = 'codicons',
-
-    -- override preset symbols
-    --
-    -- default: {}
-    symbol_map = {
-      Text = '',
-      Method = 'ƒ',
-      Function = '',
-      Constructor = '',
-      Variable = '',
-      Class = '',
-      Interface = 'ﰮ',
-      Module = '',
-      Property = '',
-      Unit = '',
-      Value = '',
-      Enum = '了',
-      Keyword = '',
-      Snippet = '﬌',
-      Color = '',
-      File = '',
-      Folder = '',
-      EnumMember = '',
-      Constant = '',
-      Struct = ''
-    },
-})
 
 vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
 vim.lsp.handlers['textDocument/references'] = require'lsputil.locations'.references_handler
@@ -256,45 +223,6 @@ require'nvim-treesitter.configs'.setup {
     enable = true,              -- false will disable the whole extension
   },
 }
-
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-local check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        return true
-    else
-        return false
-    end
-end
-
--- Use (s-)tab to:
---- move to prev/next item in completion menuone
---- jump to prev/next snippet's placeholder
-_G.tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t "<C-n>"
-  elseif check_back_space() then
-    return t "<Tab>"
-  else
-    return vim.fn['compe#complete']()
-  end
-end
-_G.s_tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t "<C-p>"
-  else
-    -- If <S-Tab> is not working in your terminal, change it to <C-h>
-    return t "<S-Tab>"
-  end
-end
-
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 EOF
 
 augroup FormatAutogroup
@@ -304,34 +232,88 @@ augroup END
 
 set completeopt=menuone,noselect
 
-let g:compe = {}
-let g:compe.enabled = v:true
-let g:compe.autocomplete = v:true
-let g:compe.debug = v:false
-let g:compe.min_length = 1
-let g:compe.preselect = 'enable'
-let g:compe.throttle_time = 0
-let g:compe.source_timeout = 200
-let g:compe.incomplete_delay = 400
-let g:compe.max_abbr_width = 100
-let g:compe.max_kind_width = 100
-let g:compe.max_menu_width = 100
-let g:compe.documentation = v:true
-let g:compe.resolve = v:true
+lua <<EOF
 
-let g:compe.source = {}
-let g:compe.source.path = v:true
-let g:compe.source.buffer = v:true
-let g:compe.source.spell = v:true
-let g:compe.source.tags = v:true
-let g:compe.source.nvim_lsp = v:true
-let g:compe.source.nvim_lua = v:true
+require('lspkind').init({
+    -- enables text annotations
+    --
+    -- default: true
+    with_text = true,
 
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-b>     compe#scroll({ 'delta': -4 })
+    -- default symbol map
+    -- can be either 'default' or
+    -- 'codicons' for codicon preset (requires vscode-codicons font installed)
+    --
+    -- default: 'default'
+    preset = 'codicons',
+
+    -- override preset symbols
+    --
+    -- default: {}
+    symbol_map = {
+      Text = '',
+      Method = 'ƒ',
+      Function = '',
+      Constructor = '',
+      Variable = '',
+      Class = '',
+      Interface = 'ﰮ',
+      Module = '',
+      Property = '',
+      Unit = '',
+      Value = '',
+      Enum = '了',
+      Keyword = '',
+      Snippet = '﬌',
+      Color = '',
+      File = '',
+      Folder = '',
+      EnumMember = '',
+      Constant = '',
+      Struct = ''
+    },
+})
+
+local cmp = require'cmp'
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+  mapping = {
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    }),
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
+  },
+  sources = {
+    { name = 'buffer' },
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+    { name = 'treesitter' },
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
+
+      vim_item.menu = ({
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+        path = "[PATH]",
+        treesitter = "[Treesitter]",
+      })[entry.source.name]
+      return vim_item
+    end,
+  }
+})
+EOF
 
 set shortmess+=c
 
