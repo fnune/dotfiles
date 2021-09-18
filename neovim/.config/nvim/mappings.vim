@@ -64,7 +64,7 @@ function! s:pull_request_branch_fzf(line)
   if l:branch ==? '*'
     let l:branch = l:parser[1]
   endif
-  execute 'Git pull-request --no-edit -o -b ' . l:branch
+  execute 'Git pull-request -e -o -b ' . l:branch
 endfunction
 
 command! -bang -nargs=0 GPullRequest
