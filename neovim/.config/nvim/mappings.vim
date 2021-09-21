@@ -2,11 +2,6 @@ let mapleader=" "
 
 map 0 ^
 imap <c-x><c-l> <plug>(fzf-complete-line)
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-" Move a line of text using ALT+[jk]
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
 nnoremap Q <nop>
 nnoremap <leader>f :FZF<CR>
 nnoremap <leader>F :Rg<space>
