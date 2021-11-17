@@ -23,6 +23,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'brooth/far.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'farmergreg/vim-lastplace'
 Plug 'fenetikm/falcon'
 Plug 'jgdavey/tslime.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
