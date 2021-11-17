@@ -144,12 +144,6 @@ capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 nvim_lsp.rust_analyzer.setup { on_attach = on_attach, capabilities = capabilities }
 nvim_lsp.tsserver.setup { on_attach = on_attach, capabilities = capabilities }
 nvim_lsp.ccls.setup { on_attach = on_attach, capabilities = capabilities }
-nvim_lsp.pylsp.setup {
-  cmd = { "pyls" },
-  on_attach = on_attach,
-  capabilities = capabilities,
-  pyls = { plugins = { pyls_mypy = { enabled = true }, pyls_black = { enabled = true } } },
-}
 
 vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
 vim.lsp.handlers['textDocument/references'] = require'lsputil.locations'.references_handler
