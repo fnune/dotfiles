@@ -105,7 +105,7 @@ lsp_status.register_progress()
 local nvim_lsp = require('lspconfig')
 
 -- Enables e.g. eslint diagnostics to integrate with the lsp
-require("null-ls").setup {}
+require("null-ls").config {}
 nvim_lsp["null-ls"].setup {}
 
 -- Use an on_attach function to only map the following keys
