@@ -220,16 +220,6 @@ require'nvim-treesitter.configs'.setup {
     enable = true,              -- false will disable the whole extension
   },
 }
-EOF
-
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost *.js,*.rs,*.css,*.scss,*.mdx,*.py,*.ts,*.tsx,*.md FormatWrite
-augroup END
-
-set completeopt=menuone,noselect
-
-lua <<EOF
 
 require('lspkind').init({
     -- enables text annotations
@@ -311,6 +301,13 @@ cmp.setup({
   }
 })
 EOF
+
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost *.js,*.rs,*.css,*.scss,*.mdx,*.py,*.ts,*.tsx,*.md FormatWrite
+augroup END
+
+set completeopt=menuone,noselect
 
 set shortmess+=c
 
