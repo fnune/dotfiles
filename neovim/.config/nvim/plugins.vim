@@ -50,6 +50,7 @@ Plug 'vim-test/vim-test'
 " Technology-specific
 Plug 'NoahTheDuke/vim-just'
 Plug 'fladson/vim-kitty'
+Plug 'habamax/vim-godot'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'jxnblk/vim-mdx-js'
@@ -144,6 +145,7 @@ capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 nvim_lsp.rust_analyzer.setup { on_attach = on_attach, capabilities = capabilities }
 nvim_lsp.tsserver.setup { on_attach = on_attach, capabilities = capabilities }
 nvim_lsp.ccls.setup { on_attach = on_attach, capabilities = capabilities }
+nvim_lsp.gdscript.setup { on_attach = on_attach, capabilities = capabilities }
 
 vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
 vim.lsp.handlers['textDocument/references'] = require'lsputil.locations'.references_handler
@@ -207,6 +209,14 @@ filetype = {
             function()
                   return {
                         exe = "gofmt",
+                        stdin = true
+                  }
+            end
+            },
+      gdscript = {
+            function()
+                  return {
+                        exe = "poetry run gdformat -",
                         stdin = true
                   }
             end
