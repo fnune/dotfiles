@@ -1,7 +1,7 @@
 [user]
   name = Fausto Núñez Alberro
   email = fausto.nunez@mailbox.org
-  editor = nvim
+  editor = lvim
 [push]
   default = current
 [init]
