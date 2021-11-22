@@ -6,6 +6,9 @@ vim.cmd("nnoremap j gj")
 vim.cmd("nnoremap k gk")
 vim.cmd("nnoremap <Leader>F <cmd>lua GrepInputString()<CR>")
 
+lvim.keys.visual_block_mode.J = false
+lvim.keys.visual_block_mode.K = false
+
 lvim.colorscheme = "falcon"
 lvim.leader = "space"
 
