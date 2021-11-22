@@ -1,1 +1,4 @@
-../../../tmux/.dependencies/includes/falcon
+#!/usr/bin/env sh
+
+if cd ~/.config/falcon; then git pull; else git clone https://github.com/fenetikm/falcon ~/.config/falcon; fi
+
