@@ -1,6 +1,11 @@
 vim.opt.timeoutlen = 500
 vim.opt.shortmess = vim.opt.shortmess + "I"
 
+vim.cmd("map 0 ^")
+vim.cmd("nnoremap Q <nop>")
+vim.cmd("nnoremap j gj")
+vim.cmd("nnoremap k gk")
+
 lvim.colorscheme = "falcon"
 lvim.leader = "space"
 
