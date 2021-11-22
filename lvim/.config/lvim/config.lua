@@ -1,10 +1,10 @@
 vim.opt.timeoutlen = 500
 vim.opt.shortmess = vim.opt.shortmess + "I"
-
 vim.cmd("map 0 ^")
 vim.cmd("nnoremap Q <nop>")
 vim.cmd("nnoremap j gj")
 vim.cmd("nnoremap k gk")
+vim.cmd("nnoremap <Leader>F <cmd>lua GrepInputString()<CR>")
 
 lvim.colorscheme = "falcon"
 lvim.leader = "space"
@@ -38,6 +38,16 @@ lvim.builtin.treesitter.ensure_installed = {
   "typescript",
   "yaml",
 }
+
+function GrepInputString()
+  local default = vim.api.nvim_eval([[expand("<cword>")]])
+  local input = vim.fn.input({
+    prompt = "Search for: ",
+    default = default,
+  })
+  require("telescope.builtin").grep_string({ search = input })
+end
+lvim.builtin.which_key.mappings["sT"] = { "<cmd>lua GrepInputString()<CR>", "Text under cursor" }
 
 lvim.plugins = {
     { "AndrewRadev/tagalong.vim" },
