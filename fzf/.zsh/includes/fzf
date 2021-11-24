@@ -11,11 +11,5 @@ function zvm_after_init() {
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 }
 
-export FZF_DEFAULT_OPTS='
- --color=fg:#b4b4b9,bg:#020221,hl:#ffc552
- --color=fg+:#f8f8ff,bg+:#2f2f3a,hl+:#ff761a
- --color=info:#bfdaff,prompt:#ff5fff,pointer:#cbccc6
- --color=marker:#ff3600,spinner:#bfdaff,header:#635196'
-
 # "Remove" the rail on the left by making it the same as bg
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color=bg+:-1"

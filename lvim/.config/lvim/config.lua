@@ -9,8 +9,9 @@ vim.cmd("nnoremap <Leader>F <cmd>lua GrepInputString()<CR>")
 lvim.keys.visual_block_mode.J = false
 lvim.keys.visual_block_mode.K = false
 
-lvim.colorscheme = "falcon"
+lvim.colorscheme = "rose-pine"
 lvim.leader = "space"
+vim.g.rose_pine_variant = 'moon'
 
 -- https://githubmemory.com/repo/ChristianChiarulli/LunarVim/issues/1705
 lvim.format_on_save = false
@@ -58,6 +59,7 @@ lvim.plugins = {
     { "felipec/vim-sanegx", event = "BufRead" },
     { "fenetikm/falcon" },
     { "rcarriga/vim-ultest" },
+    { "rose-pine/neovim" },
     { "tpope/vim-abolish" },
     { "tpope/vim-repeat" },
     { "tpope/vim-surround", keys = {"c", "d", "y"} },
