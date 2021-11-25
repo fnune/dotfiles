@@ -1,1 +1,1 @@
-alias vim='lvim'
+alias vim='NVIM_LISTEN_ADDRESS=/tmp/nvimsocket lvim'

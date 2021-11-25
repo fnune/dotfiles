@@ -1,0 +1,4 @@
+os:
+  editCommand: "nvr"
+  editCommandTemplate: "{{editor}} +{{line}} --remote-tab {{filename}}"
+  openCommand: "nvr --remote-tab {{filename}}"
