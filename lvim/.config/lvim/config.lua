@@ -58,6 +58,7 @@ lvim.builtin.which_key.mappings["sT"] = { "<cmd>lua GrepInputString()<CR>", "Tex
 lvim.plugins = {
     { "AndrewRadev/tagalong.vim" },
     { "christoomey/vim-tmux-navigator" },
+    { "editorconfig/editorconfig-vim" },
     { "felipec/vim-sanegx", event = "BufRead" },
     { "fenetikm/falcon" },
     { "rcarriga/vim-ultest" },
