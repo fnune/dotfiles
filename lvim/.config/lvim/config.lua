@@ -1,7 +1,10 @@
 vim.opt.timeoutlen = 500
 vim.opt.shortmess = vim.opt.shortmess + "I"
+vim.opt.lazyredraw = true
 vim.cmd("map 0 ^")
 vim.cmd("nnoremap Q <nop>")
+vim.cmd("nnoremap S ddko")
+vim.cmd("nnoremap cc ddko")
 vim.cmd("nnoremap j gj")
 vim.cmd("nnoremap k gk")
 vim.cmd("nnoremap <Leader>F <cmd>lua GrepInputString()<CR>")
