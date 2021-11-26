@@ -8,6 +8,10 @@ function cdb() {
   fi
 }
 
+function .edit() {
+  cd ~/.dotfiles && $EDITOR
+}
+
 function untilfail() {
   while "$@"; do :; done
 }
