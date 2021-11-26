@@ -1,20 +1,13 @@
+-- ********
+-- Settings
+-- ********
+
+lvim.colorscheme = "rose-pine"
+vim.g.rose_pine_variant = 'moon'
+
 vim.opt.timeoutlen = 500
 vim.opt.shortmess = vim.opt.shortmess + "I"
 vim.opt.lazyredraw = true
-vim.cmd("map 0 ^")
-vim.cmd("nnoremap Q <nop>")
-vim.cmd("nnoremap S ddko")
-vim.cmd("nnoremap cc ddko")
-vim.cmd("nnoremap j gj")
-vim.cmd("nnoremap k gk")
-vim.cmd("nnoremap <Leader>F <cmd>lua GrepInputString()<CR>")
-
-lvim.keys.visual_block_mode.J = false
-lvim.keys.visual_block_mode.K = false
-
-lvim.colorscheme = "rose-pine"
-lvim.leader = "space"
-vim.g.rose_pine_variant = 'moon'
 
 -- https://githubmemory.com/repo/ChristianChiarulli/LunarVim/issues/1705
 lvim.format_on_save = false
@@ -48,6 +41,23 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
+-- ***********
+-- Keybindings
+-- ***********
+
+lvim.leader = "space"
+
+vim.cmd("map 0 ^")
+vim.cmd("nnoremap Q <nop>")
+vim.cmd("nnoremap S ddko")
+vim.cmd("nnoremap cc ddko")
+vim.cmd("nnoremap j gj")
+vim.cmd("nnoremap k gk")
+vim.cmd("nnoremap <Leader>F <cmd>lua GrepInputString()<CR>")
+
+lvim.keys.visual_block_mode.J = false
+lvim.keys.visual_block_mode.K = false
+
 function GrepInputString()
   local default = vim.api.nvim_eval([[expand("<cword>")]])
   local input = vim.fn.input({
@@ -57,13 +67,22 @@ function GrepInputString()
   require("telescope.builtin").grep_string({ search = input })
 end
 lvim.builtin.which_key.mappings["sT"] = { "<cmd>lua GrepInputString()<CR>", "Text under cursor" }
+lvim.builtin.which_key.mappings["lo"] = { "<cmd>TSLspOrganize<CR>", "Organize imports" }
+lvim.builtin.which_key.mappings["lI"] = { "<cmd>TSLspImportAll<CR>", "Import all" }
+lvim.builtin.which_key.mappings["li"] = { "<cmd>TSLspImportCurrent<CR>", "Import under cursor" }
+
+-- *******
+-- Plugins
+-- *******
 
 lvim.plugins = {
     { "AndrewRadev/tagalong.vim" },
     { "christoomey/vim-tmux-navigator" },
     { "editorconfig/editorconfig-vim" },
+    { "farmergreg/vim-lastplace" },
     { "felipec/vim-sanegx", event = "BufRead" },
     { "fenetikm/falcon" },
+    { "jose-elias-alvarez/nvim-lsp-ts-utils" },
     { "rcarriga/vim-ultest" },
     { "rose-pine/neovim" },
     { "tpope/vim-abolish" },
@@ -72,9 +91,15 @@ lvim.plugins = {
     { "vim-test/vim-test" },
 }
 
-vim.list_extend(lvim.lsp.override, { "pyright", "pylsp" })
+-- ***
+-- LSP
+-- ***
 
-local opts = {
+vim.list_extend(lvim.lsp.override, { "pyright", "pylsp", "tsserver" })
+
+local lspconfig = require("lspconfig")
+
+local pylsp_opts = {
   settings = {
     pylsp = {
       plugins = {
@@ -84,8 +109,17 @@ local opts = {
     },
   }
 }
--- https://github.com/LunarVim/LunarVim/issues/1978
-require("lspconfig")["pylsp"].setup(opts)
+lspconfig["pylsp"].setup(pylsp_opts)
+
+local tsserver_opts = {
+    init_options = require("nvim-lsp-ts-utils").init_options,
+    on_attach = function(client)
+        local ts_utils = require("nvim-lsp-ts-utils")
+        ts_utils.setup({})
+        ts_utils.setup_client(client)
+    end,
+}
+lspconfig["tsserver"].setup(tsserver_opts)
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
