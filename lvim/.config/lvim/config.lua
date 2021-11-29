@@ -77,6 +77,7 @@ lvim.builtin.which_key.mappings["li"] = { "<cmd>TSLspImportCurrent<CR>", "Import
 
 lvim.plugins = {
     { "AndrewRadev/tagalong.vim" },
+    { "NoahTheDuke/vim-just" },
     { "christoomey/vim-tmux-navigator" },
     { "editorconfig/editorconfig-vim" },
     { "farmergreg/vim-lastplace" },
