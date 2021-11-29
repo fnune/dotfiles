@@ -22,6 +22,7 @@ lvim.autocommands.custom_groups = {
 lvim.builtin.dashboard.active = false
 lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.telescope.defaults.prompt_prefix = " "
+lvim.builtin.telescope.defaults.path_display.shorten = nil
 lvim.builtin.telescope.pickers = {
   find_files = { find_command = { "fd", "--type=file", "--hidden", "--exclude", ".git" } },
 }
