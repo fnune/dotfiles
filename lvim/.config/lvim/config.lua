@@ -20,6 +20,7 @@ lvim.autocommands.custom_groups = {
 }
 
 lvim.builtin.dashboard.active = false
+lvim.builtin.project.active = false
 lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.telescope.defaults.prompt_prefix = " "
 lvim.builtin.telescope.defaults.path_display.shorten = nil
@@ -50,7 +51,6 @@ lvim.leader = "space"
 
 vim.cmd("map 0 ^")
 vim.cmd("nnoremap Q <nop>")
-vim.cmd("nnoremap S ddko")
 vim.cmd("nnoremap cc ddko")
 vim.cmd("nnoremap j gj")
 vim.cmd("nnoremap k gk")
@@ -79,12 +79,20 @@ lvim.builtin.which_key.mappings["li"] = { "<cmd>TSLspImportCurrent<CR>", "Import
 lvim.plugins = {
     { "AndrewRadev/tagalong.vim" },
     { "NoahTheDuke/vim-just" },
+    {
+      "folke/zen-mode.nvim",
+      config = function()
+        require("zen-mode").setup { plugins = { tmux = { enabled = true } } }
+      end
+    },
     { "christoomey/vim-tmux-navigator" },
     { "editorconfig/editorconfig-vim" },
     { "farmergreg/vim-lastplace" },
     { "felipec/vim-sanegx", event = "BufRead" },
     { "fenetikm/falcon" },
+    { "ggandor/lightspeed.nvim" },
     { "jose-elias-alvarez/nvim-lsp-ts-utils" },
+    { "jxnblk/vim-mdx-js" },
     { "rcarriga/vim-ultest" },
     { "rose-pine/neovim" },
     { "tpope/vim-abolish" },
@@ -97,21 +105,9 @@ lvim.plugins = {
 -- LSP
 -- ***
 
-vim.list_extend(lvim.lsp.override, { "pyright", "pylsp", "tsserver" })
+vim.list_extend(lvim.lsp.override, { "tsserver" })
 
 local lspconfig = require("lspconfig")
-
-local pylsp_opts = {
-  settings = {
-    pylsp = {
-      plugins = {
-        pylsp_mypy = { enabled = true },
-        pylsp_black = { enabled = true },
-      }
-    },
-  }
-}
-lspconfig["pylsp"].setup(pylsp_opts)
 
 local tsserver_opts = {
     init_options = require("nvim-lsp-ts-utils").init_options,
