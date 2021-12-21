@@ -1,12 +1,16 @@
 let mapleader = " "
 
-set hlsearch
-set incsearch
-set commentary
-set surround
-set ignorecase smartcase
-set ideajoin
 set NERDTree
+set argtextobj
+set commentary
+set easymotion
+set hlsearch
+set ideajoin
+set ignorecase smartcase
+set incsearch
+set matchit
+set multiple-cursors
+set surround
 
 map 0 ^
 
