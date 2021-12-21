@@ -2,3 +2,4 @@
 .envrc
 .vim
 .ccls-cache
+.idea
