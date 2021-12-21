@@ -5,6 +5,8 @@ set incsearch
 set commentary
 set surround
 set ignorecase smartcase
+set ideajoin
+set NERDTree
 
 map 0 ^
 
@@ -22,21 +24,42 @@ nmap gx :action GotoDeclaration<CR>
 nnoremap <silent> <C-u> <C-u>zz
 nnoremap <silent> <C-d> <C-d>zz
 
+nnoremap <S-h> :bp<CR>
+nnoremap <S-l> :bn<CR>
+nnoremap <A-1> :b 1<CR>
+nnoremap <A-2> :b 2<CR>
+nnoremap <A-3> :b 3<CR>
+nnoremap <A-4> :b 4<CR>
+nnoremap <A-5> :b 5<CR>
+nnoremap <A-6> :b 6<CR>
+nnoremap <A-7> :b 7<CR>
+nnoremap <A-8> :b 8<CR>
+nnoremap <A-9> :b 9<CR>
+
 nmap <A-j> :action MoveLineDown<CR>
 nmap <A-k> :action MoveLineUp<CR>
 vmap <A-j> :action MoveLineDown<CR>
 vmap <A-k> :action MoveLineUp<CR>
+
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
 
 nnoremap <leader>w :w!<CR>
 nnoremap <leader>wq :wq!<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>l :nohlsearch<CR>
 nnoremap <leader>e :action Synchronize<CR>
-nnoremap <leader>f :action SearchEverywhere<CR>
+nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>a :action GotoAction<CR>
 nnoremap <leader>F :action FindInPath<CR>
 nnoremap <leader>p :action ReformatCode<CR>
 nnoremap <leader>j :action GotoNextError<CR>
 nnoremap <leader>k :action GotoPreviousError<CR>
 nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
 nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
-nnoremap <leader>e :action HideAllWindows<CR>
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+nnoremap <leader>g :action ActivateCommitToolWindow<CR>
