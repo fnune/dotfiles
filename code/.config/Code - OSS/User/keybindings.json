@@ -1,0 +1,78 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "ctrl+n",
+    "command": "goToNextReferenceFromEmbeddedEditor",
+    "when": "inReferenceSearchEditor"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "goToPreviousReferenceFromEmbeddedEditor",
+    "when": "inReferenceSearchEditor"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "search.action.focusNextSearchResult",
+    "when": "hasSearchResult && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "search.action.focusPreviousSearchResult",
+    "when": "hasSearchResult && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "goToNextReference",
+    "when": "referenceSearchVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "goToPreviousReference",
+    "when": "referenceSearchVisible"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "references-view.next",
+    "when": "reference-list.hasResult"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "references-view.prev",
+    "when": "reference-list.hasResult"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusSideBar",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "terminal.focus",
+    "when": "terminal.active && editorFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.togglePanel",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "git.stageSelectedRanges",
+    "when": "inDiffEditor"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "git.unstageSelectedRanges",
+    "when": "inDiffEditor"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "command-runner.run",
+    "args": { "command": "lazygit" }
+  }
+]

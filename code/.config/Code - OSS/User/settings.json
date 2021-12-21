@@ -1,0 +1,32 @@
+{
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "editor.fontFamily": "monospace",
+  "terminal.integrated.fontFamily": "monospace",
+  "editor.fontSize": 18,
+  "command-runner.terminal.autoFocus": true,
+  "terminal.integrated.fontSize": 18,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.cursorBlinking": "solid",
+  "editor.overviewRulerBorder": false,
+  "editor.scrollbar.horizontalScrollbarSize": 0,
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.showFoldingControls": "mouseover",
+  "git.detectSubmodules": false,
+  "keyboard.dispatch": "keyCode",
+  "terminal.external.linuxExec": "kitty",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.allowChords": true,
+  "terminal.integrated.fontWeight": "300",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.linux": "/home/fausto/.config/vscode-neovim/init.lua",
+  "window.menuBarVisibility": "hidden",
+  "window.restoreWindows": "one",
+  "workbench.colorTheme": "Rosé Pine",
+  "window.zoomLevel": 1,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
