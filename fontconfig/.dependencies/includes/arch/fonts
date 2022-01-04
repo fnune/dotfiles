@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
 sudo pacman -S inter-font ttf-liberation ttf-dejavu ttf-hanazono ttf-cascadia-code wqy-microhei --noconfirm
+
+git clone https://gitlab.com/exorcist365/fonts --depth=1 --branch=master ~/.local/share/fonts/nerd-fonts
+
+fc-cache -fv ~/.local/share/fonts
