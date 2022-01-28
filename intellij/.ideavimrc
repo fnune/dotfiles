@@ -66,3 +66,4 @@ nnoremap <leader>k :action GotoPreviousError<CR>
 nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
 nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+nnoremap <leader>be :action CloseAllEditorsButActive<CR>
