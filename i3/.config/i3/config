@@ -10,6 +10,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id unclutter --timeout 1 --fork
 exec --no-startup-id xcompmgr
 exec --no-startup-id cbatticon --icon-type symbolic --hide-notification
+exec --no-startup-id autorandr
 
 exec_always hsetroot -solid "#000000"
 exec_always xset r rate 180 45
