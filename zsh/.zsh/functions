@@ -8,8 +8,8 @@ function cdb() {
   fi
 }
 
-function .edit() {
-  cd ~/.dotfiles && $EDITOR
+function dfi() {
+  cd ~/.dotfiles && $EDITOR; cd -
 }
 
 function untilfail() {
