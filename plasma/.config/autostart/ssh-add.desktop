@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=zsh --extendedglob -c 'ssh-add -q ~/.ssh/id^*.pub < /dev/null'
+Name=ssh-add
+Type=Application
+X-KDE-AutostartScript=true
