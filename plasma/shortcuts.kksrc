@@ -17,12 +17,12 @@ BackwardWord=Ctrl+Left
 Begin=Ctrl+Home
 BeginningOfLine=Home
 Clear=
-Close=Ctrl+Esc; Ctrl+W
+Close=Ctrl+W; Ctrl+Esc
 ConfigureNotifications=
 ConfigureToolbars=
-Copy=Ctrl+C; Ctrl+Ins
+Copy=Ctrl+Ins; Ctrl+C
 CreateFolder=F10
-Cut=Ctrl+X; Shift+Del
+Cut=Shift+Del; Ctrl+X
 DeleteFile=Shift+Del
 DeleteWordBack=Ctrl+Backspace
 DeleteWordForward=Ctrl+Del
@@ -46,7 +46,7 @@ Goto=
 GotoLine=Ctrl+G
 GotoPage=
 Help=F1
-Home=Alt+Home; Home Page
+Home=Home Page; Alt+Home
 KeyBindings=Ctrl+Alt+,
 Mail=
 MoveToTrash=Del
@@ -64,7 +64,7 @@ PrintPreview=
 Prior=PgUp
 Quit=Ctrl+Q
 Redo=Ctrl+Shift+Z
-Reload=F5; Refresh
+Reload=Refresh; F5
 RenameFile=F2
 Replace=Ctrl+R
 ReportBug=
@@ -88,7 +88,7 @@ Undo=Ctrl+Z
 Up=Alt+Up
 WhatsThis=Shift+F1
 Zoom=
-ZoomIn=Ctrl+=; Ctrl++
+ZoomIn=Ctrl++; Ctrl+=
 ZoomOut=Ctrl+-
 
 [kaccess][Global Shortcuts]
@@ -101,7 +101,7 @@ Toggle Touchpad=Touchpad Toggle
 
 [kded5][Global Shortcuts]
 Show System Activity=Ctrl+Esc
-display=Meta+P; Display
+display=Display; Meta+P
 
 [khotkeys][Global Shortcuts]
 {99bbb7b8-5bc9-4368-91a1-c3139452d35b}=Meta+Return
@@ -117,7 +117,7 @@ mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=
-Lock Session=Ctrl+Alt+L; Screensaver
+Lock Session=Screensaver; Ctrl+Alt+L
 Log Out=Ctrl+Alt+Del
 Log Out Without Confirmation=
 Reboot Without Confirmation=
@@ -126,7 +126,7 @@ Reboot Without Confirmation=
 Activate Window Demanding Attention=Ctrl+Alt+A
 Decrease Opacity=
 Expose=Ctrl+F9
-ExposeAll=Launch (C); Ctrl+F10
+ExposeAll=Ctrl+F10; Launch (C)
 ExposeClass=Ctrl+F7
 Increase Opacity=
 Invert Screen Colors=
@@ -146,7 +146,7 @@ Switch One Desktop Up=
 Switch One Desktop to the Left=
 Switch One Desktop to the Right=
 Switch Window Down=Meta+J; Meta+Alt+Down
-Switch Window Left=Meta+H; Meta+Alt+Left
+Switch Window Left=Meta+Alt+Left; Meta+H
 Switch Window Right=Meta+L; Meta+Alt+Right
 Switch Window Up=Meta+Alt+Up; Meta+K
 Switch to Desktop 1=Ctrl+F1; Meta+1
@@ -162,7 +162,7 @@ Switch to Desktop 18=
 Switch to Desktop 19=
 Switch to Desktop 2=Ctrl+F2; Meta+2
 Switch to Desktop 20=
-Switch to Desktop 3=Meta+3; Ctrl+F3
+Switch to Desktop 3=Ctrl+F3; Meta+3
 Switch to Desktop 4=Meta+4; Ctrl+F4
 Switch to Desktop 5=Meta+5
 Switch to Desktop 6=Meta+6
@@ -197,7 +197,7 @@ Walk Through Windows of Current Application Alternative=
 Walk Through Windows of Current Application Alternative (Reverse)=
 Window Above Other Windows=
 Window Below Other Windows=
-Window Close=Alt+F4; Meta+Shift+Q
+Window Close=Meta+Shift+Q; Alt+F4
 Window Fullscreen=Meta+Shift+F
 Window Grow Horizontal=
 Window Grow Vertical=
@@ -221,9 +221,9 @@ Window Pack Up=
 Window Quick Tile Bottom=Meta+Shift+J; Meta+Down
 Window Quick Tile Bottom Left=
 Window Quick Tile Bottom Right=
-Window Quick Tile Left=Meta+Shift+H; Meta+Left
-Window Quick Tile Right=Meta+Right; Meta+Shift+L
-Window Quick Tile Top=Meta+Shift+K; Meta+Up
+Window Quick Tile Left=Meta+Left; Meta+Shift+H
+Window Quick Tile Right=Meta+Shift+L; Meta+Right
+Window Quick Tile Top=Meta+Up; Meta+Shift+K
 Window Quick Tile Top Left=
 Window Quick Tile Top Right=
 Window Raise=
@@ -282,7 +282,7 @@ _launch=Meta+E
 
 [org.kde.krunner.desktop][Global Shortcuts]
 RunClipboard=Alt+Shift+F2
-_launch=Search; Meta+D; Alt+Space; Alt+F2
+_launch=Alt+F2; Search; Meta+D; Alt+Space
 
 [org.kde.plasma.emojier.desktop][Global Shortcuts]
 _launch=Meta+.
@@ -327,7 +327,7 @@ show-on-mouse-pos=Meta+V
 stop current activity=Meta+S
 switch to next activity=
 switch to previous activity=
-toggle do not disturb=
+toggle do not disturb=Meta+Shift+O
 
 [systemsettings.desktop][Global Shortcuts]
 _launch=Tools
