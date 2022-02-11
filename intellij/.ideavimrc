@@ -6,6 +6,7 @@ set commentary
 set easymotion
 set hlsearch
 set ideajoin
+set idearefactormode=keep
 set ignorecase smartcase
 set incsearch
 set matchit
