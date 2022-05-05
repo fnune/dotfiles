@@ -105,7 +105,7 @@ lvim.plugins = {
 -- LSP
 -- ***
 
-vim.list_extend(lvim.lsp.override, { "tsserver" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tsserver" })
 
 local lspconfig = require("lspconfig")
 
