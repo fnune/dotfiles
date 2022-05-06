@@ -12,6 +12,7 @@ set incsearch
 set matchit
 set multiple-cursors
 set surround
+set visualbell
 
 map 0 ^
 
