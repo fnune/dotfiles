@@ -19,7 +19,7 @@ lvim.autocommands.custom_groups = {
   },
 }
 
-lvim.builtin.dashboard.active = false
+lvim.builtin.alpha.active = false
 lvim.builtin.project.active = false
 lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.telescope.defaults.prompt_prefix = " "
@@ -67,6 +67,7 @@ function GrepInputString()
   })
   require("telescope.builtin").grep_string({ search = input })
 end
+
 lvim.builtin.which_key.mappings["sT"] = { "<cmd>lua GrepInputString()<CR>", "Text under cursor" }
 lvim.builtin.which_key.mappings["lo"] = { "<cmd>TSLspOrganize<CR>", "Organize imports" }
 lvim.builtin.which_key.mappings["lI"] = { "<cmd>TSLspImportAll<CR>", "Import all" }
@@ -77,28 +78,28 @@ lvim.builtin.which_key.mappings["li"] = { "<cmd>TSLspImportCurrent<CR>", "Import
 -- *******
 
 lvim.plugins = {
-    { "AndrewRadev/tagalong.vim" },
-    { "NoahTheDuke/vim-just" },
-    {
-      "folke/zen-mode.nvim",
-      config = function()
-        require("zen-mode").setup { plugins = { tmux = { enabled = true } } }
-      end
-    },
-    { "christoomey/vim-tmux-navigator" },
-    { "editorconfig/editorconfig-vim" },
-    { "farmergreg/vim-lastplace" },
-    { "felipec/vim-sanegx", event = "BufRead" },
-    { "fenetikm/falcon" },
-    { "ggandor/lightspeed.nvim" },
-    { "jose-elias-alvarez/nvim-lsp-ts-utils" },
-    { "jxnblk/vim-mdx-js" },
-    { "rcarriga/vim-ultest" },
-    { "rose-pine/neovim" },
-    { "tpope/vim-abolish" },
-    { "tpope/vim-repeat" },
-    { "tpope/vim-surround", keys = {"c", "d", "y"} },
-    { "vim-test/vim-test" },
+  { "AndrewRadev/tagalong.vim" },
+  { "NoahTheDuke/vim-just" },
+  {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup { plugins = { tmux = { enabled = true } } }
+    end
+  },
+  { "christoomey/vim-tmux-navigator" },
+  { "editorconfig/editorconfig-vim" },
+  { "farmergreg/vim-lastplace" },
+  { "felipec/vim-sanegx", event = "BufRead" },
+  { "fenetikm/falcon" },
+  { "ggandor/lightspeed.nvim" },
+  { "jose-elias-alvarez/nvim-lsp-ts-utils" },
+  { "jxnblk/vim-mdx-js" },
+  { "rcarriga/vim-ultest" },
+  { "rose-pine/neovim" },
+  { "tpope/vim-abolish" },
+  { "tpope/vim-repeat" },
+  { "tpope/vim-surround", keys = { "c", "d", "y" } },
+  { "vim-test/vim-test" },
 }
 
 -- ***
@@ -110,12 +111,12 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tsserver" }
 local lspconfig = require("lspconfig")
 
 local tsserver_opts = {
-    init_options = require("nvim-lsp-ts-utils").init_options,
-    on_attach = function(client)
-        local ts_utils = require("nvim-lsp-ts-utils")
-        ts_utils.setup({})
-        ts_utils.setup_client(client)
-    end,
+  init_options = require("nvim-lsp-ts-utils").init_options,
+  on_attach = function(client)
+    local ts_utils = require("nvim-lsp-ts-utils")
+    ts_utils.setup({})
+    ts_utils.setup_client(client)
+  end,
 }
 lspconfig["tsserver"].setup(tsserver_opts)
 
