@@ -2,8 +2,7 @@ set t_Co=256
 set background=dark
 set termguicolors
 
-let g:falcon_inactive = 1
-colorscheme falcon
+colorscheme rose-pine
 
 syntax enable
 syntax sync minlines=10000
