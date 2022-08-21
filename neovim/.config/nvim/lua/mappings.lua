@@ -14,7 +14,7 @@ nmap('j', 'gj')
 nmap('k', 'gk')
 
 nmap('<leader>f', '<cmd>FZF<cr>')
-nmap('<leader>F', '<cmd>Rg<space>')
+nmap('<leader>F', '<cmd>Rg<cr>')
 nmap('<leader>g', '<cmd>Git<cr>')
 nmap('<leader>q', '<cmd>q<cr>')
 nmap('<leader>p', '<cmd>Format<cr>')
