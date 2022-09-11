@@ -27,6 +27,7 @@ gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 10
 
 # Disable Gnome default keybindings that cobble Super + Number
+gsettings set org.gnome.shell.extensions.dash-to-dock hot-keys false
 for application in {1..9}
 do
   gsettings set org.gnome.shell.keybindings switch-to-application-$application "[]"
