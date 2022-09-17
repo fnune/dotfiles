@@ -42,7 +42,12 @@
   },
   {
     "key": "ctrl+h",
-    "command": "workbench.action.focusSideBar",
+    "command": "workbench.action.focusLeftGroupWithoutWrap",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusRightGroupWithoutWrap",
     "when": "editorFocus"
   },
   {
@@ -51,28 +56,51 @@
     "when": "sideBarFocus"
   },
   {
-    "key": "ctrl+j",
-    "command": "terminal.focus",
-    "when": "terminal.active && editorFocus"
+    "key": "shift+escape",
+    "command": "workbench.action.closeSidebar"
   },
   {
     "key": "ctrl+k",
-    "command": "workbench.action.togglePanel",
-    "when": "terminalFocus"
+    "when": "CodeActionMenuVisible",
+    "command": "focusPreviousCodeAction"
   },
   {
-    "key": "ctrl+s",
-    "command": "git.stageSelectedRanges",
-    "when": "inDiffEditor"
+    "key": "ctrl+j",
+    "when": "CodeActionMenuVisible",
+    "command": "focusNextCodeAction"
   },
   {
-    "key": "ctrl+u",
-    "command": "git.unstageSelectedRanges",
-    "when": "inDiffEditor"
+    "key": "ctrl+p",
+    "when": "CodeActionMenuVisible",
+    "command": "focusPreviousCodeAction"
   },
   {
-    "key": "ctrl+shift+g",
-    "command": "command-runner.run",
-    "args": { "command": "lazygit" }
+    "key": "ctrl+n",
+    "when": "CodeActionMenuVisible",
+    "command": "focusNextCodeAction"
+  },
+  {
+    "key": "alt+h",
+    "command": "vscode-neovim.send",
+    "args": "<a-h>",
+    "when": "editorTextFocus && neovim.init"
+  },
+  {
+    "key": "alt+j",
+    "command": "vscode-neovim.send",
+    "args": "<a-j>",
+    "when": "editorTextFocus && neovim.init"
+  },
+  {
+    "key": "alt+k",
+    "command": "vscode-neovim.send",
+    "args": "<a-k>",
+    "when": "editorTextFocus && neovim.init"
+  },
+  {
+    "key": "alt+l",
+    "command": "vscode-neovim.send",
+    "args": "<a-l>",
+    "when": "editorTextFocus && neovim.init"
   }
 ]
