@@ -24,4 +24,5 @@ if [[ ! -d "$RBENV_ROOT/plugins/ruby-build" ]]; then
 fi
 
 # Install a ruby:
-$RBENV_ROOT/bin/rbenv install $RUBY_VERSION
+$RBENV_ROOT/bin/rbenv install --skip-existing $RUBY_VERSION
+$RBENV_ROOT/bin/rbenv global $RUBY_VERSION
