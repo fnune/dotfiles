@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+RBENV_ROOT=$HOME/.rbenv
+
+mkdir -p $RBENV_ROOT/plugins
+git clone https://github.com/rbenv/ruby-build.git $RBENV_ROOT/plugins/ruby-build
+
+rbenv install 3.1.2
