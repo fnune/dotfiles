@@ -4,7 +4,11 @@ RBENV_ROOT=$HOME/.rbenv
 RUBY_VERSION=3.1.2
 
 # Install rbenv:
-git clone https://github.com/rbenv/rbenv.git $RBENV_ROOT
+if [[ ! -d "$RBENV_ROOT" ]]; then
+  git clone https://github.com/rbenv/rbenv.git $RBENV_ROOT
+else
+  git -C $RBENV_ROOT pull
+fi
 
 # Compile dynamic bash extension to speed up env:
 pushd $RBENV_ROOT
