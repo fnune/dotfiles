@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+RBENV_ROOT=$HOME/.rbenv
+RUBY_VERSION=3.1.2
+
+# Install rbenv:
+git clone https://github.com/rbenv/rbenv.git $RBENV_ROOT
+
+# Compile dynamic bash extension to speed up env:
+pushd $RBENV_ROOT
+  src/configure
+  make -C src
+popd
+
+# Add ruby-build plugin to enable rbenv install:
+
+if [[ ! -d "$RBENV_ROOT/plugins/ruby-build" ]]; then
+  mkdir -p $RBENV_ROOT/plugins
+  git clone https://github.com/rbenv/ruby-build.git $RBENV_ROOT/plugins/ruby-build
+fi
+
+# Install a ruby:
+$RBENV_ROOT/bin/rbenv install $RUBY_VERSION
