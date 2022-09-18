@@ -58,3 +58,7 @@ nmap('<leader>bw', '<cmd>BufferOrderByWindowNumber<cr>')
 
 -- Zen mode with true-zen
 nmap('<leader>z', '<cmd>TZAtaraxis<cr>')
+
+-- Toggle neovim-tree
+nmap('<leader>e', ':NvimTreeToggle<cr>')
+nmap('<leader>E', ':NvimTreeFindFile<cr>')
