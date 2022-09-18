@@ -41,7 +41,6 @@ Plug('TimUntersberger/neogit')
 Plug('kyazdani42/nvim-web-devicons')
 Plug('sindrets/diffview.nvim')
 Plug('romgrk/barbar.nvim')
-Plug('Pocco81/true-zen.nvim')
 Plug('kyazdani42/nvim-tree.lua')
 Plug('neoclide/coc.nvim', { branch = 'release' })
 
@@ -66,24 +65,6 @@ require('bufferline').setup {
   closable = false,
   clickable = false,
   icons = 'both',
-}
-
-require('true-zen').setup {
-  integrations = {
-    tmux = true,
-  },
-  modes = {
-    ataraxis = {
-      callbacks = {
-        open_pos = function()
-          vim.opt.number = true
-          vim.opt.signcolumn = 'yes'
-          vim.opt.showtabline = 1
-          vim.cmd('silent! GitGutterEnable')
-        end,
-      },
-    }
-  }
 }
 
 require('nvim-tree').setup {}
