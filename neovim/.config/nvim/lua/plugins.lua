@@ -41,6 +41,7 @@ Plug('tversteeg/registers.nvim')
 Plug('TimUntersberger/neogit')
 Plug('kyazdani42/nvim-web-devicons')
 Plug('sindrets/diffview.nvim')
+Plug('romgrk/barbar.nvim')
 Plug('neoclide/coc.nvim', { branch = 'release' })
 
 vim.call('plug#end')
@@ -57,4 +58,15 @@ vim.g.goyo_height = 95
 vim.g.goyo_width = 100
 vim.g.goyo_linenr = 1
 
-require('neogit').setup { integrations = { diffview = true } }
+require('neogit').setup {
+  integrations = {
+    diffview = true,
+  },
+}
+
+require('bufferline').setup {
+  animation = false,
+  closable = false,
+  clickable = false,
+  icons = 'both',
+}

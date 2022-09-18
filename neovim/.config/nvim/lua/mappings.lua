@@ -16,7 +16,6 @@ nmap('k', 'gk')
 nmap('<leader>f', '<cmd>FZF<cr>')
 nmap('<leader>F', '<cmd>Rg<cr>')
 nmap('<leader>g', '<cmd>Neogit<cr>')
-nmap('<leader>q', '<cmd>q<cr>')
 
 -- <Ctrl-u> and <Ctrl-d> also center the screen
 nmap('<C-u>', '<C-u>zz')
@@ -28,16 +27,32 @@ nmap('gp', '`[v`]')
 -- Use <leader>l to clear the highlighting of :set hlsearch
 nmap('<leader>l', '<cmd>nohlsearch<cr>')
 
-nmap('<M-1>', '1gt')
-nmap('<M-2>', '2gt')
-nmap('<M-3>', '3gt')
-nmap('<M-4>', '4gt')
-nmap('<M-5>', '5gt')
-nmap('<M-6>', '6gt')
-nmap('<M-7>', '7gt')
-nmap('<M-8>', '8gt')
-nmap('<M-9>', '9gt')
-nmap('<M-0>', '<cmd>tablast<cr>')
-
 -- Use escape to exit insert mode in a terminal
-map('t', '<esc>', '<C-\\><C-n>')
+nmap('t', '<esc>', '<C-\\><C-n>')
+
+-- Tabs with barbar
+nmap('<S-h>', '<cmd>BufferPrevious<cr>')
+nmap('<S-l>', '<cmd>BufferNext<cr>')
+
+nmap('<<', '<cmd>BufferMovePrevious<cr>')
+nmap('>>', '<cmd>BufferMoveNext<cr>')
+
+nmap('<M-1>', '<cmd>BufferGoto 1<cr>')
+nmap('<M-2>', '<cmd>BufferGoto 2<cr>')
+nmap('<M-3>', '<cmd>BufferGoto 3<cr>')
+nmap('<M-4>', '<cmd>BufferGoto 4<cr>')
+nmap('<M-5>', '<cmd>BufferGoto 5<cr>')
+nmap('<M-6>', '<cmd>BufferGoto 6<cr>')
+nmap('<M-7>', '<cmd>BufferGoto 7<cr>')
+nmap('<M-8>', '<cmd>BufferGoto 8<cr>')
+nmap('<M-9>', '<cmd>BufferGoto 9<cr>')
+nmap('<M-0>', '<cmd>BufferLast<cr>')
+
+nmap('<leader>q', '<cmd>BufferClose<cr>')
+nmap('<leader>be', '<cmd>BufferCloseAllButCurrent<cr>')
+
+nmap('<leader>bb', '<cmd>BufferOrderByBufferNumber<cr>')
+nmap('<leader>bd', '<cmd>BufferOrderByDirectory<cr>')
+nmap('<leader>bl', '<cmd>BufferOrderByLanguage<cr>')
+nmap('<leader>bw', '<cmd>BufferOrderByWindowNumber<cr>')
+
