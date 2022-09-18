@@ -6,6 +6,9 @@ vim.opt.statusline = vim.opt.statusline + '%F'
 -- Subsequent concatenations will be pushed to the far right
 vim.opt.statusline = vim.opt.statusline + '%='
 
+-- CoC.vim support
+vim.opt.statusline = vim.opt.statusline + '%{coc#status()}%{get(b:,"coc_current_function","")}'
+
 -- Filetype
 vim.opt.statusline = vim.opt.statusline + ' %y'
 

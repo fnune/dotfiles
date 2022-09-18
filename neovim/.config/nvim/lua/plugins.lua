@@ -38,18 +38,7 @@ Plug('tpope/vim-repeat')
 Plug('tpope/vim-rhubarb')
 Plug('tpope/vim-surround')
 Plug('tversteeg/registers.nvim')
-
--- Intellisense
-Plug('L3MON4D3/LuaSnip')
-Plug('hrsh7th/nvim-cmp')
-Plug('hrsh7th/cmp-buffer')
-Plug('hrsh7th/cmp-path')
-Plug('hrsh7th/cmp-nvim-lsp')
-Plug('williamboman/mason.nvim')
-Plug('williamboman/mason-lspconfig.nvim')
-Plug('neovim/nvim-lspconfig')
-Plug('nvim-lua/popup.nvim')
-Plug('RishabhRD/lspactions')
+Plug('neoclide/coc.nvim', { branch = 'release' })
 
 vim.call('plug#end')
 
@@ -60,3 +49,7 @@ vim.g.blamer_relative_time = 1
 vim.g.gitgutter_grep = 'rg'
 
 vim.g.traces_abolish_integration = 1
+
+vim.g.goyo_height = 95
+vim.g.goyo_width = 100
+vim.g.goyo_linenr = 1
