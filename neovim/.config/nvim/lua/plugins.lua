@@ -19,7 +19,6 @@ Plug('editorconfig/editorconfig-vim')
 Plug('farmergreg/vim-lastplace')
 Plug('junegunn/fzf', { dir = '~/.fzf' })
 Plug('junegunn/fzf.vim')
-Plug('junegunn/goyo.vim')
 Plug('machakann/vim-swap')
 Plug('markonm/traces.vim')
 Plug('matze/vim-move')
@@ -53,10 +52,6 @@ vim.g.blamer_relative_time = 1
 vim.g.gitgutter_grep = 'rg'
 
 vim.g.traces_abolish_integration = 1
-
-vim.g.goyo_height = 95
-vim.g.goyo_width = 100
-vim.g.goyo_linenr = 1
 
 require('neogit').setup {
   integrations = {
