@@ -25,7 +25,7 @@ nmap('<C-d>', '<C-d>zz')
 -- Visual select last pasted text
 nmap('gp', '`[v`]')
 
--- Use <leader>l to clear the highlighting of :set hlsearch.
+-- Use <leader>l to clear the highlighting of :set hlsearch
 nmap('<leader>l', '<cmd>nohlsearch<cr>')
 
 nmap('<M-1>', '1gt')
@@ -38,3 +38,6 @@ nmap('<M-7>', '7gt')
 nmap('<M-8>', '8gt')
 nmap('<M-9>', '9gt')
 nmap('<M-0>', '<cmd>tablast<cr>')
+
+-- Use escape to exit insert mode in a terminal
+map('t', '<esc>', '<C-\\><C-n>')

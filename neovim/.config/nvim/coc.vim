@@ -40,7 +40,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Rename a symbol
-nmap <leader>r <Plug>(coc-rename)
+nmap <silent><leader>r <Plug>(coc-rename)
 
 " Format a file
 nmap <silent><leader>p :call CocActionAsync('runCommand', 'editor.action.formatDocument')<cr>
@@ -48,12 +48,14 @@ nmap <silent><leader>p :call CocActionAsync('runCommand', 'editor.action.formatD
 " Add a command to organize imports of the current buffer
 nmap <silent><C-M-o> :call CocActionAsync('runCommand', 'editor.action.organizeImport')<cr>
 
+nmap <silent><leader>c :CocList commands<cr>
+
 " Code actions
 nmap <silent><leader>al <Plug>(coc-codeaction-line)
 xmap <silent><leader>ac v<Plug>(coc-codeaction-selected)
 nmap <silent><leader>ac v<Plug>(coc-codeaction-selected)
 nmap <silent><leader>aq <Plug>(coc-fix-current)
-nmap <silent><leader>cl <Plug>(coc-codelens-action)
+nmap <silent><leader>aL <Plug>(coc-codelens-action)
 
 " Map function and class text objects
 xmap if <Plug>(coc-funcobj-i)
