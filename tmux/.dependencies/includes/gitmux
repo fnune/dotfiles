@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-mkdir -p ~/.local/bin
-
-curl -sL https://github.com/arl/gitmux/releases/download/v0.4.1/gitmux_0.4.1_linux_amd64.tar.gz | tar xz -C ~/.local/bin
-
