@@ -15,7 +15,7 @@ nmap('k', 'gk')
 
 nmap('<leader>f', '<cmd>FZF<cr>')
 nmap('<leader>F', '<cmd>Rg<cr>')
-nmap('<leader>g', '<cmd>Git<cr>')
+nmap('<leader>g', '<cmd>Neogit<cr>')
 nmap('<leader>q', '<cmd>q<cr>')
 
 -- <Ctrl-u> and <Ctrl-d> also center the screen
