@@ -8,7 +8,7 @@ vim.cmd('syntax sync minlines=10000')
 vim.cmd('set ignorecase smartcase')
 vim.opt.autoindent = true
 vim.opt.autoread = true
-vim.opt.background = dark
+vim.opt.background = 'dark'
 vim.opt.cmdheight = 2
 vim.opt.cursorline = true
 vim.opt.encoding = 'utf-8'
