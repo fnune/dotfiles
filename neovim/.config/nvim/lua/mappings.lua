@@ -1,10 +1,10 @@
 vim.g.mapleader = ' '
 
-function map(mode, shortcut, command)
+local function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
 
-function nmap(shortcut, command)
+local function nmap(shortcut, command)
   map('n', shortcut, command)
 end
 
@@ -48,7 +48,8 @@ nmap('<M-8>', '<cmd>BufferGoto 8<cr>')
 nmap('<M-9>', '<cmd>BufferGoto 9<cr>')
 nmap('<M-0>', '<cmd>BufferLast<cr>')
 
-nmap('<leader>q', '<cmd>BufferClose<cr>')
+nmap('<leader>q', ':close<cr>')
+nmap('<leader>bq', '<cmd>BufferClose<cr>')
 nmap('<leader>be', '<cmd>BufferCloseAllButCurrent<cr>')
 
 nmap('<leader>bb', '<cmd>BufferOrderByBufferNumber<cr>')
