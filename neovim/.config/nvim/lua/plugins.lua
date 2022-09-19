@@ -37,9 +37,8 @@ Plug('tpope/vim-repeat')
 Plug('tpope/vim-rhubarb')
 Plug('tpope/vim-surround')
 Plug('tversteeg/registers.nvim')
-Plug('TimUntersberger/neogit')
 Plug('kyazdani42/nvim-web-devicons')
-Plug('sindrets/diffview.nvim')
+Plug('kdheepak/lazygit.nvim')
 Plug('romgrk/barbar.nvim')
 Plug('kyazdani42/nvim-tree.lua')
 Plug('rmagatti/auto-session')
@@ -55,12 +54,6 @@ vim.g.gitgutter_grep = 'rg'
 
 vim.g.traces_abolish_integration = 1
 
-require('neogit').setup {
-  integrations = {
-    diffview = true,
-  },
-}
-
 require('bufferline').setup {
   animation = false,
   closable = false,
@@ -72,8 +65,9 @@ require('nvim-tree').setup {}
 local nvim_tree_events = require('nvim-tree.events')
 local bufferline_state = require('bufferline.state')
 local function get_tree_size()
-  return require'nvim-tree.view'.View.width
+  return require('nvim-tree.view').View.width
 end
+
 nvim_tree_events.subscribe('TreeOpen', function()
   bufferline_state.set_offset(get_tree_size())
 end)
@@ -85,3 +79,10 @@ nvim_tree_events.subscribe('TreeClose', function()
 end)
 
 require("auto-session").setup {}
+
+-- https://github.com/kdheepak/lazygit.nvim
+vim.cmd([[
+  if has('nvim') && executable('nvr')
+    let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
+  endif
+]])

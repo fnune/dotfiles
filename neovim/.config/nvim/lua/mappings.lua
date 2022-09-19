@@ -15,7 +15,7 @@ nmap('k', 'gk')
 
 nmap('<leader>f', '<cmd>FZF<cr>')
 nmap('<leader>F', '<cmd>Rg<cr>')
-nmap('<leader>g', '<cmd>Neogit<cr>')
+nmap('<leader>g', '<cmd>LazyGit<cr>')
 
 -- <Ctrl-u> and <Ctrl-d> also center the screen
 nmap('<C-u>', '<C-u>zz')

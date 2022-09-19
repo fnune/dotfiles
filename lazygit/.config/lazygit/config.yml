@@ -1,4 +1,0 @@
-os:
-  editCommand: "charm"
-  editCommandTemplate: "{{editor}} {{filename}}:{{line}}"
-  openCommand: "charm {{filename}}"
