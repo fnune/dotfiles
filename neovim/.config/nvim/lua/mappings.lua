@@ -28,7 +28,7 @@ nmap('gp', '`[v`]')
 nmap('<leader>l', '<cmd>nohlsearch<cr>')
 
 -- Use escape to exit insert mode in a terminal
-nmap('t', '<esc>', '<C-\\><C-n>')
+map('t', '<esc>', '<C-\\><C-n>')
 
 -- Tabs with barbar
 nmap('<S-h>', '<cmd>BufferPrevious<cr>')
