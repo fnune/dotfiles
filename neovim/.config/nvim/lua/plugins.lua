@@ -42,6 +42,7 @@ Plug('kdheepak/lazygit.nvim')
 Plug('romgrk/barbar.nvim')
 Plug('kyazdani42/nvim-tree.lua')
 Plug('rmagatti/auto-session')
+Plug('chentoast/marks.nvim')
 Plug('neoclide/coc.nvim', { branch = 'release' })
 
 vim.call('plug#end')
@@ -86,3 +87,5 @@ vim.cmd([[
     let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
   endif
 ]])
+
+require("marks").setup {}
