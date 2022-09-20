@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mkdir -p ~/.config/alacritty/rose-pine
+git clone git@github.com:rose-pine/alacritty.git ~/.config/alacritty/rose-pine
