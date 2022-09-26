@@ -46,6 +46,7 @@ Plug('chentoast/marks.nvim')
 Plug('neoclide/coc.nvim', { branch = 'release' })
 Plug('tpope/vim-dadbod')
 Plug('kristijanhusak/vim-dadbod-ui')
+Plug('jxnblk/vim-mdx-js')
 
 vim.call('plug#end')
 
