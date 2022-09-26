@@ -44,6 +44,8 @@ Plug('kyazdani42/nvim-tree.lua')
 Plug('rmagatti/auto-session')
 Plug('chentoast/marks.nvim')
 Plug('neoclide/coc.nvim', { branch = 'release' })
+Plug('tpope/vim-dadbod')
+Plug('kristijanhusak/vim-dadbod-ui')
 
 vim.call('plug#end')
 
