@@ -1,3 +1,22 @@
+let g:coc_global_extensions = [
+  \'coc-clangd',
+  \'coc-db',
+  \'coc-docker',
+  \'coc-eslint',
+  \'coc-jest',
+  \'coc-json',
+  \'coc-prettier',
+  \'coc-pyright',
+  \'coc-rust-analyzer',
+  \'coc-sh',
+  \'coc-sqlfluff',
+  \'coc-sumneko-lua',
+  \'coc-toml',
+  \'coc-tsserver',
+  \'coc-vimlsp',
+  \'coc-yaml',
+\]
+
 " Trigger completion using <tab>
 inoremap <silent><expr> <tab>
       \ coc#pum#visible() ? coc#pum#next(1) :
