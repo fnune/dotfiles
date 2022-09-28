@@ -9,7 +9,7 @@ let g:coc_global_extensions = [
   \'coc-pyright',
   \'coc-rust-analyzer',
   \'coc-sh',
-  \'coc-sqlfluff',
+  \'coc-sql',
   \'coc-sumneko-lua',
   \'coc-toml',
   \'coc-tsserver',
