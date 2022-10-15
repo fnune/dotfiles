@@ -1,4 +1,10 @@
 {
   "Lua.telemetry.enable": false,
-  "coc.preferences.formatOnType": true
+  "coc.preferences.formatOnType": true,
+  "languageserver": {
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": ["nix"]
+    }
+  }
 }
