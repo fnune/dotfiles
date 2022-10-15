@@ -1,6 +1,6 @@
 window:
   startup_mode: Maximized
-  decorations: none
+  decorations: full
 import:
   - ~/.config/alacritty/rose-pine/dist/rose-pine-moon.yml
   - ~/.config/alacritty/alacritty.local.yml
