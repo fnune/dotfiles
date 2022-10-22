@@ -27,6 +27,7 @@ vim.opt.list = true
 vim.opt.nu = true
 vim.opt.number = true
 vim.opt.redrawtime = 10000
+vim.opt.relativenumber = true
 vim.opt.scrolloff = 6
 vim.opt.secure = true
 vim.opt.shiftwidth = 2
