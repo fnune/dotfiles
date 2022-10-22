@@ -4,3 +4,9 @@ window:
 import:
   - ~/.config/alacritty/rose-pine/dist/rose-pine-moon.yml
   - ~/.config/alacritty/alacritty.local.yml
+
+key_bindings:
+  - { key: Return, mods: Shift, chars: "\x1b[13;2u" }
+  - { key: Return, mods: Control, chars: "\x1b[13;5u" }
+  - { key: Back, mods: Shift, chars: "\x1b[127;2u" }
+  - { key: Back, mods: Control, chars: "\x1b[127;5u" }
