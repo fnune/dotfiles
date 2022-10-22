@@ -48,6 +48,7 @@ Plug('tpope/vim-dadbod')
 Plug('kristijanhusak/vim-dadbod-ui')
 Plug('LnL7/vim-nix')
 Plug('jxnblk/vim-mdx-js')
+Plug('lukas-reineke/indent-blankline.nvim')
 
 vim.call('plug#end')
 
@@ -93,3 +94,5 @@ vim.cmd([[
 ]])
 
 require("marks").setup {}
+
+require("indent_blankline").setup {}

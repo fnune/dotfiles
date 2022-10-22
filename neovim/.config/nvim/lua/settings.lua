@@ -1,3 +1,5 @@
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
 vim.cmd('colorscheme rose-pine')
 vim.cmd('filetype plugin indent on')
 vim.cmd('hi link xmlEndTag xmlTag')
@@ -5,10 +7,12 @@ vim.cmd('highlight Comment cterm=italic gui=italic')
 vim.cmd('syntax enable')
 vim.cmd('syntax sync minlines=10000')
 
+-- https://github.com/rose-pine/alacritty/blob/main/dist/rose-pine-moon.yml
+vim.cmd('highlight IndentBlanklineChar guifg=#232136 gui=nocombine')
+
 vim.cmd('set ignorecase smartcase')
 vim.opt.autoindent = true
 vim.opt.autoread = true
-vim.opt.background = 'dark'
 vim.opt.cmdheight = 2
 vim.opt.cursorline = true
 vim.opt.encoding = 'utf-8'
@@ -37,7 +41,6 @@ vim.opt.softtabstop = 2
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.tabstop = 2
-vim.opt.termguicolors = true
 vim.opt.textwidth = 0
 vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 100
