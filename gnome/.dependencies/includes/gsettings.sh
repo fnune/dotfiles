@@ -78,3 +78,6 @@ gsettings set org.gnome.desktop.interface text-scaling-factor 1
 # Stop the Super key from opening the overview and choose another shortcut
 gsettings set org.gnome.mutter overlay-key ""
 gsettings set org.gnome.shell.keybindings toggle-overview "['<Super>d']"
+
+# Allow uninstalling unsupported extensions
+gsettings set org.gnome.shell disable-extension-version-validation true
