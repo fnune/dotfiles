@@ -45,6 +45,7 @@ vim.opt.tabstop = 2
 vim.opt.textwidth = 0
 vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 100
+vim.opt.timeoutlen = 500
 vim.opt.wildmenu = true
 vim.opt.wrap = true
 
