@@ -27,8 +27,8 @@ nmap('gp', '`[v`]')
 -- Use <leader>l to clear the highlighting of :set hlsearch
 nmap('<leader>l', '<cmd>nohlsearch<cr>')
 
--- Use <leader><esc> to exit insert mode in a terminal
-map('t', '<leader><esc>', '<C-\\><C-n>')
+-- Exit insert mode in a terminal
+map('t', '<C-t><esc>', '<C-\\><C-n>')
 
 -- Tabs with barbar
 nmap('<S-h>', '<cmd>BufferPrevious<cr>')
