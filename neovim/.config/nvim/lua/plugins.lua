@@ -17,8 +17,6 @@ Plug('airblade/vim-gitgutter')
 Plug('christoomey/vim-tmux-navigator')
 Plug('editorconfig/editorconfig-vim')
 Plug('farmergreg/vim-lastplace')
-Plug('junegunn/fzf', { dir = '~/.fzf' })
-Plug('junegunn/fzf.vim')
 Plug('machakann/vim-swap')
 Plug('markonm/traces.vim')
 Plug('matze/vim-move')
@@ -50,6 +48,7 @@ Plug('LnL7/vim-nix')
 Plug('jxnblk/vim-mdx-js')
 Plug('lukas-reineke/indent-blankline.nvim')
 Plug('folke/which-key.nvim')
+Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
 
 vim.call('plug#end')
 
@@ -99,3 +98,5 @@ require("marks").setup {}
 require("indent_blankline").setup {}
 
 require("which-key").setup {}
+
+require('telescope').setup {}

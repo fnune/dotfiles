@@ -13,8 +13,6 @@ nmap('Q', '<nop>')
 nmap('j', 'gj')
 nmap('k', 'gk')
 
-nmap('<leader>f', '<cmd>FZF<cr>')
-nmap('<leader>F', '<cmd>Rg<cr>')
 nmap('<leader>g', '<cmd>LazyGit<cr>')
 
 -- <Ctrl-u> and <Ctrl-d> also center the screen
@@ -83,3 +81,8 @@ end
 -- Run tests
 nmap('<leader>ts', ':lua RunTests(false)<CR>')
 nmap('<leader>ta', ':lua RunTests(true)<CR>')
+
+-- Telescope
+local telescope = require('telescope.builtin')
+vim.keymap.set('n', '<leader>f', telescope.find_files, {})
+vim.keymap.set('n', '<leader>F', telescope.live_grep, {})
