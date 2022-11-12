@@ -48,6 +48,7 @@ Plug('jxnblk/vim-mdx-js')
 Plug('lukas-reineke/indent-blankline.nvim')
 Plug('folke/which-key.nvim')
 Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
+Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 
 vim.call('plug#end')
 
@@ -97,3 +98,4 @@ require("indent_blankline").setup {}
 require("which-key").setup {}
 
 require('telescope').setup {}
+require('telescope').load_extension('fzf')
