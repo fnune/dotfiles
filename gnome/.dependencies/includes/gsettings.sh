@@ -79,5 +79,8 @@ gsettings set org.gnome.desktop.interface text-scaling-factor 1
 gsettings set org.gnome.mutter overlay-key ""
 gsettings set org.gnome.shell.keybindings toggle-overview "['<Super>d']"
 
-# Allow uninstalling unsupported extensions
+# Allow installing unsupported extensions
 gsettings set org.gnome.shell disable-extension-version-validation true
+
+# Stop alt-tab from showing windows from other workspaces
+gsettings set org.gnome.shell.app-switcher current-workspace-only true
