@@ -97,5 +97,9 @@ require("indent_blankline").setup {}
 
 require("which-key").setup {}
 
-require('telescope').setup {}
+require('telescope').setup {
+  defaults = {
+    file_ignore_patterns = { ".git/*", ".cache/*" },
+  },
+}
 require('telescope').load_extension('fzf')

@@ -84,5 +84,5 @@ nmap('<leader>ta', ':lua RunTests(true)<CR>')
 
 -- Telescope
 local telescope = require('telescope.builtin')
-vim.keymap.set('n', '<leader>f', telescope.find_files, {})
-vim.keymap.set('n', '<leader>F', telescope.live_grep, {})
+nmap('<leader>f', ':Telescope find_files hidden=true<CR>')
+nmap('<leader>F', ':Telescope live_grep<CR>')
