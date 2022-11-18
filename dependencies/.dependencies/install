@@ -21,7 +21,7 @@ if grep -Rq "Arch" /etc/*-release; then
   done
 fi
 
-if grep -Rq "Ubuntu" /etc/*-release; then
+if grep -REq "Ubuntu|Debian" /etc/*-release; then
   for file in $DEPENDENCIES_INCLUDES/ubuntu/*; do
     "$file"
   done
