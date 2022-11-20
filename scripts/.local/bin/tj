@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Journal
+journal_path="$HOME/.journal"
+tmux new-session -c $journal_path -d -s journal -n editor
+tmux send-keys -t journal:editor add-inbox C-m
+
+# Take-off
+tmux attach-session -t journal

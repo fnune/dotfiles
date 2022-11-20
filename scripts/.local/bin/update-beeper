@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+WORKDIR=$(mktemp --directory)
+DOWNLOAD_URL="https://download.beeper.com/linux/appImage/x64"
+
+pushd $WORKDIR
+  wget $DOWNLOAD_URL
+  mv x64 beeper
+  chmod u+x beeper
+  sudo mv beeper /usr/bin/beeper
+popd
+
+rm -rf $WORKDIR
