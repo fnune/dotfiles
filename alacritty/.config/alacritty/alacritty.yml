@@ -1,6 +1,10 @@
 window:
   startup_mode: Maximized
   decorations: full
+  dimensions:
+    columns: 96
+    lines: 32
+
 import:
   - ~/.config/alacritty/rose-pine/dist/rose-pine-moon.yml
   - ~/.config/alacritty/alacritty.local.yml
