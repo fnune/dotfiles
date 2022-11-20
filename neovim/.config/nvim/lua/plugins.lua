@@ -49,6 +49,7 @@ Plug('lukas-reineke/indent-blankline.nvim')
 Plug('folke/which-key.nvim')
 Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
 Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
+Plug('vimwiki/vimwiki')
 
 vim.call('plug#end')
 
@@ -94,6 +95,29 @@ vim.cmd([[
 ]])
 
 require("indent_blankline").setup {}
+
+vim.cmd([[
+  let wiki = {}
+  let wiki.path = '~/.journal'
+  let wiki.diary_rel_path = 'notes'
+  let wiki.syntax = 'markdown'
+  let wiki.ext = '.md'
+  let wiki.auto_diary_index = 1
+  let wiki.auto_tags = 1
+
+  let g:vimwiki_list = [wiki]
+
+  function! ConfigureMarkdownVimwiki() abort
+    set number
+    set textwidth=74
+    set wrapmargin=0
+    set formatoptions+=t
+    set linebreak
+  endfunction
+
+  autocmd FileType markdown call ConfigureMarkdownVimwiki()
+  autocmd FileType vimwiki  call ConfigureMarkdownVimwiki()
+]])
 
 require("which-key").setup {}
 
