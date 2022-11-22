@@ -38,5 +38,10 @@ journal_path="$HOME/.journal"
 tmux new-session -c $journal_path -d -s journal -n editor
 tmux send-keys -t journal:editor add-inbox C-m
 
+# Dotfiles
+dotfiles_path="$HOME/.dotfiles"
+tmux new-session -c $dotfiles_path -d -s dotfiles -n editor
+tmux send-keys -t dotfiles:editor $EDITOR C-m
+
 # Take-off
 tmux attach-session -t memfault
