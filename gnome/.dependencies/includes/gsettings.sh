@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ux
+
 # These are keybindings I don't use and that would interrupt me
 # if they were set, and I were to use them accidentally
 KEYBINDINGS_TO_UNSET=(
@@ -84,3 +86,6 @@ gsettings set org.gnome.shell disable-extension-version-validation true
 
 # Stop alt-tab from showing windows from other workspaces
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
+
+# Place new windows centered
+gsettings set org.gnome.mutter center-new-windows true
