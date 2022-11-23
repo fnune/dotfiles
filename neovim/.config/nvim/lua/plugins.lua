@@ -85,7 +85,7 @@ nvim_tree_events.subscribe('TreeClose', function()
   bufferline_api.set_offset(0)
 end)
 
-require("auto-session").setup {}
+require("auto-session").setup { log_level = 'error' }
 
 -- https://github.com/kdheepak/lazygit.nvim
 vim.cmd([[
