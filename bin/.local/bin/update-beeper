@@ -9,7 +9,9 @@ pushd $WORKDIR
   wget $DOWNLOAD_URL
   mv x64 beeper
   chmod u+x beeper
-  sudo mv beeper /usr/bin/beeper
+  mkdir -p $HOME/.local/bin
+  mv beeper $HOME/.local/bin
+  update-desktop-database $HOME/.local/share/applications
 popd
 
 rm -rf $WORKDIR
