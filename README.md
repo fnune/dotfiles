@@ -1,7 +1,7 @@
 # Dotfiles
 
 ![Install on Arch](https://github.com/fnune/dotfiles/workflows/Install%20on%20Arch/badge.svg)
-![Install on Ubuntu](https://github.com/fnune/dotfiles/workflows/Install%20on%20Ubuntu/badge.svg)
+![Install on Debian](https://github.com/fnune/dotfiles/workflows/Install%20on%20Debian/badge.svg)
 
 My dotfiles, built to work with GNU stow in a `~/.dotfiles` directory.
 
@@ -48,7 +48,7 @@ For example, after stowing some packages, these directories look like this:
 ➜  ~ ls ~/.zsh/includes
 fzf  fzf-theme  volta
 ➜  ~ ls ~/.dependencies/includes
-antigen  arch  base16-fzf  base16-shell  fzf  tpm  ubuntu  volta
+antigen  arch  base16-fzf  base16-shell  fzf  tpm  debian  volta
 ```
 
 For example, the [fzf](fzf) package adds files to both the `zsh` and `dependencies` drop-in directories:

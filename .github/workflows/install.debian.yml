@@ -1,4 +1,4 @@
-name: Install on Ubuntu
+name: Install on Debian
 on: [push]
 jobs:
   install:
@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: docker build . --file Dockerfile.ubuntu --tag dotfiles-ubuntu:$(date +%s)
+        run: docker build . --file Dockerfile.debian --tag dotfiles-debian:$(date +%s)
