@@ -9,20 +9,31 @@ echo "Running dependencies scripts for your stowed packages."
 echo "The scripts can be found in $DEPENDENCIES_INCLUDES"
 echo "Distribution-dependent scripts live in in $DEPENDENCIES_INCLUDES/<arch|debian>"
 
+mkdir --parents $DEPENDENCIES_INCLUDES/{arch,debian}
+
 for file in $DEPENDENCIES_INCLUDES/*; do
   if [ -f "$file" ]; then
+    echo
+    echo Running $file...
+    echo
     "$file"
   fi
 done
 
 if grep -Rq "Arch" /etc/*-release; then
   for file in $DEPENDENCIES_INCLUDES/arch/*; do
+    echo
+    echo Running $file...
+    echo
     "$file"
   done
 fi
 
 if grep -REq "Ubuntu|Debian" /etc/*-release; then
   for file in $DEPENDENCIES_INCLUDES/debian/*; do
+    echo
+    echo Running $file...
+    echo
     "$file"
   done
 fi

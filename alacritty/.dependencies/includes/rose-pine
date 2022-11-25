@@ -1,4 +1,14 @@
 #!/bin/bash
 
-mkdir -p ~/.config/alacritty/rose-pine
-git clone git@github.com:rose-pine/alacritty.git ~/.config/alacritty/rose-pine
+DIRECTORY="$HOME/.config/alacritty/rose-pine"
+REPOSITORY_URL="git@github.com:rose-pine/alacritty.git "
+
+mkdir --parents $DIRECTORY
+
+if [ ! -d "$DIRECTORY" ]; then
+  git clone $REPOSITORY_URL $DIRECTORY
+else
+  pushd "$DIRECTORY"
+    git pull $REPOSITORY_URL
+  popd
+fi

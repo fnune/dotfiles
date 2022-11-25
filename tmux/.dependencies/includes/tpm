@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+DIRECTORY="$HOME/.tmux/plugins/tmp"
+REPOSITORY_URL="https://github.com/tmux-plugins/tpm"
+
+if [ ! -d "$DIRECTORY" ]; then
+  git clone $REPOSITORY_URL $DIRECTORY
+else
+  pushd "$DIRECTORY"
+    git pull $REPOSITORY_URL
+  popd
+fi
 
