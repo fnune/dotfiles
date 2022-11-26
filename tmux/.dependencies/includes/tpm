@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-DIRECTORY="$HOME/.tmux/plugins/tmp"
+DIRECTORY="$HOME/.tmux/plugins/tpm"
 REPOSITORY_URL="https://github.com/tmux-plugins/tpm"
+
+mkdir --parents $HOME/.tmux/plugins
 
 if [ ! -d "$DIRECTORY" ]; then
   git clone $REPOSITORY_URL $DIRECTORY
