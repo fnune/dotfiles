@@ -20,9 +20,11 @@ else
   git -C $BUILD_DIR pull
 fi
 
+$HOME/.dependencies/includes/rustup
+
 pushd $BUILD_DIR
-  rustup override set stable
-  rustup update stable
+  $HOME/.cargo/bin/rustup override set stable
+  $HOME/.cargo/bin/rustup update stable
   cargo build --release
 
   # Terminfo

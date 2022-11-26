@@ -1,9 +1,9 @@
 #!/bin/bash
 
+set -euxo pipefail
+
 DIRECTORY="$HOME/.config/alacritty/rose-pine"
 REPOSITORY_URL="git@github.com:rose-pine/alacritty.git "
-
-mkdir --parents $DIRECTORY
 
 if [ ! -d "$DIRECTORY" ]; then
   git clone $REPOSITORY_URL $DIRECTORY
