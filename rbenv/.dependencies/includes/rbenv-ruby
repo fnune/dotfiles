@@ -3,6 +3,8 @@
 RBENV_ROOT=$HOME/.rbenv
 RUBY_VERSION=3.1.2
 
+sudo apt-get install -y libssl-dev
+
 # Install rbenv:
 if [[ ! -d "$RBENV_ROOT" ]]; then
   git clone https://github.com/rbenv/rbenv.git $RBENV_ROOT
