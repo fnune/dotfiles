@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+git clone https://gitlab.com/exorcist365/fonts --depth=1 --branch=master ~/.local/share/fonts/nerd-fonts
+
+fc-cache -fv ~/.local/share/fonts
