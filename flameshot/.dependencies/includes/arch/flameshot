@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mkdir --parents $HOME/Pictures/Screenshots/
+
+sudo pacman -S flameshot --noconfirm
