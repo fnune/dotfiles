@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+sudo apt-get install -y python3 python3-pip || sudo pacman -S python python-pip --noconfirm
+
 pip3 install neovim-remote
