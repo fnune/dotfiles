@@ -89,3 +89,37 @@ gsettings set org.gnome.shell.app-switcher current-workspace-only true
 
 # Place new windows centered
 gsettings set org.gnome.mutter center-new-windows true
+
+# GNOME 3.38 does not yet ship with the Appearance settings tab
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+
+# Switch application windows instead of applications with Alt + Tab
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
+
+# Replace print keybindings with flameshot and add Super + Return for Alacritty
+CK_FLAMESHOT_SCREEN="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+CK_FLAMESHOT_GUI="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+CK_ALACRITTY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[\
+  '$CK_FLAMESHOT_SCREEN', \
+  '$CK_FLAMESHOT_GUI', \
+  '$CK_ALACRITTY'\
+]"
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_SCREEN binding "Print"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_SCREEN command "flameshot screen"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_SCREEN name "flameshot screen"
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot "[]"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_GUI binding "<Shift>Print"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_GUI command "flameshot gui"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_GUI name "flameshot gui"
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ALACRITTY binding "<Super>Return"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ALACRITTY command "alacritty"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ALACRITTY name "alacritty"
