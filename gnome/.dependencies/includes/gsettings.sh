@@ -99,7 +99,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
 
-# Replace print keybindings with flameshot and add Super + Return for Alacritty
+# [0/3] Replace print keybindings with flameshot and add Super + Return for Alacritty
 CK_FLAMESHOT_SCREEN="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
 CK_FLAMESHOT_GUI="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
 CK_ALACRITTY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
@@ -110,16 +110,25 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[
   '$CK_ALACRITTY'\
 ]"
 
+# [1/3] Full-screen shot
 gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_SCREEN binding "Print"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_SCREEN command "flameshot screen"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_SCREEN name "flameshot screen"
 
+# [2/3] Area screenshot
 gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot "[]"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_GUI binding "<Shift>Print"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_GUI command "flameshot gui"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_GUI name "flameshot gui"
 
+# [3/3] Open Alacritty
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ALACRITTY binding "<Super>Return"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ALACRITTY command "alacritty"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ALACRITTY name "alacritty"
+
+# Disable hot corners
+gsettings set org.gnome.desktop.interface enable-hot-corners false
+
+# Show weekdays in the calendar
+gsettings set org.gnome.desktop.calendar show-weekdate true
