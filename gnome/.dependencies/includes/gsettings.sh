@@ -132,3 +132,6 @@ gsettings set org.gnome.desktop.interface enable-hot-corners false
 
 # Show weekdays in the calendar
 gsettings set org.gnome.desktop.calendar show-weekdate true
+
+# Make caps an additional escape and use the right-super key as the compose key
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape', 'compose:rwin']"
