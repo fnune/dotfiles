@@ -74,6 +74,7 @@ nmap <silent><leader>al <Plug>(coc-codeaction-line)
 xmap <silent><leader>ac v<Plug>(coc-codeaction-selected)
 nmap <silent><leader>ac v<Plug>(coc-codeaction-selected)
 nmap <silent><leader>aq <Plug>(coc-fix-current)
+nmap <silent><leader>aC <Plug>(coc-codeaction-cursor)
 nmap <silent><leader>aL <Plug>(coc-codelens-action)
 
 " Map function and class text objects
