@@ -10,6 +10,9 @@ vim.cmd('syntax sync minlines=10000')
 -- https://github.com/rose-pine/alacritty/blob/main/dist/rose-pine-moon.yml
 vim.cmd('highlight IndentBlanklineChar guifg=#232136 gui=nocombine')
 
+-- A manually-darkened version of colors.normal.red
+vim.cmd('highlight DiffDelete guifg=#5c2c4b')
+
 vim.cmd('set ignorecase smartcase')
 vim.opt.autoindent = true
 vim.opt.autoread = true
@@ -31,7 +34,7 @@ vim.opt.relativenumber = true
 vim.opt.scrolloff = 6
 vim.opt.secure = true
 vim.opt.shiftwidth = 2
-vim.opt.shortmess =  vim.opt.shortmess + 'c'
+vim.opt.shortmess = vim.opt.shortmess + 'c'
 vim.opt.showcmd = true
 vim.opt.showmatch = true
 vim.opt.showmode = false
@@ -48,6 +51,7 @@ vim.opt.ttimeoutlen = 100
 vim.opt.timeoutlen = 500
 vim.opt.wildmenu = true
 vim.opt.wrap = true
+vim.opt.fillchars = vim.opt.fillchars + 'diff:╱'
 
 -- This is OK if swapfile is false because we won't be writing
 -- to the swap file the whole time, ruining the SSD.
