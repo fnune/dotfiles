@@ -51,6 +51,8 @@ Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
 Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 Plug('vimwiki/vimwiki')
 Plug('sindrets/diffview.nvim')
+Plug('tyru/open-browser.vim')
+Plug('tyru/open-browser-github.vim')
 
 vim.call('plug#end')
 
