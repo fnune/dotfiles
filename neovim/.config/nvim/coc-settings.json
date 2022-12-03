@@ -1,6 +1,7 @@
 {
   "Lua.telemetry.enable": false,
   "coc.preferences.formatOnType": true,
+  "rust-analyzer.checkOnSave.command": "clippy",
   "languageserver": {
     "nix": {
       "command": "rnix-lsp",
