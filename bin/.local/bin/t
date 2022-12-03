@@ -28,17 +28,8 @@ tmux select-layout main-vertical
 tmux new-window -c $memfault_docs_path -n editor
 tmux send-keys -t memfault-docs:editor $EDITOR C-m
 
-# Memfault fixtures
-memfault_fixtures_path="$memfault_path/tools/tests/fixtures/binaries"
-tmux new-session -c $memfault_fixtures_path -d -s memfault-fixtures -n editor
-tmux send-keys -t memfault-fixtures:editor $EDITOR C-m
-
-# Memfault Linux SDK
-memfault_linux_sdk_path="$HOME/Development/memfault-linux-sdk-internal"
-tmux new-session -c $memfault_linux_sdk_path -d -s memfault-linux-sdk -n editor
-tmux send-keys -t memfault-linux-sdk:editor $EDITOR C-m
-
 # Memfault Linux SDK (memfaultd)
+memfault_linux_sdk_path="$HOME/Development/memfault-linux-sdk-internal"
 memfaultd_path="$memfault_linux_sdk_path/meta-memfault/recipes-memfault/memfaultd/files/memfaultd"
 tmux new-session -c $memfaultd_path -d -s memfaultd -n editor
 tmux send-keys -t memfaultd:editor $EDITOR C-m
