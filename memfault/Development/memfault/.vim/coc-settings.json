@@ -4,6 +4,7 @@
   "python.linting.mypyEnabled": true,
   "python.linting.flake8Enabled": true,
   "pyright.testing.provider": "pytest",
+  "pyright.testing.pytestArgs": ["-vv"],
   "sql.database": "postgresql",
   "sql.formatOptions": { "language": "postgresql" },
   "typescript.preferences.importModuleSpecifier": "non-relative"
