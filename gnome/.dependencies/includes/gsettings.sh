@@ -142,3 +142,8 @@ gsettings set org.gnome.desktop.calendar show-weekdate true
 
 # Make caps an additional escape and use the right-super key as the compose key
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape', 'compose:rwin']"
+
+# Use Inter as a desktop font
+gsettings set org.gnome.desktop.interface font-name 'Inter 11'
+gsettings set org.gnome.desktop.interface document-font-name 'Inter 11'
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Inter Bold 11'
