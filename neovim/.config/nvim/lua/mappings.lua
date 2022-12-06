@@ -48,6 +48,7 @@ nmap('<M-0>', '<cmd>BufferLast<cr>')
 
 nmap('<leader>q', ':close<cr>')
 nmap('<leader>bq', '<cmd>BufferClose<cr>')
+nmap('<leader>bQ', '<cmd>BufferWipeout<cr>')
 nmap('<leader>be', '<cmd>BufferCloseAllButCurrent<cr>')
 
 nmap('<leader>bb', '<cmd>BufferOrderByBufferNumber<cr>')
