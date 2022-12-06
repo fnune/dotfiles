@@ -9,7 +9,7 @@ tmux new-session -c $memfault_path -d -s memfault -n auxiliary
 tmux split-window -c $memfault_path -h
 tmux send-keys "invoke dc.svc --log-sql" C-m
 tmux split-window -c $memfault_path -v
-tmux send-keys "rm .overmind.sock; INVOKE_MEMFAULT_PROCFILE_RUNNER=overmind invoke -e dev" C-m
+tmux send-keys "rm .overmind.sock; LOG_RAW_SQL_QUERIES=1 INVOKE_MEMFAULT_PROCFILE_RUNNER=overmind invoke -e dev" C-m
 tmux split-window -c $memfault_path -v
 tmux send-keys "invoke ingress.dev" C-m
 tmux select-layout main-vertical
