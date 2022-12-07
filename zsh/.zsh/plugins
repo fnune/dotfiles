@@ -11,4 +11,6 @@ antigen bundle jeffreytse/zsh-vi-mode
 
 antigen apply
 
-export ZVM_CURSOR_STYLE_ENABLED=false
+# See :hi Visual and https://github.com/rose-pine/alacritty/blob/main/dist/rose-pine.yml
+export ZVM_VI_HIGHLIGHT_BACKGROUND=#403d52
+export ZVM_VI_HIGHLIGHT_FOREGROUND=#e0def4
