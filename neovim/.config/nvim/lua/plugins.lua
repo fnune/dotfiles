@@ -70,7 +70,13 @@ require('bufferline').setup {
   icons = 'both',
 }
 
-require('nvim-tree').setup {}
+local file_explorer_width_chars = 40
+
+require('nvim-tree').setup {
+  view = {
+    width = file_explorer_width_chars,
+  },
+}
 local nvim_tree_events = require('nvim-tree.events')
 local bufferline_api = require('bufferline.api')
 local function get_tree_size()
@@ -136,6 +142,11 @@ require('diffview').setup {
   },
   enhanced_diff_hl = true,
   use_icons = true,
+  file_panel = {
+    win_config = {
+      width = file_explorer_width_chars,
+    },
+  },
 }
 
 require('gitsigns').setup {}
