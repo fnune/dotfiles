@@ -58,6 +58,8 @@ vim.call('plug#end')
 vim.g.blamer_delay = 750
 vim.g.blamer_enabled = 1
 vim.g.blamer_relative_time = 1
+vim.g.blamer_show_in_visual_modes = 0
+vim.g.blamer_show_in_insert_modes = 0
 
 vim.g.traces_abolish_integration = 1
 
@@ -126,6 +128,12 @@ require('telescope').setup {
 }
 require('telescope').load_extension('fzf')
 
-require('diffview').setup {}
+require('diffview').setup {
+  hooks = {
+    diff_buf_read = function(_)
+      vim.g.blamer_enabled = 0
+    end,
+  }
+}
 
 require('gitsigns').setup {}
