@@ -1,1 +1,2 @@
 PROMPT=$' %{\033[3m%}%(5~|…/%3~|%~)%{\033[0m%} %(?.%{$fg[green]%}.%{$fg[red]%}[%?] )=>%{$reset_color%} '
+RPROMPT=$'%{$fg[grey]%}%D{%H:%M:%S}%{$reset_color%}'
