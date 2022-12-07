@@ -129,6 +129,7 @@ require('telescope').setup {
 require('telescope').load_extension('fzf')
 
 require('diffview').setup {
+  enhanced_diff_hl = true,
   hooks = {
     diff_buf_read = function(_)
       vim.g.blamer_enabled = 0
