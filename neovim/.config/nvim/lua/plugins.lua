@@ -13,7 +13,7 @@ vim.call('plug#begin')
 Plug('APZelos/blamer.nvim')
 Plug('AndrewRadev/tagalong.vim')
 Plug('Raimondi/delimitMate')
-Plug('airblade/vim-gitgutter')
+Plug('lewis6991/gitsigns.nvim')
 Plug('christoomey/vim-tmux-navigator')
 Plug('editorconfig/editorconfig-vim')
 Plug('farmergreg/vim-lastplace')
@@ -59,8 +59,6 @@ vim.call('plug#end')
 vim.g.blamer_delay = 750
 vim.g.blamer_enabled = 1
 vim.g.blamer_relative_time = 1
-
-vim.g.gitgutter_grep = 'rg'
 
 vim.g.traces_abolish_integration = 1
 
@@ -132,3 +130,5 @@ require('telescope').setup {
 require('telescope').load_extension('fzf')
 
 require('diffview').setup {}
+
+require('gitsigns').setup {}
