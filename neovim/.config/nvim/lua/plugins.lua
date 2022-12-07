@@ -74,7 +74,8 @@ local file_explorer_width_chars = 40
 
 require('nvim-tree').setup {
   view = { width = file_explorer_width_chars, },
-  diagnostics = { enable = true, show_on_dirs = true, },
+  diagnostics = { enable = true, show_on_dirs = true },
+  renderer = { group_empty = true },
 }
 
 local nvim_tree_events = require('nvim-tree.events')
