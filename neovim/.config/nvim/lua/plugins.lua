@@ -45,7 +45,6 @@ Plug('tpope/vim-dadbod')
 Plug('kristijanhusak/vim-dadbod-ui')
 Plug('LnL7/vim-nix')
 Plug('jxnblk/vim-mdx-js')
-Plug('lukas-reineke/indent-blankline.nvim')
 Plug('folke/which-key.nvim')
 Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
 Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
@@ -94,8 +93,6 @@ vim.cmd([[
     let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
   endif
 ]])
-
-require("indent_blankline").setup {}
 
 vim.cmd([[
   let wiki = {}

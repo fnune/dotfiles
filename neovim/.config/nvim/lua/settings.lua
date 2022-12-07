@@ -7,9 +7,6 @@ vim.cmd('highlight Comment cterm=italic gui=italic')
 vim.cmd('syntax enable')
 vim.cmd('syntax sync minlines=10000')
 
--- https://github.com/rose-pine/alacritty/blob/main/dist/rose-pine-moon.yml
-vim.cmd('highlight IndentBlanklineChar guifg=#232136 gui=nocombine')
-
 -- A manually-darkened version of colors.normal.red
 vim.cmd('highlight DiffDelete guifg=#5c2c4b')
 
