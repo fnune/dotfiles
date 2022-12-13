@@ -110,7 +110,6 @@ vim.cmd([[
   let wiki.syntax = 'markdown'
   let wiki.ext = '.md'
   let wiki.auto_diary_index = 1
-  let wiki.auto_tags = 1
 
   let g:vimwiki_list = [wiki]
 
