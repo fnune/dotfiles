@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+TARGET_DIR=$HOME/.config/wezterm/
+TEMP_DIR=$(mktemp --directory)
+
+git clone https://github.com/neapsix/wezterm $TEMP_DIR/wezterm-rose-pine
+
+mkdir -p $TARGET_DIR/lua
+cp -R $TEMP_DIR/wezterm-rose-pine/lua/* $TARGET_DIR/lua
+
+rm -rf $TEMP_DIR
