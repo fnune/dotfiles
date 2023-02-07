@@ -99,16 +99,18 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
 
-# [0/4] Replace print keybindings with flameshot and add Super + Return for Alacritty
+terminal="alacritty"
+
+# [0/4] Replace print keybindings with flameshot and add Super + Return for the terminal
 CK_FLAMESHOT_SCREEN="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
 CK_FLAMESHOT_GUI="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-CK_ALACRITTY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+CK_TERMINAL="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
 CK_ADD_INBOX="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[\
   '$CK_FLAMESHOT_SCREEN', \
   '$CK_FLAMESHOT_GUI', \
-  '$CK_ALACRITTY', \
+  '$CK_TERMINAL', \
   '$CK_ADD_INBOX'\
 ]"
 
@@ -124,10 +126,10 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_GUI command "flameshot gui"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_GUI name "flameshot gui"
 
-# [3/4] Open Alacritty
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ALACRITTY binding "<Super>Return"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ALACRITTY command "alacritty"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ALACRITTY name "alacritty"
+# [3/4] Open terminal
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_TERMINAL binding "<Super>Return"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_TERMINAL command "$terminal"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_TERMINAL name "$terminal"
 
 # [4/4] Add something to my inbox
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ADD_INBOX binding "<Super>i"
