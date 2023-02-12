@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:bookworm
 
 # Install dependencies to run as a regular user
 RUN apt-get update -y && apt-get upgrade -y && apt-get install -y sudo curl git stow
