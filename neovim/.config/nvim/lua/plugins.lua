@@ -65,18 +65,18 @@ vim.g.blamer_show_in_insert_modes = 0
 vim.g.traces_abolish_integration = 1
 
 require('bufferline').setup {
-  animation = false,
-  closable = false,
-  clickable = false,
-  icons = 'both',
+    animation = false,
+    closable = false,
+    clickable = false,
+    icons = 'both',
 }
 
 local file_explorer_width_chars = 40
 
 require('nvim-tree').setup {
-  view = { width = file_explorer_width_chars, },
-  diagnostics = { enable = true, show_on_dirs = true },
-  renderer = { group_empty = true },
+    view = { width = file_explorer_width_chars, },
+    diagnostics = { enable = true, show_on_dirs = true },
+    renderer = { group_empty = true },
 }
 
 local nvim_tree_events = require('nvim-tree.events')
@@ -129,25 +129,25 @@ vim.cmd([[
 require("which-key").setup {}
 
 require('telescope').setup {
-  defaults = {
-    file_ignore_patterns = { ".git/*", ".cache/*" },
-  },
+    defaults = {
+        file_ignore_patterns = { ".git/*", ".cache/*" },
+    },
 }
 require('telescope').load_extension('fzf')
 
 require('diffview').setup {
-  hooks = {
-    diff_buf_read = function(_)
-      vim.g.blamer_enabled = 0
-    end,
-  },
-  enhanced_diff_hl = true,
-  use_icons = true,
-  file_panel = {
-    win_config = {
-      width = file_explorer_width_chars,
+    hooks = {
+        diff_buf_read = function(_)
+          vim.g.blamer_enabled = 0
+        end,
     },
-  },
+    enhanced_diff_hl = true,
+    use_icons = true,
+    file_panel = {
+        win_config = {
+            width = file_explorer_width_chars,
+        },
+    },
 }
 
 require('gitsigns').setup {}
