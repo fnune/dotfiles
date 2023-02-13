@@ -114,24 +114,28 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[
   '$CK_ADD_INBOX'\
 ]"
 
-# [1/4] Full-screen shot
-gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
+# Disable default screenshot keybindings
+for setting in screenshot screenshot-window show-screenshot-ui
+do
+  gsettings set org.gnome.shell.keybindings $setting "[]"
+done
+
+# Full-screen shot
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_SCREEN binding "Print"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_SCREEN command "flameshot full -c -p $HOME/Pictures/Screenshots"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_SCREEN name "flameshot full"
 
-# [2/4] Area screenshot
-gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot "[]"
+# Area screenshot
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_GUI binding "<Shift>Print"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_GUI command "flameshot gui"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_FLAMESHOT_GUI name "flameshot gui"
 
-# [3/4] Open terminal
+# Open terminal
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_TERMINAL binding "<Super>Return"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_TERMINAL command "$terminal"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_TERMINAL name "$terminal"
 
-# [4/4] Add something to my inbox
+# Add something to my inbox
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ADD_INBOX binding "<Super>i"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ADD_INBOX command "add-inbox-alacritty"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$CK_ADD_INBOX name "add-inbox-alacritty"
