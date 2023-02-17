@@ -90,9 +90,6 @@ gsettings set org.gnome.shell.app-switcher current-workspace-only true
 # Place new windows centered
 gsettings set org.gnome.mutter center-new-windows true
 
-# GNOME 3.38 does not yet ship with the Appearance settings tab
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-
 # Switch application windows instead of applications with Alt + Tab
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
