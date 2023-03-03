@@ -1,8 +1,17 @@
 \set QUIET 1
 
-\pset pager off
+\x auto
+\timing
+
 \set HISTCONTROL ignoredups
 \set HISTFILE ~/.psql_history_ :DBNAME _ :HOST
 \set HISTSIZE -1
 \set VERBOSITY verbose
-\x auto
+
+-- https://github.com/okbob/pspg
+\pset linestyle unicode
+\pset border 2
+\pset null ∅
+\pset pager on
+-- see auto-generated .pspgconf
+\setenv PAGER pspg
