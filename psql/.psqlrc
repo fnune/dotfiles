@@ -1,0 +1,8 @@
+\set QUIET 1
+
+\pset pager off
+\set HISTCONTROL ignoredups
+\set HISTFILE ~/.psql_history_ :DBNAME _ :HOST
+\set HISTSIZE -1
+\set VERBOSITY verbose
+\x auto
