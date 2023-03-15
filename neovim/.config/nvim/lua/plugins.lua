@@ -66,18 +66,18 @@ vim.g.blamer_show_in_insert_modes = 0
 vim.g.traces_abolish_integration = 1
 
 require('bufferline').setup {
-    animation = false,
-    closable = false,
-    clickable = false,
-    icons = 'both',
+  animation = false,
+  closable = false,
+  clickable = false,
+  icons = 'both',
 }
 
 local file_explorer_width_chars = 40
 
 require('nvim-tree').setup {
-    view = { width = file_explorer_width_chars, },
-    diagnostics = { enable = true, show_on_dirs = true },
-    renderer = { group_empty = true },
+  view = { width = file_explorer_width_chars, },
+  diagnostics = { enable = true, show_on_dirs = true },
+  renderer = { group_empty = true },
 }
 
 vim.api.nvim_create_autocmd('FileType', {
@@ -144,41 +144,41 @@ vim.cmd([[
 require("which-key").setup {}
 
 require('telescope').setup {
-    defaults = {
-        file_ignore_patterns = { ".git/*", ".cache/*" },
-    },
+  defaults = {
+    file_ignore_patterns = { ".git/*", ".cache/*" },
+  },
 }
 require('telescope').load_extension('fzf')
 
 require('diffview').setup {
-    hooks = {
-        diff_buf_read = function(_)
-          vim.g.blamer_enabled = 0
-        end,
+  hooks = {
+    diff_buf_read = function(_)
+      vim.g.blamer_enabled = 0
+    end,
+  },
+  enhanced_diff_hl = true,
+  use_icons = true,
+  file_panel = {
+    win_config = {
+      width = file_explorer_width_chars,
     },
-    enhanced_diff_hl = true,
-    use_icons = true,
-    file_panel = {
-        win_config = {
-            width = file_explorer_width_chars,
-        },
-    },
+  },
 }
 
 require('gitsigns').setup {}
 
 require("tint").setup({
-    tint = -10,
-    tint_background_colors = true,
-    saturation = 0.8,
-    window_ignore_function = function(winid)
-      local bufid = vim.api.nvim_win_get_buf(winid)
-      local bufname = vim.api.nvim_buf_get_name(bufid)
+  tint = -10,
+  tint_background_colors = true,
+  saturation = 0.8,
+  window_ignore_function = function(winid)
+    local bufid = vim.api.nvim_win_get_buf(winid)
+    local bufname = vim.api.nvim_buf_get_name(bufid)
 
-      if string.find(bufname, "NvimTree_1") then
-        return false
-      end
-
-      return true
+    if string.find(bufname, "NvimTree_1") then
+      return false
     end
+
+    return true
+  end
 })

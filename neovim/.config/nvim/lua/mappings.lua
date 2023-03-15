@@ -69,7 +69,8 @@ function RunTests(all)
       vim.cmd('CocCommand pyright.singleTest')
       vim.api.nvim_input('<C-j><C-w>L')
     end
-  else if string.find(vim.bo.filetype, 'typescript') then
+  else
+    if string.find(vim.bo.filetype, 'typescript') then
       if all then
         vim.cmd('CocCommand jest.fileTest')
       else
