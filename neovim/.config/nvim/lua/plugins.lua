@@ -80,21 +80,35 @@ require('nvim-tree').setup {
     renderer = { group_empty = true },
 }
 
-local nvim_tree_events = require('nvim-tree.events')
-local bufferline_api = require('bufferline.api')
-local function get_tree_size()
-  return require('nvim-tree.view').View.width
-end
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(tbl)
+    local set_offset = require('bufferline.api').set_offset
 
-nvim_tree_events.subscribe('TreeOpen', function()
-  bufferline_api.set_offset(get_tree_size())
-end)
-nvim_tree_events.subscribe('Resize', function()
-  bufferline_api.set_offset(get_tree_size())
-end)
-nvim_tree_events.subscribe('TreeClose', function()
-  bufferline_api.set_offset(0)
-end)
+    local bufwinid
+    local last_width
+    local autocmd = vim.api.nvim_create_autocmd('WinScrolled', {
+      callback = function()
+        bufwinid = bufwinid or vim.fn.bufwinid(tbl.buf)
+
+        local width = vim.api.nvim_win_get_width(bufwinid)
+        if width ~= last_width then
+          set_offset(width, 'FileTree')
+          last_width = width
+        end
+      end,
+    })
+
+    vim.api.nvim_create_autocmd('BufWipeout', {
+      buffer = tbl.buf,
+      callback = function()
+        vim.api.nvim_del_autocmd(autocmd)
+        set_offset(0)
+      end,
+      once = true,
+    })
+  end,
+  pattern = 'NvimTree',
+})
 
 require("auto-session").setup { log_level = 'error' }
 
