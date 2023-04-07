@@ -67,9 +67,8 @@ vim.g.traces_abolish_integration = 1
 
 require('bufferline').setup {
   animation = false,
-  closable = false,
   clickable = false,
-  icons = 'both',
+  icons = { buffer_index = true, filetype = { enabled = true }, button = false },
 }
 
 local file_explorer_width_chars = 40
