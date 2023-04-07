@@ -4,13 +4,13 @@ set -euxo pipefail
 
 sudo apt-get install -y wget
 
-NEOVIM_VERSION="v0.8.1"
+NEOVIM_VERSION="v0.9.0"
+APPIMG_URL="https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/nvim.appimage"
+APPIMG_TMP="$(mktemp)"
 
-DEB_URL="https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/nvim-linux64.deb"
-TEMP_DEB="$(mktemp)"
-wget -O "$TEMP_DEB" "$DEB_URL"
-sudo dpkg -i "$TEMP_DEB"
-rm -f "$TEMP_DEB"
+wget -O "$APPIMG_TMP" "$APPIMG_URL"
+chmod +x "$APPIMG_TMP"
+sudo mv "$APPIMG_TMP" /usr/bin/nvim
 
 sudo apt-get install -y python3-neovim golang
 
