@@ -1,6 +1,6 @@
 local nmap = require("utils").nmap
 
-local constants = require("plugins.constants")
+local constants = require("constants")
 
 require('nvim-tree').setup {
   view = { width = constants.file_explorer_width_chars, },

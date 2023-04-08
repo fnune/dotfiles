@@ -1,4 +1,4 @@
-local constants = require("plugins.constants")
+local constants = require("constants")
 
 require('diffview').setup {
   hooks = {
