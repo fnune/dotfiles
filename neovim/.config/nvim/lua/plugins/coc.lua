@@ -7,7 +7,7 @@ local function read_all(file)
   return content
 end
 
-vim.cmd(read_all(os.getenv("HOME") .. "/.config/nvim/coc.vim"))
+vim.cmd(read_all(os.getenv("HOME") .. "/.config/nvim/lua/plugins/coc.vim"))
 
 function RunTests(all)
   if vim.bo.filetype == 'python' then
