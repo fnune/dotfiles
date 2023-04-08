@@ -1,6 +1,7 @@
 let g:coc_global_extensions = [
   \'coc-clangd',
   \'coc-db',
+  \'coc-pairs',
   \'coc-docker',
   \'coc-eslint',
   \'coc-jest',
