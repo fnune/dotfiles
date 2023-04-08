@@ -57,127 +57,14 @@ Plug('tyru/open-browser-github.vim')
 
 vim.call('plug#end')
 
-vim.g.blamer_delay = 750
-vim.g.blamer_enabled = 1
-vim.g.blamer_relative_time = 1
-vim.g.blamer_show_in_visual_modes = 0
-vim.g.blamer_show_in_insert_modes = 0
-
-vim.g.traces_abolish_integration = 1
-
-require('bufferline').setup {
-  animation = false,
-  clickable = false,
-  icons = { buffer_index = true, filetype = { enabled = true }, button = false },
-}
-
-local file_explorer_width_chars = 40
-
-require('nvim-tree').setup {
-  view = { width = file_explorer_width_chars, },
-  diagnostics = { enable = true, show_on_dirs = true },
-  renderer = { group_empty = true },
-}
-
-vim.api.nvim_create_autocmd('FileType', {
-  callback = function(tbl)
-    local set_offset = require('bufferline.api').set_offset
-
-    local bufwinid
-    local last_width
-    local autocmd = vim.api.nvim_create_autocmd('WinScrolled', {
-      callback = function()
-        bufwinid = bufwinid or vim.fn.bufwinid(tbl.buf)
-
-        local width = vim.api.nvim_win_get_width(bufwinid)
-        if width ~= last_width then
-          set_offset(width, 'FileTree')
-          last_width = width
-        end
-      end,
-    })
-
-    vim.api.nvim_create_autocmd('BufWipeout', {
-      buffer = tbl.buf,
-      callback = function()
-        vim.api.nvim_del_autocmd(autocmd)
-        set_offset(0)
-      end,
-      once = true,
-    })
-  end,
-  pattern = 'NvimTree',
-})
-
-require("auto-session").setup { log_level = 'error' }
-
--- https://github.com/kdheepak/lazygit.nvim
-vim.cmd([[
-  if has('nvim') && executable('nvr')
-    let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
-  endif
-]])
-
-vim.cmd([[
-  let wiki = {}
-  let wiki.path = '~/.journal'
-  let wiki.diary_rel_path = 'notes'
-  let wiki.syntax = 'markdown'
-  let wiki.ext = '.md'
-  let wiki.auto_diary_index = 1
-
-  let g:vimwiki_list = [wiki]
-
-  function! ConfigureMarkdownVimwiki() abort
-    set number
-    set textwidth=74
-    set wrapmargin=0
-    set formatoptions+=t
-    set linebreak
-  endfunction
-
-  autocmd FileType markdown call ConfigureMarkdownVimwiki()
-  autocmd FileType vimwiki  call ConfigureMarkdownVimwiki()
-]])
-
-require("which-key").setup {}
-
-require('telescope').setup {
-  defaults = {
-    file_ignore_patterns = { ".git/*", ".cache/*" },
-  },
-}
-require('telescope').load_extension('fzf')
-
-require('diffview').setup {
-  hooks = {
-    diff_buf_read = function(_)
-      vim.g.blamer_enabled = 0
-    end,
-  },
-  enhanced_diff_hl = true,
-  use_icons = true,
-  file_panel = {
-    win_config = {
-      width = file_explorer_width_chars,
-    },
-  },
-}
-
-require('gitsigns').setup {}
-
-require("tint").setup({
-  tint = -10,
-  tint_background_colors = true,
-  saturation = 0.8,
-  window_ignore_function = function(winid)
-    local bufid = vim.api.nvim_win_get_buf(winid)
-    local bufname = vim.api.nvim_buf_get_name(bufid)
-
-    if string.find(bufname, "NvimTree_1") then
-      return false
-    end
-
-    return true
-  end
-})
+require("plugins.auto-session")
+require("plugins.barbar")
+require("plugins.blamer")
+require("plugins.diffview")
+require("plugins.gitsigns")
+require("plugins.lazygit")
+require("plugins.telescope")
+require("plugins.tint")
+require("plugins.traces")
+require("plugins.tree")
+require("plugins.which-key")
