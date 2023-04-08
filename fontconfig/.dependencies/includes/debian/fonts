@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
-git clone https://gitlab.com/exorcist365/fonts --depth=1 --branch=master ~/.local/share/fonts/nerd-fonts
+NERD_FONTS_ROOT=$HOME/.local/share/fonts/nerd-fonts
 
-fc-cache -fv ~/.local/share/fonts
+if [[ ! -d "$NERD_FONTS_ROOT" ]]; then
+  git clone https://codeberg.org/exorcist/fonts.git --depth=1 --branch=master $NERD_FONTS_ROOT
+else
+  git -C $NERD_FONTS_ROOT pull
+fi
+
+fc-cache -fv $NERD_FONTS_ROOT
