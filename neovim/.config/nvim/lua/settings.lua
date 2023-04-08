@@ -1,15 +1,7 @@
-vim.opt.termguicolors = true
-vim.opt.background = 'dark'
-vim.cmd('colorscheme rose-pine')
-vim.cmd('filetype plugin indent on')
-vim.cmd('hi link xmlEndTag xmlTag')
-vim.cmd('highlight Comment cterm=italic gui=italic')
 vim.cmd('syntax enable')
 vim.cmd('syntax sync minlines=10000')
 
--- A manually-darkened version of colors.normal.red
-vim.cmd('highlight DiffDelete guifg=#5c2c4b')
-
+vim.cmd('filetype plugin indent on')
 vim.cmd('set ignorecase smartcase')
 vim.opt.autoindent = true
 vim.opt.autoread = true

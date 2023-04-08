@@ -1,5 +1,7 @@
-require("plugins")
+require("system")
 require("settings")
 require("mappings")
+require("plugins")
+require("theme")
 require("statusline")
 require("coc")

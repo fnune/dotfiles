@@ -1,19 +1,12 @@
 vim.g.mapleader = ' '
 
-local function map(mode, shortcut, command)
-  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
-end
-
-local function nmap(shortcut, command)
-  map('n', shortcut, command)
-end
+local map = require("utils").map
+local nmap = require("utils").nmap
 
 nmap('0', '^')
 nmap('Q', '<nop>')
 nmap('j', 'gj')
 nmap('k', 'gk')
-
-nmap('<leader>g', '<cmd>LazyGit<cr>')
 
 -- <Ctrl-u> and <Ctrl-d> also center the screen
 nmap('<C-u>', '<C-u>zz')
@@ -27,64 +20,3 @@ nmap('<leader>l', '<cmd>nohlsearch<cr>')
 
 -- Exit insert mode in a terminal
 map('t', '<C-t><esc>', '<C-\\><C-n>')
-
--- Tabs with barbar
-nmap('<S-h>', '<cmd>BufferPrevious<cr>')
-nmap('<S-l>', '<cmd>BufferNext<cr>')
-
-nmap('<leader><<', '<cmd>BufferMovePrevious<cr>')
-nmap('<leader>>>', '<cmd>BufferMoveNext<cr>')
-
-nmap('<M-1>', '<cmd>BufferGoto 1<cr>')
-nmap('<M-2>', '<cmd>BufferGoto 2<cr>')
-nmap('<M-3>', '<cmd>BufferGoto 3<cr>')
-nmap('<M-4>', '<cmd>BufferGoto 4<cr>')
-nmap('<M-5>', '<cmd>BufferGoto 5<cr>')
-nmap('<M-6>', '<cmd>BufferGoto 6<cr>')
-nmap('<M-7>', '<cmd>BufferGoto 7<cr>')
-nmap('<M-8>', '<cmd>BufferGoto 8<cr>')
-nmap('<M-9>', '<cmd>BufferGoto 9<cr>')
-nmap('<M-0>', '<cmd>BufferLast<cr>')
-
-nmap('<leader>q', ':close<cr>')
-nmap('<leader>bq', '<cmd>BufferClose<cr>')
-nmap('<leader>bQ', '<cmd>BufferCloseAllButCurrent<cr> <cmd>BufferClose<cr>')
-nmap('<leader>be', '<cmd>BufferCloseAllButCurrent<cr>')
-
-nmap('<leader>bb', '<cmd>BufferOrderByBufferNumber<cr>')
-nmap('<leader>bd', '<cmd>BufferOrderByDirectory<cr>')
-nmap('<leader>bl', '<cmd>BufferOrderByLanguage<cr>')
-nmap('<leader>bw', '<cmd>BufferOrderByWindowNumber<cr>')
-
--- Toggle neovim-tree
-nmap('<leader>e', ':NvimTreeToggle<cr>')
-nmap('<leader>E', ':NvimTreeFindFile<cr>')
-
-function RunTests(all)
-  if vim.bo.filetype == 'python' then
-    if all then
-      vim.cmd('CocCommand pyright.fileTest')
-      vim.api.nvim_input('<C-j><C-w>L')
-    else
-      vim.cmd('CocCommand pyright.singleTest')
-      vim.api.nvim_input('<C-j><C-w>L')
-    end
-  else
-    if string.find(vim.bo.filetype, 'typescript') then
-      if all then
-        vim.cmd('CocCommand jest.fileTest')
-      else
-        vim.cmd('CocCommand jest.singleTest')
-      end
-    end
-  end
-end
-
--- Run tests
-nmap('<leader>ts', ':lua RunTests(false)<CR>')
-nmap('<leader>ta', ':lua RunTests(true)<CR>')
-
--- Telescope
-local telescope = require('telescope.builtin')
-nmap('<leader>f', ':Telescope find_files hidden=true<CR>')
-nmap('<leader>F', ':Telescope live_grep<CR>')

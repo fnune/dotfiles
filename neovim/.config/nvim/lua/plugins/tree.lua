@@ -1,3 +1,5 @@
+local nmap = require("utils").nmap
+
 local constants = require("plugins.constants")
 
 require('nvim-tree').setup {
@@ -6,3 +8,5 @@ require('nvim-tree').setup {
   renderer = { group_empty = true },
 }
 
+nmap('<leader>e', ':NvimTreeToggle<cr>')
+nmap('<leader>E', ':NvimTreeFindFile<cr>')

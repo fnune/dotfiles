@@ -1,3 +1,5 @@
+local nmap = require("utils").nmap
+
 -- https://github.com/kdheepak/lazygit.nvim
 vim.cmd([[
   if has('nvim') && executable('nvr')
@@ -5,3 +7,4 @@ vim.cmd([[
   endif
 ]])
 
+nmap('<leader>g', '<cmd>LazyGit<cr>')
