@@ -15,6 +15,9 @@ vim.keymap.set('n', '<leader>B', function() require('dap').toggle_breakpoint() e
 vim.keymap.set('n', '<leader>cB', function()
   require('dap').set_breakpoint(vim.fn.input(('Breakpoint condition: ')))
 end)
+vim.keymap.set('n', '<leader>lB', function()
+  require('dap').set_breakpoint(nil, nil, vim.fn.input(('Log: ')))
+end)
 
 vim.keymap.set({ 'n', 'v' }, '<leader>dh', function()
   require('dap.ui.widgets').hover()
