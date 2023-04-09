@@ -3,6 +3,7 @@ local dap_python = require('dap-python')
 
 dap_python.setup('~/.mambaforge/envs/memfault/bin/python')
 dap_python.test_runner = 'pytest'
+vim.api.nvim_set_keymap('n', '<leader>ds', ':lua require("dap-python").test_method()<CR>', { noremap = true, silent = true })
 
 dap.adapters.chrome = {
   type = "executable",
