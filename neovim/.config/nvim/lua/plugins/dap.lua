@@ -12,7 +12,7 @@ vim.keymap.set('n', '<leader>cB', function()
   require('dap').set_breakpoint(vim.fn.input(('Breakpoint condition: ')))
 end)
 vim.keymap.set('n', '<leader>lB', function()
-  require('dap').set_breakpoint(nil, nil, vim.fn.input(('Log: ')))
+  require('dap').set_breakpoint(nil, nil, vim.fn.input(('Logpoint message: ')))
 end)
 
 vim.keymap.set({ 'n', 'v' }, '<leader>dh', function()
