@@ -1,8 +1,4 @@
-local dap, dapui = require("dap"), require("dapui")
-
-dapui.setup {}
-
-require("nvim-dap-virtual-text").setup {}
+local dap = require("dap")
 
 vim.keymap.set('n', '<leader>D', function() require('dapui').toggle() end)
 
@@ -25,6 +21,12 @@ end)
 vim.keymap.set({ 'n', 'v' }, '<leader>dp', function()
   require('dap.ui.widgets').preview()
 end)
+
+local dapui = require("dapui")
+local dapvt = require("nvim-dap-virtual-text")
+
+dapui.setup {}
+dapvt.setup {}
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
