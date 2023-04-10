@@ -5,8 +5,9 @@ require('bufferline').setup {
   clickable = false,
   icons = {
     buffer_index = true,
-    filetype = { enabled = true },
     button = false,
+    filetype = { enabled = true },
+    pinned = { button = '車', filename = true },
   },
 }
 
@@ -46,6 +47,8 @@ nmap('<S-l>', '<cmd>BufferNext<cr>')
 nmap('<leader><<', '<cmd>BufferMovePrevious<cr>')
 nmap('<leader>>>', '<cmd>BufferMoveNext<cr>')
 
+nmap('<M-p>', '<cmd>BufferPin<cr>')
+
 nmap('<M-1>', '<cmd>BufferGoto 1<cr>')
 nmap('<M-2>', '<cmd>BufferGoto 2<cr>')
 nmap('<M-3>', '<cmd>BufferGoto 3<cr>')
@@ -60,7 +63,7 @@ nmap('<M-0>', '<cmd>BufferLast<cr>')
 nmap('<leader>q', ':close<cr>')
 nmap('<leader>bq', '<cmd>BufferClose<cr>')
 nmap('<leader>bQ', '<cmd>BufferCloseAllButCurrent<cr> <cmd>BufferClose<cr>')
-nmap('<leader>be', '<cmd>BufferCloseAllButCurrent<cr>')
+nmap('<leader>be', '<cmd>BufferCloseAllButCurrentOrPinned<cr>')
 
 nmap('<leader>bb', '<cmd>BufferOrderByBufferNumber<cr>')
 nmap('<leader>bd', '<cmd>BufferOrderByDirectory<cr>')
