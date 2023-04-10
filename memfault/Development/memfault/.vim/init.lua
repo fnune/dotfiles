@@ -27,3 +27,5 @@ dap.configurations.typescriptreact = {
     webRoot = "${workspaceFolder}"
   }
 }
+
+vim.o.makeprg = "./.git/hooks/pre-commit"
