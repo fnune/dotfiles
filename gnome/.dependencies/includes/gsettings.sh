@@ -96,7 +96,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
 
-terminal="alacritty"
+terminal="kitty"
 
 # [0/4] Replace print keybindings with flameshot and add Super + Return for the terminal
 CK_FLAMESHOT_SCREEN="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
