@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-
-if cd ~/.config/kitty/rose; then git pull; else git clone https://github.com/rose-pine/kitty ~/.config/kitty/rose; fi
-
