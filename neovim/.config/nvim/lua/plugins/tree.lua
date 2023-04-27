@@ -8,5 +8,10 @@ require('nvim-tree').setup {
   renderer = { group_empty = true },
 }
 
+vim.api.nvim_create_autocmd('BufEnter', {
+  command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+  nested = true,
+})
+
 nmap('<leader>e', ':NvimTreeToggle<cr>')
 nmap('<leader>E', ':NvimTreeFindFile<cr>')

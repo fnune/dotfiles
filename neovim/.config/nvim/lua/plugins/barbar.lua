@@ -15,6 +15,11 @@ require('bufferline').setup {
   },
 }
 
+vim.api.nvim_create_autocmd('ExitPre', {
+  command = "lua require('dapui').close()",
+  nested = true,
+})
+
 nmap('<S-h>', '<cmd>BufferPrevious<cr>')
 nmap('<S-l>', '<cmd>BufferNext<cr>')
 
@@ -34,7 +39,7 @@ nmap('<M-8>', '<cmd>BufferGoto 8<cr>')
 nmap('<M-9>', '<cmd>BufferGoto 9<cr>')
 nmap('<M-0>', '<cmd>BufferLast<cr>')
 
-nmap('<leader>q', ':close<cr>')
+nmap('<leader>q', ':quit<cr>')
 nmap('<leader>bq', '<cmd>BufferClose<cr>')
 nmap('<leader>bQ', '<cmd>BufferCloseAllButCurrent<cr> <cmd>BufferClose<cr>')
 nmap('<leader>be', '<cmd>BufferCloseAllButCurrentOrPinned<cr>')
