@@ -1,12 +1,13 @@
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
-vim.cmd('hi link xmlEndTag xmlTag')
 
-require('rose-pine').setup({
-  variant = 'auto',
-  dark_variant = 'main',
-  disable_italics = true,
+local colors = require('vscode.colors').get_colors()
+
+require('vscode').setup({
+  group_overrides = {
+    ["@comment"] = { fg = colors.vscGray, italic = true },
+    Comment = { fg = colors.vscGray, italic = true },
+  }
 })
 
-vim.cmd('colorscheme rose-pine')
-vim.cmd('highlight Comment cterm=italic gui=italic')
+require('vscode').load()
