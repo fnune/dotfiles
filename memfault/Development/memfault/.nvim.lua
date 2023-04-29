@@ -31,15 +31,11 @@ dap.configurations.typescriptreact = {
 
 vim.o.makeprg = "./.git/hooks/pre-commit"
 
-require("neotest").setup({
+local neotest = require("neotest")
+
+neotest.setup({
   adapters = {
-    require("neotest-python")({
-      args = { "--log-level", "DEBUG" },
-      runner = "pytest",
-      python = memfault_python_env,
-    }),
-    require('neotest-jest')({
-      jestCommand = "yarn workspace @memfault/app-frontend test:jest",
-    }),
+    require('neotest-jest')({ jestCommand = "yarn workspace @memfault/app-frontend test:jest" }),
+    require('neotest-python')({}),
   }
 })
