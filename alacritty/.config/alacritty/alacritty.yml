@@ -6,9 +6,11 @@ window:
   dimensions:
     columns: 96
     lines: 32
+colors:
+  primary:
+    background: "0x1e1e1e" # Match Mofiqul/vscode.nvim
 
 import:
-  - ~/.config/alacritty/rose-pine/dist/rose-pine-moon.yml
   - ~/.config/alacritty/alacritty.local.yml
 
 key_bindings:
