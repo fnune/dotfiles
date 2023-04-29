@@ -5,8 +5,6 @@ local memfault_python_env = '/home/fausto/.mambaforge/envs/memfault/bin/python'
 
 dap_python.setup(memfault_python_env)
 dap_python.test_runner = 'pytest'
-vim.api.nvim_set_keymap('n', '<leader>ds', ':lua require("dap-python").test_method()<CR>',
-  { noremap = true, silent = true })
 
 dap.adapters.chrome = {
   type = "executable",
@@ -41,7 +39,7 @@ require("neotest").setup({
       python = memfault_python_env,
     }),
     require('neotest-jest')({
-      jestCommand = "yarn workspace @memfault/app-frontend test:jest --watch",
+      jestCommand = "yarn workspace @memfault/app-frontend test:jest",
     }),
   }
 })
