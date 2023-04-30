@@ -1,9 +1,13 @@
 local dap = require("dap")
 local dap_python = require('dap-python')
 
-local memfault_python_env = '/home/fausto/.mambaforge/envs/memfault/bin/python'
+local function home(path)
+  return os.getenv("HOME") .. path
+end
 
-dap_python.setup(memfault_python_env)
+local memfault_python_bin = home("/.mambaforge/envs/memfault/bin/python")
+
+dap_python.setup(memfault_python_bin)
 dap_python.test_runner = 'pytest'
 
 dap.adapters.chrome = {
@@ -11,7 +15,7 @@ dap.adapters.chrome = {
   command = "node",
   -- Grab this from https://github.com/Microsoft/vscode-chrome-debug and
   -- build it with npm install && npm run build
-  args = { os.getenv("HOME") .. "/Development/vscode-chrome-debug/out/src/chromeDebug.js" }
+  args = { home("/Development/vscode-chrome-debug/out/src/chromeDebug.js") }
 }
 
 -- To attach, launch Chromium with:
@@ -36,6 +40,6 @@ local neotest = require("neotest")
 neotest.setup({
   adapters = {
     require('neotest-jest')({ jestCommand = "yarn workspace @memfault/app-frontend test:jest" }),
-    require('neotest-python')({}),
+    require('neotest-python')({ python = memfault_python_bin }),
   }
 })
