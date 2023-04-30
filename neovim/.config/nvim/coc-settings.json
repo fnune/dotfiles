@@ -1,11 +1,11 @@
 {
-  "Lua.telemetry.enable": false,
   "coc.preferences.formatOnType": true,
   "coc.preferences.maxFileSize": "200MB",
-  "languageserver": { "nix": { "command": "rnix-lsp", "filetypes": ["nix"] } },
-  "rust-analyzer.checkOnSave.command": "clippy",
-  "rust-analyzer.inlayHints.typeHints.enable": false,
   "coc.preferences.promptInput": false,
   "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "languageserver": { "nix": { "command": "rnix-lsp", "filetypes": ["nix"] } },
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.checkOnSave": true,
+  "rust-analyzer.inlayHints.typeHints.enable": false
 }
