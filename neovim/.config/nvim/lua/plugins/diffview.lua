@@ -1,3 +1,4 @@
+local nmap = require("utils").nmap
 local constants = require("constants")
 
 require('diffview').setup {
@@ -14,3 +15,18 @@ require('diffview').setup {
     },
   },
 }
+
+nmap('<leader>Cq', ':DiffviewClose<cr>')
+nmap('<leader>Co', ':call DiffviewOpenCommitUnderCursor()<cr>')
+nmap('<leader>Ch', ':call DiffviewFileHistoryFromCommitUnderCursor()<cr>')
+
+-- See https://github.com/sindrets/diffview.nvim/issues/196#issuecomment-1244133866
+vim.cmd([[
+  function DiffviewOpenCommitUnderCursor()
+    exe 'norm! 0"xyiw' | wincmd l | exe 'DiffviewOpen ' . getreg("x") . '^!'
+  endfunction
+
+  function DiffviewFileHistoryFromCommitUnderCursor()
+    exe 'norm! 0"xyiw' | wincmd l | exe 'DiffviewFileHistory % --range=' . getreg("x")
+  endfunction
+]])
