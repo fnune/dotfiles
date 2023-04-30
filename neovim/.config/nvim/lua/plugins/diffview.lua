@@ -16,9 +16,9 @@ require('diffview').setup {
   },
 }
 
-nmap('<leader>Cq', ':DiffviewClose<cr>')
-nmap('<leader>Co', ':call DiffviewOpenCommitUnderCursor()<cr>')
-nmap('<leader>Ch', ':call DiffviewFileHistoryFromCommitUnderCursor()<cr>')
+nmap('<leader>Dq', ':DiffviewClose<cr>')
+nmap('<leader>Do', ':call DiffviewOpenCommitUnderCursor()<cr>')
+nmap('<leader>Dh', ':call DiffviewFileHistoryFromCommitUnderCursor()<cr>')
 
 -- See https://github.com/sindrets/diffview.nvim/issues/196#issuecomment-1244133866
 vim.cmd([[
