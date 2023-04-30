@@ -5,6 +5,7 @@
   "languageserver": { "nix": { "command": "rnix-lsp", "filetypes": ["nix"] } },
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.inlayHints.typeHints.enable": false,
+  "coc.preferences.promptInput": false,
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false
 }
