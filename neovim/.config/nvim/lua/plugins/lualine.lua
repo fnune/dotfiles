@@ -1,7 +1,3 @@
-local gps = require("nvim-gps")
-
-gps.setup({})
-
 local lualine = require("lualine")
 
 local colors = require("vscode.colors").get_colors()
