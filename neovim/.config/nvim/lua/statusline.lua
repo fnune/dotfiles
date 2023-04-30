@@ -1,4 +1,4 @@
-vim.opt.laststatus = 2
+vim.opt.laststatus = 3
 
 -- Show the path to the file in the current buffer
 vim.opt.statusline = vim.opt.statusline + '%F'
