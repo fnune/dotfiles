@@ -12,5 +12,5 @@ require('telescope').setup {
 
 require('telescope').load_extension('fzf')
 
-nmap('<leader>f', ':Telescope find_files<CR>')
-nmap('<leader>F', ':Telescope live_grep<CR>')
+nmap('<leader>f', ':Telescope find_files theme=ivy<CR>')
+nmap('<leader>F', ':Telescope live_grep theme=ivy<CR>')
