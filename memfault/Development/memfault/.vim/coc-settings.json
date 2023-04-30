@@ -8,5 +8,8 @@
   "sql.database": "postgresql",
   "sql.formatOptions": { "language": "postgresql" },
   "sumneko-lua.enableNvimLuaDev": true,
-  "typescript.preferences.importModuleSpecifier": "non-relative"
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "Lua.workspace.library": [
+    "${3rd}/luv/library"
+  ]
 }

@@ -4,7 +4,6 @@ local modules = {
   "mappings",
   "plugins",
   "theme",
-  "statusline",
 }
 
 for _, module in pairs(modules) do
