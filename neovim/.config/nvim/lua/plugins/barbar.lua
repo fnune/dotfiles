@@ -3,10 +3,6 @@ local nmap = require("utils").nmap
 require('bufferline').setup {
   animation = false,
   clickable = false,
-  sidebar_filetypes = {
-    NvimTree = true,
-    undotree = true,
-  },
   icons = {
     buffer_index = true,
     button = false,
