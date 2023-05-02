@@ -1,8 +1,8 @@
 local modules = {
   "system",
   "settings",
-  "mappings",
   "plugins",
+  "mappings",
   "theme",
 }
 
@@ -10,7 +10,9 @@ for _, module in pairs(modules) do
   require(module)
 end
 
-vim.keymap.set("n", "<leader>R", function()
+local m = require("mapx")
+
+m.nmap("<leader>R", function()
   for _, module in pairs(modules) do
     package.loaded[module] = nil
   end
@@ -18,4 +20,4 @@ vim.keymap.set("n", "<leader>R", function()
   dofile(vim.env.MYVIMRC)
 
   vim.cmd("echo '↻ Reloaded " .. vim.env.MYVIMRC .. "'")
-end)
+end, "Reload the configuration")

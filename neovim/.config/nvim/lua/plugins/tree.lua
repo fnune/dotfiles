@@ -1,12 +1,12 @@
-local nmap = require("utils").nmap
-
+local m = require("mapx")
+local tree = require("nvim-tree")
 local constants = require("constants")
 
-require('nvim-tree').setup {
+tree.setup({
   view = { width = constants.file_explorer_width_chars, },
   diagnostics = { enable = true, show_on_dirs = true },
   renderer = { group_empty = true },
-}
+})
 
-nmap('<leader>e', ':NvimTreeToggle<cr>')
-nmap('<leader>E', ':NvimTreeFindFile<cr>')
+m.nmap("<leader>e", ":NvimTreeToggle<cr>", "Toggle the file explorer view")
+m.nmap("<leader>E", ":NvimTreeFindFile<cr>", "Find the current file in the explorer")

@@ -1,6 +1,7 @@
-local nmap = require("utils").nmap
+local m = require("mapx")
+local telescope = require("telescope")
 
-require('telescope').setup {
+telescope.setup {
   defaults = {
     file_ignore_patterns = { ".git/*", ".cache/*" },
   },
@@ -10,7 +11,7 @@ require('telescope').setup {
   },
 }
 
-require('telescope').load_extension('fzf')
+telescope.load_extension("fzf")
 
-nmap('<leader>f', ':Telescope find_files theme=ivy<CR>')
-nmap('<leader>F', ':Telescope live_grep theme=ivy<CR>')
+m.nmap("<leader>f", ":Telescope find_files theme=ivy<CR>", "Find files")
+m.nmap("<leader>F", ":Telescope live_grep theme=ivy<CR>", "Find text in files")

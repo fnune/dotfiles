@@ -1,22 +1,15 @@
-vim.g.mapleader = ' '
+local m = require("mapx")
 
-local map = require("utils").map
-local nmap = require("utils").nmap
+vim.g.mapleader = " "
 
-nmap('0', '^')
-nmap('Q', '<nop>')
-nmap('j', 'gj')
-nmap('k', 'gk')
+m.nnoremap("0", "^")
+m.nnoremap("Q", "<nop>")
+m.nmap("j", "gj")
+m.nmap("k", "gk")
 
--- <Ctrl-u> and <Ctrl-d> also center the screen
-nmap('<C-u>', '<C-u>zz')
-nmap('<C-d>', '<C-d>zz')
+m.nmap("<C-u>", "<C-u>zz", "Center the buffer after scrolling")
+m.nmap("<C-d>", "<C-d>zz", "Center the buffer after scrolling")
 
--- Visual select last pasted text
-nmap('gp', '`[v`]')
-
--- Use <leader>l to clear the highlighting of :set hlsearch
-nmap('<leader>l', '<cmd>nohlsearch<cr>')
-
--- Exit insert mode in a terminal
-map('t', '<C-t><esc>', '<C-\\><C-n>')
+m.nmap("gp", "`[v`]", "Select last pasted text")
+m.nmap("<leader>l", "<cmd>nohlsearch<cr>", "Clear hlsearch highlights")
+m.tmap("<C-t><esc>", "<C-\\><C-n>", "Exit insert mode in the terminal")
