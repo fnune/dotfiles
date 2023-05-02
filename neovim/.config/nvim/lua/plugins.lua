@@ -14,6 +14,7 @@ Plug('jxnblk/vim-mdx-js')
 Plug('kristijanhusak/vim-dadbod-ui')
 Plug('lewis6991/gitsigns.nvim')
 Plug('machakann/vim-swap')
+Plug('b0o/mapx.nvim')
 Plug('markonm/traces.vim')
 Plug('matze/vim-move')
 Plug('mbbill/undotree')
@@ -53,6 +54,8 @@ Plug('tyru/open-browser.vim')
 Plug('vimwiki/vimwiki')
 
 vim.call('plug#end')
+
+require("mapx").setup({ whichkey = true })
 
 require("plugins.auto-session")
 require("plugins.barbar")

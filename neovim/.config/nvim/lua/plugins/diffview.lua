@@ -1,7 +1,7 @@
-local nmap = require("utils").nmap
+local m = require("mapx")
 local constants = require("constants")
 
-require('diffview').setup {
+require("diffview").setup {
   hooks = {
     diff_buf_read = function(_)
       vim.g.blamer_enabled = 0
@@ -16,9 +16,11 @@ require('diffview').setup {
   },
 }
 
-nmap('<leader>Dq', ':DiffviewClose<cr>')
-nmap('<leader>Do', ':call DiffviewOpenCommitUnderCursor()<cr>')
-nmap('<leader>Dh', ':call DiffviewFileHistoryFromCommitUnderCursor()<cr>')
+m.nname("<leader>D", "Diff and blame")
+m.nmap("<leader>Dq", ":DiffviewClose<cr>", "Close diff view")
+m.nmap("<leader>Do", ":call DiffviewOpenCommitUnderCursor()<cr>", "Open a diff for the commit under the cursor")
+m.nmap("<leader>Dh", ":call DiffviewFileHistoryFromCommitUnderCursor()<cr>",
+  "Open a file history starting from the commit under the cursor")
 
 -- See https://github.com/sindrets/diffview.nvim/issues/196#issuecomment-1244133866
 vim.cmd([[

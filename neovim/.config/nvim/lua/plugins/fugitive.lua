@@ -1,3 +1,3 @@
-local nmap = require("utils").nmap
+local m = require("mapx")
 
-nmap('<leader>Db', ':Git blame<cr>')
+m.nmap('<leader>Db', ':Git blame<cr>', "Open git blame view")

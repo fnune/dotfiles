@@ -1,5 +1,5 @@
+local m = require("mapx")
 local neogit = require('neogit')
-local nmap = require("utils").nmap
 
 neogit.setup {
   disable_builtin_notifications = true,
@@ -13,4 +13,4 @@ neogit.setup {
   },
 }
 
-nmap('<leader>g', '<cmd>Neogit<cr>')
+m.nmap("<leader>g", ":Neogit<cr>", "Open neogit")
