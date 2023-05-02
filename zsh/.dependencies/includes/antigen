@@ -1,2 +1,2 @@
 sudo mkdir -p /usr/share/zsh/share && \
-sudo sh -c 'curl -L git.io/antigen > /usr/share/zsh/share/antigen.zsh'
+sudo sh -c 'curl --silent --show-error --fail -L git.io/antigen > /usr/share/zsh/share/antigen.zsh'
