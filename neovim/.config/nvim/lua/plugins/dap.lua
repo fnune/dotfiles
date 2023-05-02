@@ -1,6 +1,6 @@
 local dap = require("dap")
 
-vim.keymap.set('n', '<leader>do', function() require('dapui').toggle() end)
+vim.keymap.set('n', '<leader>dd', function() require('dapui').toggle() end)
 vim.keymap.set('n', '<leader>db', function() require('dap').toggle_breakpoint() end)
 vim.keymap.set('n', '<leader>cB', function()
   require('dap').set_breakpoint(vim.fn.input(('Breakpoint condition: ')))
