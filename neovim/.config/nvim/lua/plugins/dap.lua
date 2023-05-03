@@ -7,6 +7,14 @@ return {
       local dap = require("dap")
       local dap_widgets = require("dap.ui.widgets")
 
+      local dap_mason = require("mason-nvim-dap")
+      dap_mason.setup({
+        ensure_installed = { "python", }
+      })
+
+      local dapvt = require("nvim-dap-virtual-text")
+      dapvt.setup {}
+
       m.nname("<leader>d", "Debugging")
       m.nmap("<leader>db", function() dap.toggle_breakpoint() end, "Toggle breakpoint")
       m.nmap("<leader>dc", function() dap.set_breakpoint(vim.fn.input(("Breakpoint condition: "))) end,
