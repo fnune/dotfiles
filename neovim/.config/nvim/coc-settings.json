@@ -2,6 +2,7 @@
   "coc.preferences.formatOnType": true,
   "coc.preferences.maxFileSize": "200MB",
   "coc.preferences.promptInput": false,
+  "coc.preferences.useQuickfixForLocations": true,
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "languageserver": { "nix": { "command": "rnix-lsp", "filetypes": ["nix"] } },
