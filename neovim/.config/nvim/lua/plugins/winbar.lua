@@ -1,11 +1,11 @@
-local winbar = require("winbar")
-
-winbar.setup({
-  enabled = true,
-  exclude_filetype = {
-    "NeogitStatus",
-    "NeogitCommitMessage",
-    "NvimTree",
-    "undotree",
+return {
+  "fgheng/winbar.nvim",
+  opts = {
+    enabled = true,
+    exclude_filetype = {
+      "NeogitCommitMessage",
+      "NvimTree",
+      "undotree",
+    },
   },
-})
+}

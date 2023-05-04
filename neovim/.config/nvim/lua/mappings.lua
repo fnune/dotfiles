@@ -1,7 +1,5 @@
 local m = require("mapx")
 
-vim.g.mapleader = " "
-
 m.nnoremap("0", "^")
 m.nnoremap("Q", "<nop>")
 m.nmap("j", "gj")
