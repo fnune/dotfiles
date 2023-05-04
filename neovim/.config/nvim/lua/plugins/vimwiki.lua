@@ -10,6 +10,7 @@ return {
       let wiki.auto_diary_index = 1
 
       let g:vimwiki_list = [wiki]
+      let g:vimwiki_global_ext = 0
 
       function! ConfigureMarkdownVimwiki() abort
         set number
