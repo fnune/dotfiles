@@ -9,6 +9,7 @@ return {
       pickers = {
         find_files = { hidden = true },
         live_grep = { additional_args = { "--hidden" } },
+        colorscheme = { enable_preview = true },
       },
     },
     init = function()
