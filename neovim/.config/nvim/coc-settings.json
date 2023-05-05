@@ -12,5 +12,11 @@
   "diagnostic.hintSign": "",
   "diagnostic.infoSign": "",
   "diagnostic.errorSign": "",
-  "diagnostic.warningSign": ""
+  "diagnostic.warningSign": "",
+  "hover.floatConfig": {
+    "border": true,
+    "rounded": true,
+    "title": "",
+    "highlight": "Normal"
+  }
 }
