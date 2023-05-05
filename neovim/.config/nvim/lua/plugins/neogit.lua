@@ -1,5 +1,7 @@
 return {
   "TimUntersberger/neogit",
+  lazy = true,
+  cmd = "Neogit",
   opts = {
     disable_builtin_notifications = true,
     integrations = { diffview = true },
@@ -14,6 +16,6 @@ return {
   init = function()
     local m = require("mapx")
 
-    m.nmap("<leader>g", ":Neogit<cr>", "Open neogit")
+    m.nmap("<leader>g", ":Neogit<cr>", { silent = true }, "Open neogit")
   end
 }

@@ -2,6 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    lazy = true,
     config = function()
       local treesitter_configs = require("nvim-treesitter.configs")
 
@@ -13,5 +14,5 @@ return {
       }
     end,
   },
-  { "nvim-treesitter/completion-treesitter", dependencies = { "nvim-treesitter/nvim-treesitter" } },
+  { "nvim-treesitter/completion-treesitter", lazy = true, dependencies = { "nvim-treesitter/nvim-treesitter" } },
 }

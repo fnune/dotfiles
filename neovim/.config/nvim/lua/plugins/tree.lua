@@ -1,6 +1,8 @@
 local constants = require("constants")
 return {
   "nvim-tree/nvim-tree.lua",
+  lazy = true,
+  cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
   opts = {
     view = { width = constants.file_explorer_width_chars, },
     diagnostics = { enable = true, show_on_dirs = true },

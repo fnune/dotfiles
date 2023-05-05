@@ -1,6 +1,8 @@
 local constants = require("constants")
 return {
   "sindrets/diffview.nvim",
+  lazy = true,
+  cmd = { "DiffviewOpen", "DiffviewFileHistory" },
   opts = {
     enhanced_diff_hl = true,
     use_icons = true,

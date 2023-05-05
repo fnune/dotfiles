@@ -1,5 +1,7 @@
 return {
   "pwntester/octo.nvim",
+  lazy = true,
+  cmd = "Octo",
   opts = {
     mappings = {
       submit_win = {

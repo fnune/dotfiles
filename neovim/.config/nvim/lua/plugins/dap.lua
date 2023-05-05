@@ -1,6 +1,7 @@
 return {
   {
     "mfussenegger/nvim-dap",
+    lazy = true,
     init = function()
       local m = require("mapx")
       local dap = require("dap")
@@ -35,6 +36,7 @@ return {
   },
   {
     "rcarriga/nvim-dap-ui",
+    lazy = true,
     dependencies = { "mfussenegger/nvim-dap" },
     opts = {
       controls = {
@@ -83,6 +85,6 @@ return {
       vim.cmd('hi! link DapUIWinSelect DiagnosticHint')
     end
   },
-  { "mfussenegger/nvim-dap-python",    dependencies = { "mfussenegger/nvim-dap" } },
-  { "theHamsta/nvim-dap-virtual-text", dependencies = { "mfussenegger/nvim-dap" } },
+  { "mfussenegger/nvim-dap-python",    lazy = true, dependencies = { "mfussenegger/nvim-dap" } },
+  { "theHamsta/nvim-dap-virtual-text", lazy = true, dependencies = { "mfussenegger/nvim-dap" } },
 }

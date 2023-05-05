@@ -1,9 +1,10 @@
 return {
-  { "nvim-neotest/neotest-jest" },
-  { "nvim-neotest/neotest-python" },
-  { "rouge8/neotest-rust" },
+  { "nvim-neotest/neotest-jest",   lazy = true },
+  { "nvim-neotest/neotest-python", lazy = true },
+  { "rouge8/neotest-rust",         lazy = true },
   {
     "nvim-neotest/neotest",
+    lazy = true,
     dependencies = {
       "nvim-neotest/neotest-jest",
       "nvim-neotest/neotest-python",
