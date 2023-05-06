@@ -13,19 +13,14 @@
   "diagnostic.infoSign": "",
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
-  "hover.floatConfig": {
-    "border": true,
-    "rounded": true,
-    "title": "",
-    "highlight": "Normal"
-  },
   "floatFactory.floatConfig": {
     "border": true,
     "rounded": true,
     "highlight": "Normal"
   },
-  "suggest.floatConfig": { "title": "" },
-  "signature.floatConfig": { "title": "󰘧" },
   "diagnostic.floatConfig": { "title": "" },
+  "hover.floatConfig": { "title": "" },
+  "signature.floatConfig": { "title": "󰘧" },
+  "suggest.floatConfig": { "title": "" },
   "colors.enable": true
 }
