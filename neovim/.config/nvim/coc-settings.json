@@ -22,5 +22,6 @@
   "hover.floatConfig": { "title": "" },
   "signature.floatConfig": { "title": "󰘧" },
   "suggest.floatConfig": { "title": "" },
-  "colors.enable": true
+  "colors.enable": true,
+  "highlight.colorNames.enable": false
 }
