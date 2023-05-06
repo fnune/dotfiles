@@ -17,6 +17,8 @@ return {
   init = function()
     vim.g.barbar_auto_setup = false
 
+    vim.cmd('hi! link TabLineFill BufferInactive')
+
     local m = require("mapx")
 
     vim.api.nvim_create_autocmd('ExitPre', {
