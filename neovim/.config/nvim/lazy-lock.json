@@ -25,6 +25,7 @@
   "octo.nvim": { "branch": "master", "commit": "66c0fe4256c4ed1c9f79977ee961d38cedf7d6c6" },
   "plenary.nvim": { "branch": "master", "commit": "9ac3e9541bbabd9d73663d757e4fe48a675bb054" },
   "registers.nvim": { "branch": "main", "commit": "2ab8372bb837f05fae6b43091f10a0b725d113ca" },
+  "rose-pine": { "branch": "main", "commit": "2eace84d649d76d41dcd44a87a17f64c7c4a586d" },
   "tagalong.vim": { "branch": "main", "commit": "7b8cf57d8b5cbf5ece29e8198e72e8db39d9fe26" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "580b6c48651cabb63455e97d7e131ed557b8c7e2" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "9de317bdea2bc393074651179c4fc7f93e9b2d56" },
@@ -43,7 +44,6 @@
   "vim-swap": { "branch": "master", "commit": "9358bfdc5e377aa13e7c2c2dd8699ba32b0dcf83" },
   "vim-tmux-navigator": { "branch": "master", "commit": "cdd66d6a37d991bba7997d593586fc51a5b37aa8" },
   "vimwiki": { "branch": "dev", "commit": "7a48268d24614e74f8187856ade54cf03134e9d9" },
-  "vscode.nvim": { "branch": "main", "commit": "dc5f37603ada51db13bc4009cbee628c5857a274" },
   "which-key.nvim": { "branch": "main", "commit": "af8f26bfbb61b5f722c9fbc72b296dc9db0bcfdc" },
   "winbar.nvim": { "branch": "main", "commit": "13739fdb31be51a1000486189662596f07a59a31" }
 }
