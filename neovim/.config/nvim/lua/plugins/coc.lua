@@ -1,5 +1,3 @@
-local m = require("mapx")
-
 return {
   "neoclide/coc.nvim",
   branch = "release",
@@ -45,6 +43,8 @@ return {
       local col = vim.fn.col('.') - 1
       return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
     end
+
+    local m = require("mapx")
 
     -- Use Tab to trigger completion with characters ahead and navigate
     m.inoremap("<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()',
