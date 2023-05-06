@@ -5,11 +5,12 @@ return {
     vim.g.coc_global_extensions = {
       "coc-clangd",
       "coc-db",
-      "coc-pairs",
       "coc-docker",
       "coc-eslint",
+      "coc-highlight",
       "coc-jest",
       "coc-json",
+      "coc-pairs",
       "coc-prettier",
       "coc-pyright",
       "coc-rust-analyzer",

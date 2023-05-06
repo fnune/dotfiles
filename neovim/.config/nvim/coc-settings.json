@@ -26,5 +26,6 @@
   },
   "suggest.floatConfig": { "title": "" },
   "signature.floatConfig": { "title": "󰘧" },
-  "diagnostic.floatConfig": { "title": "" }
+  "diagnostic.floatConfig": { "title": "" },
+  "colors.enable": true
 }
