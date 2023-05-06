@@ -1,1 +1,1 @@
-alias vim='nvim'
+alias vim='nvim --listen /tmp/nvim-server.pipe'
