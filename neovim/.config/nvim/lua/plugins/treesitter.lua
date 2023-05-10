@@ -10,6 +10,7 @@ return {
         sync_install = false,
         auto_install = true,
         highlight = { enable = true },
+        autotag = { enable = true }, -- See windwp/nvim-ts-autotag
       }
     end,
   },

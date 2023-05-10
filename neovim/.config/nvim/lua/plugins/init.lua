@@ -1,5 +1,5 @@
 return {
-  "AndrewRadev/tagalong.vim",
+  "windwp/nvim-ts-autotag",
   "antoinemadec/FixCursorHold.nvim",
   "christoomey/vim-tmux-navigator",
   { "folke/which-key.nvim",         opts = { window = { border = "single", padding = { 0, 0, 0, 0 } } } },
