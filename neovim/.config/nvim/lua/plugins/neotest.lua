@@ -19,6 +19,8 @@ return {
           require('neotest-python')({}),
           require('neotest-rust')({}),
         },
+        quickfix = { open = false },
+        output = { open_on_run = false },
       })
     end,
     init = function()
