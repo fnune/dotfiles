@@ -37,11 +37,9 @@ vim.o.makeprg = "./.git/hooks/pre-commit"
 
 local neotest = require("neotest")
 
-neotest.setup({
+neotest.setup_project(vim.loop.cwd(), {
   adapters = {
     require('neotest-jest')({ jestCommand = "yarn workspace @memfault/app-frontend test:jest" }),
     require('neotest-python')({ python = memfault_python_bin }),
   },
-  quickfix = { open = false },
-  output = { open_on_run = false },
 })
