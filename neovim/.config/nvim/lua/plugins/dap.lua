@@ -1,4 +1,10 @@
 return {
+  { "theHamsta/nvim-dap-virtual-text", config = true },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    dependencies = { "williamboman/mason.nvim" },
+    opts = { ensure_installed = { "python", "node2", "chrome", "firefox", "js" }, handlers = {} },
+  },
   {
     "mfussenegger/nvim-dap",
     lazy = true,
@@ -85,6 +91,6 @@ return {
       vim.cmd('hi! link DapUIWinSelect DiagnosticHint')
     end
   },
-  { "mfussenegger/nvim-dap-python",    lazy = true, dependencies = { "mfussenegger/nvim-dap" } },
-  { "theHamsta/nvim-dap-virtual-text", lazy = true, dependencies = { "mfussenegger/nvim-dap" } },
+  { "mfussenegger/nvim-dap-python",    lazy = true,  dependencies = { "mfussenegger/nvim-dap" } },
+  { "theHamsta/nvim-dap-virtual-text", lazy = true,  dependencies = { "mfussenegger/nvim-dap" } },
 }
