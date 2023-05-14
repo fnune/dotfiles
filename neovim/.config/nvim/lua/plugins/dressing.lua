@@ -12,5 +12,6 @@ return {
         end
       end
     },
+    input = { insert_only = false },
   },
 }
