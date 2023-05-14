@@ -1,5 +1,5 @@
 return {
-  { "theHamsta/nvim-dap-virtual-text", config = true },
+  { "theHamsta/nvim-dap-virtual-text", config = true, lazy = true, dependencies = { "mfussenegger/nvim-dap" } },
   {
     "jay-babu/mason-nvim-dap.nvim",
     dependencies = { "williamboman/mason.nvim" },
@@ -91,6 +91,4 @@ return {
       vim.cmd('hi! link DapUIWinSelect DiagnosticHint')
     end
   },
-  { "mfussenegger/nvim-dap-python",    lazy = true,  dependencies = { "mfussenegger/nvim-dap" } },
-  { "theHamsta/nvim-dap-virtual-text", lazy = true,  dependencies = { "mfussenegger/nvim-dap" } },
 }
