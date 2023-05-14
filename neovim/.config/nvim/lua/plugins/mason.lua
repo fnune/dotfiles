@@ -1,6 +1,5 @@
 return {
   "williamboman/mason-lspconfig.nvim",
-  { "jay-babu/mason-nvim-dap.nvim", opts = { ensure_installed = { "python" } } },
   {
     "williamboman/mason.nvim",
     dependencies = {
