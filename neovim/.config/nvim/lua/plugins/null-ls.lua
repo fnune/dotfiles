@@ -1,6 +1,10 @@
 return {
-  { "CKolkey/ts-node-action",      config = true },
-  { "jay-babu/mason-null-ls.nvim", dependencies = { "williamboman/mason.nvim" }, opts = { automatic_installation = true } },
+  { "CKolkey/ts-node-action", config = true },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    dependencies = { "williamboman/mason.nvim" },
+    automatic_installation = { exclude = { "mypy" } },
+  },
   {
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
@@ -14,7 +18,7 @@ return {
           null_ls.builtins.completion.spell,
           null_ls.builtins.diagnostics.eslint_d,
           null_ls.builtins.diagnostics.jsonlint,
-          null_ls.builtins.diagnostics.mypy.with({ extra_args = { "--ignore-missing-imports" } }),
+          null_ls.builtins.diagnostics.mypy,
           null_ls.builtins.diagnostics.shellcheck,
           null_ls.builtins.diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
           null_ls.builtins.diagnostics.stylelint,

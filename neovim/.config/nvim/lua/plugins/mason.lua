@@ -3,7 +3,12 @@ return {
   { "jay-babu/mason-nvim-dap.nvim", opts = { ensure_installed = { "python" } } },
   {
     "williamboman/mason.nvim",
-    dependencies = { "neovim/nvim-lspconfig", "williamboman/mason-lspconfig.nvim", "hrsh7th/cmp-nvim-lsp" },
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
+      "b0o/SchemaStore.nvim",
+    },
     config = function()
       local m = require("mapx")
       local lspconfig = require("lspconfig")
