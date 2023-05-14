@@ -9,7 +9,6 @@ return {
   "mbbill/undotree",
   "nvim-tree/nvim-web-devicons",
   "tpope/vim-abolish",
-  "tpope/vim-commentary",
   "tpope/vim-dadbod",
   "tpope/vim-eunuch",
   "tpope/vim-repeat",
