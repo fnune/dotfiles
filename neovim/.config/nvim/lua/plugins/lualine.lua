@@ -1,15 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
   config = function()
-    local fidget = require("fidget")
-    fidget.setup({
-      text = {
-        spinner = "dots",
-        commenced = "",
-        completed = "",
-      }
-    })
-
     local lualine = require("lualine")
     lualine.setup({
       options = {

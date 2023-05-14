@@ -1,4 +1,5 @@
 return {
+  { "theHamsta/nvim-dap-virtual-text", config = true },
   {
     "mfussenegger/nvim-dap",
     lazy = true,
@@ -6,14 +7,6 @@ return {
       local m = require("mapx")
       local dap = require("dap")
       local dap_widgets = require("dap.ui.widgets")
-
-      local dap_mason = require("mason-nvim-dap")
-      dap_mason.setup({
-        ensure_installed = { "python", }
-      })
-
-      local dapvt = require("nvim-dap-virtual-text")
-      dapvt.setup {}
 
       m.nname("<leader>d", "Debugging")
       m.nmap("<leader>db", function() dap.toggle_breakpoint() end, "Toggle breakpoint")
@@ -93,6 +86,6 @@ return {
       vim.cmd('hi! link DapUIWinSelect DiagnosticHint')
     end
   },
-  { "mfussenegger/nvim-dap-python",    lazy = true, dependencies = { "mfussenegger/nvim-dap" } },
-  { "theHamsta/nvim-dap-virtual-text", lazy = true, dependencies = { "mfussenegger/nvim-dap" } },
+  { "mfussenegger/nvim-dap-python",    lazy = true,  dependencies = { "mfussenegger/nvim-dap" } },
+  { "theHamsta/nvim-dap-virtual-text", lazy = true,  dependencies = { "mfussenegger/nvim-dap" } },
 }
