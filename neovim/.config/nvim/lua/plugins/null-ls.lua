@@ -17,7 +17,7 @@ return {
           null_ls.builtins.code_actions.ts_node_action,
           null_ls.builtins.diagnostics.eslint_d,
           null_ls.builtins.diagnostics.jsonlint,
-          null_ls.builtins.diagnostics.mypy,
+          null_ls.builtins.diagnostics.mypy.with({ extra_args = { "--ignore-missing-imports" } }),
           null_ls.builtins.diagnostics.shellcheck,
           null_ls.builtins.diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
           null_ls.builtins.diagnostics.stylelint,
