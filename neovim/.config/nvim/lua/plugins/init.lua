@@ -1,4 +1,5 @@
 return {
+  "RRethy/vim-illuminate",
   "antoinemadec/FixCursorHold.nvim",
   "b0o/SchemaStore.nvim",
   "christoomey/vim-tmux-navigator",
