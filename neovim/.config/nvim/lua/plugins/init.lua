@@ -2,6 +2,7 @@ return {
   "antoinemadec/FixCursorHold.nvim",
   "b0o/SchemaStore.nvim",
   "christoomey/vim-tmux-navigator",
+  { "folke/todo-comments.nvim", opts = {} },
   "folke/trouble.nvim",
   "hrsh7th/vim-vsnip",
   "machakann/vim-swap",
@@ -15,9 +16,13 @@ return {
   "tpope/vim-rhubarb",
   "tpope/vim-surround",
   "windwp/nvim-ts-autotag",
-  { "folke/neodev.nvim",            opts = {}, priority = 51 },
-  { "b0o/mapx.nvim",                priority = 51,                                                      opts = {
-    whichkey = true } },
+  { "folke/neodev.nvim",        opts = {}, priority = 51 },
+  {
+    "b0o/mapx.nvim",
+    priority = 51,
+    opts = {
+      whichkey = true }
+  },
   { "folke/which-key.nvim",         opts = { window = { border = "single", padding = { 0, 0, 0, 0 } } } },
   { "kevinhwang91/nvim-bqf",        lazy = true,                                                        ft = "qf" },
   { "kristijanhusak/vim-dadbod-ui", lazy = true,                                                        cmd = "DBUI" },
