@@ -20,6 +20,14 @@ return {
         ["<TAB>"] = cmp.mapping.confirm({ select = true }),
       }),
       formatting = { format = lspkind.cmp_format({}) },
+      window = {
+        completion = {
+          border = "rounded",
+        },
+        documentation = {
+          border = "rounded",
+        },
+      },
     })
   end,
 }

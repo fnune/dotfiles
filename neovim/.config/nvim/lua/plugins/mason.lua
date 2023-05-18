@@ -55,7 +55,15 @@ return {
         m.xmap("<leader>ac", function() vim.lsp.buf.code_action() end, "Apply code action (visual)")
       end
 
-      local common = { on_attach = lsp_attach, capabilities = lsp_capabilities }
+      local common = {
+        on_attach = lsp_attach,
+        capabilities = lsp_capabilities,
+        handlers = {
+          ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+            border = "rounded",
+          })
+        }
+      }
 
       mason_lspconfig.setup_handlers({
         function(server)
@@ -63,24 +71,24 @@ return {
         end,
         ["jsonls"] = function(server)
           lspconfig[server].setup({
-            on_attach = lsp_attach,
             settings = { json = { schemas = require('schemastore').json.schemas(), validate = { enable = true } } },
+            unpack(common),
           })
         end,
         ["yamlls"] = function(server)
           lspconfig[server].setup({
-            on_attach = lsp_attach,
             settings = { yaml = { schemas = require('schemastore').yaml.schemas() } },
+            unpack(common),
           })
         end,
         ["pyright"] = function(server)
           lspconfig[server].setup({
-            on_attach = lsp_attach,
             root_dir = function() return vim.fn.getcwd() end,
             handlers = {
               ["textDocument/publishDiagnostics"] = function()
                 -- noop: I get enough diagnostics from Ruff and mypy.
               end,
+              unpack(common.handlers),
             },
             settings = {
               python = {
@@ -90,6 +98,7 @@ return {
                 },
               }
             },
+            unpack(common),
           })
         end,
       })
