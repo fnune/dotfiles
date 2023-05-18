@@ -31,8 +31,8 @@ return {
       m.nmap("<leader>ta", ":lua require('neotest').run.run(vim.fn.expand('%'))<cr>", { silent = true }, "Run all tests")
       m.nmap("<leader>ds", ":lua require('neotest').run.run({ strategy = 'dap' })<cr>", { silent = true },
         "Debug the closest test")
-      m.nmap("<leader>T", ":lua require('neotest').summary.toggle()<cr>", { silent = true },
-        "Toggle the test summary view")
+      m.nmap("<leader>to", ":lua require('neotest').output_panel.toggle()<cr>", { silent = true },
+        "Toggle the test output panel")
 
       vim.cmd("hi! link NeotestAdapterName Macro")
       vim.cmd("hi! link NeotestDir Normal")
