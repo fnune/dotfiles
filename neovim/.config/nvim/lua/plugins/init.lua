@@ -9,6 +9,18 @@ return {
   "matze/vim-move",
   "mbbill/undotree",
   "nvim-tree/nvim-web-devicons",
+  {
+    "smjonas/inc-rename.nvim",
+    dependencies = { "stevearc/dressing.nvim" },
+    config = function()
+      local inc_rename = require("inc_rename")
+      inc_rename.setup({ input_buffer_type = "dressing" })
+
+      vim.keymap.set("n", "<leader>rn", function()
+        return ":IncRename " .. vim.fn.expand("<cword>")
+      end, { expr = true })
+    end,
+  },
   "tpope/vim-abolish",
   "tpope/vim-dadbod",
   "tpope/vim-eunuch",

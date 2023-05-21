@@ -42,7 +42,7 @@ return {
         m.nmap("K", function() vim.lsp.buf.hover() end, bufopts, "Show documentation")
         m.nmap("<leader>k", function() vim.diagnostic.goto_prev() end, "Previous diagnostic")
         m.nmap("<leader>j", function() vim.diagnostic.goto_next() end, "Next diagnostic")
-        m.nmap("<leader>r", function() vim.lsp.buf.rename() end, bufopts, "Rename symbol")
+        -- m.nmap("<leader>r", function() vim.lsp.buf.rename() end, bufopts, "Rename symbol")
         m.nmap("<leader>p", function() vim.lsp.buf.format { async = true } end, bufopts, "Format document")
 
         m.nname("g", "Go to")
