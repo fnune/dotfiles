@@ -26,12 +26,28 @@ return {
     init = function()
       local m = require("mapx")
 
+      local function prompt_args()
+        local args = {}
+        for arg in string.gmatch(vim.fn.input("Extra arguments: "), "[^%s]+") do
+          table.insert(args, arg)
+        end
+        return args
+      end
+
       m.nname("<leader>t", "Tests")
-      m.nmap("<leader>ts", ":lua require('neotest').run.run()<cr>", { silent = true }, "Run the closest test")
-      m.nmap("<leader>ta", ":lua require('neotest').run.run(vim.fn.expand('%'))<cr>", { silent = true }, "Run all tests")
-      m.nmap("<leader>ds", ":lua require('neotest').run.run({ strategy = 'dap' })<cr>", { silent = true },
+      m.nmap("<leader>ts", function() require("neotest").run.run() end, { silent = true }, "Run the closest test")
+      m.nmap("<leader>ta", function() require("neotest").run.run(vim.fn.expand("%")) end, { silent = true },
+        "Run all tests")
+      m.nmap("<leader>tS", function() require("neotest").run.run({ extra_args = prompt_args() }) end,
+        { silent = true },
+        "Run the closest test with extra arguments")
+      m.nmap("<leader>tA",
+        function() require("neotest").run.run({ vim.fn.expand("%"), extra_args = prompt_args() }) end,
+        { silent = true },
+        "Run all tests with extra arguments")
+      m.nmap("<leader>ds", function() require("neotest").run.run({ strategy = "dap" }) end, { silent = true },
         "Debug the closest test")
-      m.nmap("<leader>to", ":lua require('neotest').output_panel.toggle()<cr>", { silent = true },
+      m.nmap("<leader>to", function() require("neotest").output_panel.toggle() end, { silent = true },
         "Toggle the test output panel")
 
       vim.cmd("hi! link NeotestAdapterName Macro")
