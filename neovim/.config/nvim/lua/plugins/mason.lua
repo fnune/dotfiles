@@ -70,6 +70,15 @@ return {
         function(server)
           lspconfig[server].setup(common)
         end,
+        ["tsserver"] = function(server)
+          lspconfig[server].setup({
+            init_options = {
+              hostInfo = "neovim",
+              preferences = { importModuleSpecifierPreference = "non-relative" },
+            },
+            unpack(common),
+          })
+        end,
         ["jsonls"] = function(server)
           lspconfig[server].setup({
             settings = { json = { schemas = require('schemastore').json.schemas(), validate = { enable = true } } },
