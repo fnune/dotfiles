@@ -20,12 +20,11 @@ return {
   {
     "b0o/mapx.nvim",
     priority = 51,
-    opts = {
-      whichkey = true }
+    opts = { whichkey = false },
   },
-  { "folke/which-key.nvim",         opts = { window = { border = "single", padding = { 0, 0, 0, 0 } } } },
-  { "kevinhwang91/nvim-bqf",        lazy = true,                                                        ft = "qf" },
-  { "kristijanhusak/vim-dadbod-ui", lazy = true,                                                        cmd = "DBUI" },
+  { "folke/which-key.nvim",         enabled = false, opts = { window = { border = "single", padding = { 0, 0, 0, 0 } } } },
+  { "kevinhwang91/nvim-bqf",        lazy = true,     ft = "qf" },
+  { "kristijanhusak/vim-dadbod-ui", lazy = true,     cmd = "DBUI" },
   { "lewis6991/gitsigns.nvim",      config = true },
   { "nvim-lua/plenary.nvim",        priority = 51 },
   { "ray-x/lsp_signature.nvim",     opts = {} },
