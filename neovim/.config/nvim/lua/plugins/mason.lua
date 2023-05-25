@@ -58,12 +58,6 @@ return {
       local common = {
         on_attach = lsp_attach,
         capabilities = lsp_capabilities,
-        handlers = {
-          ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-            border = "rounded",
-            silent = true,
-          })
-        }
       }
 
       mason_lspconfig.setup_handlers({
@@ -98,7 +92,6 @@ return {
               ["textDocument/publishDiagnostics"] = function()
                 -- noop: I get enough diagnostics from Ruff and mypy.
               end,
-              unpack(common.handlers),
             },
             settings = {
               python = {
@@ -112,6 +105,11 @@ return {
           })
         end,
       })
+
+      local handlers = vim.lsp.handlers
+      handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+      handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+      vim.diagnostic.config { float = { border = "rounded" } }
     end,
   },
 }
