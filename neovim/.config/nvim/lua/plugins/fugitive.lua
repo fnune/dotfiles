@@ -1,7 +1,7 @@
 return {
   "tpope/vim-fugitive",
   lazy = true,
-  cmd = "Git",
+  cmd = {"Git", "GBrowse"},
   init = function()
     local m = require("mapx")
 
