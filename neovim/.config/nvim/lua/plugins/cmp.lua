@@ -2,6 +2,7 @@ return {
   "hrsh7th/nvim-cmp",
   dependencies = { "onsails/lspkind.nvim", "hrsh7th/vim-vsnip" },
   config = function()
+    local constants = require("constants")
     local lspkind = require("lspkind")
     local cmp = require("cmp")
 
@@ -22,10 +23,10 @@ return {
       formatting = { format = lspkind.cmp_format({}) },
       window = {
         completion = {
-          border = "rounded",
+          border = constants.floating_border,
         },
         documentation = {
-          border = "rounded",
+          border = constants.floating_border,
         },
       },
     })

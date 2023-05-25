@@ -106,10 +106,13 @@ return {
         end,
       })
 
+
+      local constants = require("constants")
       local handlers = vim.lsp.handlers
-      handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-      handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
-      vim.diagnostic.config { float = { border = "rounded" } }
+      handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = constants.floating_border })
+      handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help,
+        { border = constants.floating_border })
+      vim.diagnostic.config { float = { border = constants.floating_border } }
     end,
   },
 }
