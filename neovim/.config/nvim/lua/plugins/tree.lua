@@ -5,7 +5,7 @@ return {
   cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
   opts = {
     view = { width = constants.file_explorer_width_chars, },
-    diagnostics = { enable = true, show_on_dirs = true },
+    diagnostics = { enable = false },
     renderer = { group_empty = true },
   },
   init = function()
