@@ -5,11 +5,11 @@ set -euxo pipefail
 # Following the instructions in https://github.com/alacritty/alacritty/blob/master/INSTALL.md
 
 if [ -x "$(command -v pacman)" ]; then
-  sudo pacman -S gzip cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon python --noconfirm
+  sudo pacman -S gzip cmake scdoc freetype2 fontconfig pkg-config make libxcb libxkbcommon python --noconfirm
 fi
 
 if [ -x "$(command -v apt)" ]; then
-  sudo apt install -y gzip cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+  sudo apt install -y gzip scdoc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 fi
 
 BUILD_DIR=~/.alacritty.build
@@ -41,7 +41,7 @@ pushd $BUILD_DIR
 
   # Man page
   sudo mkdir -p /usr/local/share/man/man1
-  gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
-  gzip -c extra/alacritty-msg.man | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null
+  scdoc < extra/man/alacritty.1.scd | gzip -c | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
+  scdoc < extra/man/alacritty-msg.1.scd | gzip -c | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null
 popd
 
