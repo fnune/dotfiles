@@ -3,6 +3,7 @@ return {
   lazy = true,
   cmd = "Neogit",
   opts = {
+    disable_commit_confirmation = true,
     disable_builtin_notifications = true,
     integrations = { diffview = true },
     kind = "vsplit",
