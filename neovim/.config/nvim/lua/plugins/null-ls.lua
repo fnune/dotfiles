@@ -56,6 +56,7 @@ return {
           null_ls.builtins.formatting.stylelint,
         },
         on_attach = on_attach,
+        temp_dir = "/tmp",
       })
     end,
   },
