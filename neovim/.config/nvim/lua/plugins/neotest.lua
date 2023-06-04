@@ -47,6 +47,9 @@ return {
         "Run all tests with extra arguments")
       m.nmap("<leader>ds", function() require("neotest").run.run({ strategy = "dap" }) end, { silent = true },
         "Debug the closest test")
+      m.nmap("<leader>dS", function() require("neotest").run.run({ strategy = "dap", extra_args = prompt_args() }) end,
+        { silent = true },
+        "Debug the closest test with extra arguments")
       m.nmap("<leader>to", function() require("neotest").output_panel.toggle() end, { silent = true },
         "Toggle the test output panel")
 
