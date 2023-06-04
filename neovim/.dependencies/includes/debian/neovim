@@ -4,7 +4,7 @@ set -euxo pipefail
 
 sudo apt-get install -y wget
 
-NEOVIM_VERSION="v0.9.0"
+NEOVIM_VERSION="v0.9.1"
 APPIMG_URL="https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/nvim.appimage"
 APPIMG_TMP="$(mktemp)"
 
