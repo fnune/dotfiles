@@ -1,7 +1,7 @@
 return {
   "kdheepak/lazygit.nvim",
   lazy = true,
-  cmd = "LazyGit",
+  cmd = { "LazyGit", "LazyGitCurrentFile", "LazyGitConfig" },
   init = function()
     local m = require("mapx")
 
