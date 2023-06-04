@@ -12,3 +12,5 @@ neotest.setup_project(vim.loop.cwd(), {
     require('neotest-python')({ python = memfault_python_bin }),
   },
 })
+
+vim.o.makeprg = "./.git/hooks/pre-commit"
