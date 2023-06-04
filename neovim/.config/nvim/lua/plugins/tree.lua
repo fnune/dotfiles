@@ -11,7 +11,7 @@ return {
   init = function()
     local m = require("mapx")
 
-    m.nmap("<leader>e", ":NvimTreeToggle<cr>", "Toggle the file explorer view")
-    m.nmap("<leader>E", ":NvimTreeFindFile<cr>", "Find the current file in the explorer")
+    m.nmap("<leader>e", ":NvimTreeToggle<cr>", { silent = true }, "Toggle the file explorer view")
+    m.nmap("<leader>E", ":NvimTreeFindFile<cr>", { silent = true }, "Find the current file in the explorer")
   end
 }
