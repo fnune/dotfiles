@@ -65,28 +65,25 @@ return {
           lspconfig[server].setup(common)
         end,
         ["tsserver"] = function(server)
-          lspconfig[server].setup({
+          lspconfig[server].setup(vim.tbl_deep_extend("force", common, {
             init_options = {
               hostInfo = "neovim",
               preferences = { importModuleSpecifierPreference = "non-relative" },
             },
-            unpack(common),
-          })
+          }))
         end,
         ["jsonls"] = function(server)
-          lspconfig[server].setup({
+          lspconfig[server].setup(vim.tbl_deep_extend("force", common, {
             settings = { json = { schemas = require('schemastore').json.schemas(), validate = { enable = true } } },
-            unpack(common),
-          })
+          }))
         end,
         ["yamlls"] = function(server)
-          lspconfig[server].setup({
+          lspconfig[server].setup(vim.tbl_deep_extend("force", common, {
             settings = { yaml = { schemas = require('schemastore').yaml.schemas() } },
-            unpack(common),
-          })
+          }))
         end,
         ["pyright"] = function(server)
-          lspconfig[server].setup({
+          lspconfig[server].setup(vim.tbl_deep_extend("force", common, {
             root_dir = function() return vim.fn.getcwd() end,
             handlers = {
               ["textDocument/publishDiagnostics"] = function()
@@ -101,8 +98,7 @@ return {
                 },
               }
             },
-            unpack(common),
-          })
+          }))
         end,
       })
 
