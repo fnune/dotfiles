@@ -24,13 +24,13 @@ return {
 
     -- See https://github.com/sindrets/diffview.nvim/issues/196#issuecomment-1244133866
     vim.cmd([[
-  function DiffviewOpenCommitUnderCursor()
-    exe 'norm! 0"xyiw' | wincmd l | exe 'DiffviewOpen ' . getreg("x") . '^!'
-  endfunction
+      function DiffviewOpenCommitUnderCursor()
+        exe 'norm! 0"xyiw' | wincmd l | exe 'DiffviewOpen ' . getreg("x") . '^!'
+      endfunction
 
-  function DiffviewFileHistoryFromCommitUnderCursor()
-    exe 'norm! 0"xyiw' | wincmd l | exe 'DiffviewFileHistory % --range=' . getreg("x")
-  endfunction
-]])
+      function DiffviewFileHistoryFromCommitUnderCursor()
+        exe 'norm! 0"xyiw' | wincmd l | exe 'DiffviewFileHistory % --range=' . getreg("x")
+      endfunction
+    ]])
   end
 }
