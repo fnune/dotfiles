@@ -2,6 +2,7 @@ return {
   "kdheepak/lazygit.nvim",
   lazy = true,
   cmd = { "LazyGit", "LazyGitCurrentFile", "LazyGitConfig" },
+  enabled = false, -- Using neogit for now.
   init = function()
     local m = require("mapx")
 

@@ -2,7 +2,6 @@ return {
   "TimUntersberger/neogit",
   lazy = true,
   cmd = "Neogit",
-  enabled = false, -- Using lazygit for now.
   opts = {
     disable_builtin_notifications = true,
     integrations = { diffview = true },
