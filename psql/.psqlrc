@@ -12,6 +12,9 @@
 \pset linestyle unicode
 \pset border 2
 \pset null ∅
-\pset pager on
+
 -- see auto-generated .pspgconf
 \setenv PAGER pspg
+
+-- set it manually if necessary
+\pset pager off
