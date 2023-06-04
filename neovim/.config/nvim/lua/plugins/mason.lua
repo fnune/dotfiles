@@ -3,14 +3,19 @@ return {
   {
     "williamboman/mason.nvim",
     dependencies = {
+      "b0o/SchemaStore.nvim",
+      "hrsh7th/cmp-nvim-lsp",
+      "lukas-reineke/lsp-format.nvim",
       "neovim/nvim-lspconfig",
       "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/cmp-nvim-lsp",
-      "b0o/SchemaStore.nvim",
     },
     config = function()
       local m = require("mapx")
       local lspconfig = require("lspconfig")
+
+      local lspformat = require("lsp-format")
+      lspformat.setup({})
+
       local mason = require("mason")
       local mason_lspconfig = require("mason-lspconfig")
 
@@ -36,14 +41,16 @@ return {
       local cmp_lsp = require("cmp_nvim_lsp")
 
       local lsp_capabilities = cmp_lsp.default_capabilities()
-      local lsp_attach = function(_, bufnr)
+      local lsp_attach = function(client, bufnr)
+        lspformat.on_attach(client)
+
         local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
         m.nmap("K", function() vim.lsp.buf.hover() end, bufopts, "Show documentation")
         m.nmap("<leader>k", function() vim.diagnostic.goto_prev() end, "Previous diagnostic")
         m.nmap("<leader>j", function() vim.diagnostic.goto_next() end, "Next diagnostic")
         m.nmap("<leader>r", function() vim.lsp.buf.rename() end, bufopts, "Rename symbol")
-        m.nmap("<leader>p", function() vim.lsp.buf.format { async = true } end, bufopts, "Format document")
+        m.nmap("<leader>p", function() vim.lsp.buf.format({ async = true }) end, bufopts, "Format document")
 
         m.nname("g", "Go to")
         m.nmap("gD", function() vim.lsp.buf.declaration() end, bufopts, "Go to declaration")
@@ -69,6 +76,11 @@ return {
             init_options = {
               hostInfo = "neovim",
               preferences = { importModuleSpecifierPreference = "non-relative" },
+            },
+            handlers = {
+              ["textDocument/formatting"] = function()
+                -- noop: let prettier do this
+              end,
             },
           }))
         end,
