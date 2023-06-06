@@ -9,9 +9,10 @@ return {
     kind = "vsplit",
     -- These could become defaults https://github.com/TimUntersberger/neogit/issues/497
     ignored_settings = {
-      "NeogitPushPopup--force-with-lease",
-      "NeogitPushPopup--force",
       "NeogitCommitPopup--allow-empty",
+      "NeogitCommitPopup--no-verify",
+      "NeogitPushPopup--force",
+      "NeogitPushPopup--force-with-lease",
     },
   },
   init = function()
