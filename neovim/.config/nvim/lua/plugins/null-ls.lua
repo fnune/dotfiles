@@ -1,5 +1,4 @@
 return {
-  { "CKolkey/ts-node-action", config = true },
   {
     "jay-babu/mason-null-ls.nvim",
     dependencies = { "williamboman/mason.nvim" },
@@ -39,7 +38,6 @@ return {
           null_ls.builtins.code_actions.eslint_d,
           null_ls.builtins.code_actions.refactoring,
           null_ls.builtins.code_actions.shellcheck,
-          null_ls.builtins.code_actions.ts_node_action,
           null_ls.builtins.diagnostics.eslint_d,
           null_ls.builtins.diagnostics.jsonlint,
           null_ls.builtins.diagnostics.mypy.with({ extra_args = { "--ignore-missing-imports" } }),
