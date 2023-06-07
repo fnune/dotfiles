@@ -114,13 +114,18 @@ return {
         end,
       })
 
-
       local constants = require("constants")
       local handlers = vim.lsp.handlers
       handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = constants.floating_border })
       handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help,
         { border = constants.floating_border })
       vim.diagnostic.config { float = { border = constants.floating_border } }
+
+      local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+      for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+      end
     end,
   },
 }
