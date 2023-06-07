@@ -40,7 +40,7 @@ vim.opt.ttimeoutlen = 100
 vim.opt.timeoutlen = 500
 vim.opt.wildmenu = true
 vim.opt.wrap = true
-vim.opt.fillchars = vim.opt.fillchars + 'diff:╱'
+vim.opt.fillchars = vim.opt.fillchars + 'diff:╱,foldopen:,foldclose:'
 
 -- This is OK if swapfile is false because we won't be writing
 -- to the swap file the whole time, ruining the SSD.
