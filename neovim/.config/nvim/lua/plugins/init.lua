@@ -29,10 +29,9 @@ return {
     opts = {
       window = { border = constants.floating_border, padding = { 0, 0, 0, 0 } } }
   },
-  { "kevinhwang91/nvim-bqf",        lazy = true,                                                     ft = "qf" },
-  { "kristijanhusak/vim-dadbod-ui", lazy = true,                                                     cmd = "DBUI" },
+  { "kevinhwang91/nvim-bqf",        lazy = true,  ft = "qf" },
+  { "kristijanhusak/vim-dadbod-ui", lazy = true,  cmd = "DBUI" },
   { "lewis6991/gitsigns.nvim",      config = true },
   { "nvim-lua/plenary.nvim",        priority = 51 },
-  { "ray-x/lsp_signature.nvim",     opts = { handler_opts = { border = constants.floating_border } } },
   { "tversteeg/registers.nvim",     lazy = true },
 }
