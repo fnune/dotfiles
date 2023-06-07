@@ -5,7 +5,12 @@ return {
     automatic_installation = { exclude = { "mypy" } },
   },
   {
+    "jose-elias-alvarez/typescript.nvim",
+    disable_commands = true,
+  },
+  {
     "jose-elias-alvarez/null-ls.nvim",
+    dependencies = { "jose-elias-alvarez/typescript.nvim" },
     config = function()
       local lsp_formatting = function(bufnr)
         vim.lsp.buf.format({
@@ -52,6 +57,7 @@ return {
           null_ls.builtins.formatting.rustfmt,
           null_ls.builtins.formatting.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
           null_ls.builtins.formatting.stylelint,
+          require("typescript.extensions.null-ls.code-actions"),
         },
         on_attach = on_attach,
         temp_dir = "/tmp",
