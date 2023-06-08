@@ -1,5 +1,5 @@
 return {
-  "TimUntersberger/neogit",
+  "CKolkey/neogit",
   lazy = true,
   cmd = "Neogit",
   opts = {
