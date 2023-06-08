@@ -72,23 +72,25 @@ return {
       local m = require("mapx")
       m.nmap("<leader>dd", function() dapui.toggle() end, "Toggle debugging view")
 
-      vim.cmd('hi! link DapUIPlayPauseNC StatusLine')
-      vim.cmd('hi! link DapUIRestartNC StatusLine')
-      vim.cmd('hi! link DapUIStepBackNC StatusLine')
-      vim.cmd('hi! link DapUIStepIntoNC StatusLine')
-      vim.cmd('hi! link DapUIStepOutNC StatusLine')
-      vim.cmd('hi! link DapUIStepOverNC StatusLine')
-      vim.cmd('hi! link DapUIStopNC StatusLine')
+      vim.cmd([[
+        hi! link DapUIPlayPauseNC DapUIPlayPause
+        hi! link DapUIRestartNC DapUIRestart
+        hi! link DapUIStepBackNC DapUIStepBack
+        hi! link DapUIStepIntoNC DapUIStepInto
+        hi! link DapUIStepOutNC DapUIStepOut
+        hi! link DapUIStepOverNC DapUIStepOver
+        hi! link DapUIStopNC DapUIStop
 
-      vim.cmd('hi! link DapUIPlayPause DiagnosticOk')
-      vim.cmd('hi! link DapUIRestart DiagnosticOk')
-      vim.cmd('hi! link DapUIStepBack Macro')
-      vim.cmd('hi! link DapUIStepInto Macro')
-      vim.cmd('hi! link DapUIStepOut Macro')
-      vim.cmd('hi! link DapUIStepOver Macro')
-      vim.cmd('hi! link DapUIStop DiagnosticError')
-      vim.cmd('hi! link DapUIType Macro')
-      vim.cmd('hi! link DapUIWinSelect DiagnosticHint')
+        hi! link DapUIPlayPause DiagnosticOk
+        hi! link DapUIRestart DiagnosticOk
+        hi! link DapUIStepBack Macro
+        hi! link DapUIStepInto Macro
+        hi! link DapUIStepOut Macro
+        hi! link DapUIStepOver Macro
+        hi! link DapUIStop DiagnosticError
+        hi! link DapUIType Macro
+        hi! link DapUIWinSelect DiagnosticHint
+      ]])
     end
   },
 }
