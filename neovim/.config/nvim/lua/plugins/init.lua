@@ -6,6 +6,7 @@ return {
   { "folke/todo-comments.nvim", opts = {} },
   "folke/trouble.nvim",
   "hrsh7th/vim-vsnip",
+  "jxnblk/vim-mdx-js",
   "machakann/vim-swap",
   "matze/vim-move",
   "mbbill/undotree",
