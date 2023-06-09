@@ -30,7 +30,7 @@ return {
     opts = {
       window = { border = constants.floating_border, padding = { 0, 0, 0, 0 } } }
   },
-  { "kevinhwang91/nvim-bqf",        lazy = true,  ft = "qf" },
+  { "kevinhwang91/nvim-bqf",        lazy = true,  ft = "qf",   opts = { preview = { winblend = 0 } } },
   { "kristijanhusak/vim-dadbod-ui", lazy = true,  cmd = "DBUI" },
   { "lewis6991/gitsigns.nvim",      config = true },
   { "nvim-lua/plenary.nvim",        priority = 51 },
