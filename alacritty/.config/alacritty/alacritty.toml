@@ -1,0 +1,9 @@
+[window]
+startup_mode = "Maximized"
+decorations = "full"
+title = "Terminal"
+dynamic_title = false
+
+[window.dimensions]
+columns = 96
+lines = 32
