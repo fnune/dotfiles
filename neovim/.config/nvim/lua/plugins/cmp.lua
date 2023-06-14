@@ -29,6 +29,7 @@ return {
           border = constants.floating_border,
         },
       },
+      experimental = { ghost_text = true },
     })
   end,
 }
