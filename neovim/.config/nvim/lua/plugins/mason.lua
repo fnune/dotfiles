@@ -31,7 +31,6 @@ return {
           "pyright",
           "ruff_lsp",
           "rust_analyzer",
-          "sqlls",
           "taplo",
           "tsserver",
           "yamlls",
