@@ -6,7 +6,7 @@ return {
     disable_commit_confirmation = true,
     disable_builtin_notifications = true,
     integrations = { diffview = true },
-    kind = "vsplit",
+    kind = "split",
     -- These could become defaults https://github.com/TimUntersberger/neogit/issues/497
     ignored_settings = {
       "NeogitCommitPopup--allow-empty",
