@@ -1,6 +1,7 @@
 return {
   "vimwiki/vimwiki",
   ft = { "markdown" },
+  enabled = false,
   init = function()
     vim.cmd([[
       let wiki = {}
