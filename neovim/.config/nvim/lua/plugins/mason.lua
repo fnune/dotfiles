@@ -29,6 +29,7 @@ return {
           "jsonls",
           "lua_ls",
           "pyright",
+          "rnix",
           "ruff_lsp",
           "rust_analyzer",
           "taplo",

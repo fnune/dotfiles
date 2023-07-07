@@ -58,6 +58,10 @@ return {
           null_ls.builtins.formatting.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
           null_ls.builtins.formatting.stylelint,
           require("typescript.extensions.null-ls.code-actions"),
+          -- nix profile install nixpkgs#alejandra nixpkgs#deadnix nixpkgs#statix
+          null_ls.builtins.code_actions.statix,
+          null_ls.builtins.diagnostics.deadnix,
+          null_ls.builtins.formatting.alejandra,
         },
         on_attach = on_attach,
         temp_dir = "/tmp",
