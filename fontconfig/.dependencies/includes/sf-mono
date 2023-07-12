@@ -1,0 +1,14 @@
+#!/bin/bash
+set -euxo pipefail
+
+mkdir -p ~/.local/share/fonts/sf-mono-nerd-font
+
+temp_dir=$(mktemp -d -t SF-Mono-Nerd-Font-TEMP-XXXXXX)
+
+git clone https://github.com/epk/SF-Mono-Nerd-Font.git "$temp_dir"
+
+mv "$temp_dir"/*.otf ~/.local/share/fonts/sf-mono-nerd-font
+
+rm -rf "$temp_dir"
+
+fc-cache -f -v
