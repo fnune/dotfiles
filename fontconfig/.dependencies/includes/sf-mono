@@ -1,14 +1,16 @@
 #!/bin/bash
 set -euxo pipefail
 
-mkdir -p ~/.local/share/fonts/sf-mono-nerd-font
+font_dir=~/.local/share/fonts/sf-mono-nerd-font
+repo_url=https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git
 
-temp_dir=$(mktemp -d -t SF-Mono-Nerd-Font-TEMP-XXXXXX)
-
-git clone https://github.com/epk/SF-Mono-Nerd-Font.git "$temp_dir"
-
-mv "$temp_dir"/*.otf ~/.local/share/fonts/sf-mono-nerd-font
-
-rm -rf "$temp_dir"
+if [ -d "$font_dir/.git" ]; then
+    pushd "$font_dir"
+    git pull
+    popd
+else
+    rm -rf "$font_dir"
+    git clone "$repo_url" "$font_dir"
+fi
 
 fc-cache -f -v
