@@ -1,16 +1,40 @@
 #!/bin/bash
-set -euxo pipefail
 
-font_dir=~/.local/share/fonts/sf-mono-nerd-font
-repo_url=https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git
+set -euo pipefail
 
-if [ -d "$font_dir/.git" ]; then
-    pushd "$font_dir"
-    git pull
-    popd
-else
-    rm -rf "$font_dir"
-    git clone "$repo_url" "$font_dir"
-fi
+TEMP_DIR=$(mktemp -d -t "sf-mono-patch-$(date +%Y-%m-%d-%H-%M-%S)-XXXXXXXXXX")
+FONT_PATCHER_ZIP="$TEMP_DIR/FontPatcher.zip"
+SF_MONO_DIR="$TEMP_DIR/SF-Mono-Font"
+PATCHED_FONTS_DIR="$TEMP_DIR/Patched-Fonts"
+LOCAL_FONTS_DIR="$HOME/.local/share/fonts"
 
-fc-cache -f -v
+echo "Downloading font patcher..."
+wget -O "$FONT_PATCHER_ZIP" https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FontPatcher.zip
+unzip "$FONT_PATCHER_ZIP" -d "$TEMP_DIR"
+chmod +x "$TEMP_DIR"/font-patcher
+
+echo "Installing necessary dependencies..."
+sudo apt-get install -y python3 fontforge python3-fontforge
+
+echo "Cloning SF Mono fonts repository..."
+git clone https://github.com/bahmanworld/San-Francisco-Mono.git "$SF_MONO_DIR"
+
+echo "Patching fonts..."
+mkdir -p "$PATCHED_FONTS_DIR"
+for font in "$SF_MONO_DIR"/*.otf; do
+    echo "Patching $font..."
+    python3 "$TEMP_DIR"/font-patcher "$font" \
+    --quiet \
+    --complete \
+    -out "$PATCHED_FONTS_DIR"
+done
+
+echo "Installing fonts..."
+mkdir -p "$LOCAL_FONTS_DIR"
+cp "$PATCHED_FONTS_DIR"/*.otf "$LOCAL_FONTS_DIR"
+fc-cache -fv
+
+echo "Cleaning up..."
+rm -rf "$TEMP_DIR"
+
+echo "Done."

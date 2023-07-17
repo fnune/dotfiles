@@ -1,9 +1,3 @@
 #!/usr/bin/env bash
 
-NERD_FONTS_ROOT=$HOME/.local/share/fonts/nerd-fonts
-
-if [[ ! -d "$NERD_FONTS_ROOT" ]]; then
-  git -C $NERD_FONTS_ROOT pull
-fi
-
-fc-cache -fv $NERD_FONTS_ROOT
+sudo apt-get install -y fonts-noto-color-emoji

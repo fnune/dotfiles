@@ -32,12 +32,12 @@ return {
       m.nmap("<F11>", function() dap.step_into() end, "Debugger: step into")
       m.nmap("<F12>", function() dap.step_out() end, "Debugger: step out")
 
-      vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError", linehl = "", numhl = "" })
-      vim.fn.sign_define("DapBreakpointCondition", { text = "ﳁ", texthl = "DiagnosticWarn", linehl = "", numhl = "" })
-      vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DiagnosticError", linehl = "", numhl = "" })
-      vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticInfo", linehl = "", numhl = "" })
+      vim.fn.sign_define("DapBreakpoint", { text = " ", texthl = "DiagnosticError", linehl = "", numhl = "" })
+      vim.fn.sign_define("DapBreakpointCondition", { text = "󰟃 ", texthl = "DiagnosticWarn", linehl = "", numhl = "" })
+      vim.fn.sign_define("DapBreakpointRejected", { text = " ", texthl = "DiagnosticError", linehl = "", numhl = "" })
+      vim.fn.sign_define("DapLogPoint", { text = " ", texthl = "DiagnosticInfo", linehl = "", numhl = "" })
       vim.fn.sign_define("DapStopped",
-        { text = "", texthl = "DiagnosticHint", linehl = "CursorLine", numhl = "CursorLine" })
+        { text = " ", texthl = "DiagnosticHint", linehl = "CursorLine", numhl = "CursorLine" })
     end
   },
   {

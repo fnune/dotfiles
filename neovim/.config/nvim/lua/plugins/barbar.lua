@@ -11,7 +11,7 @@ return {
       buffer_index = true,
       button = false,
       filetype = { enabled = true },
-      pinned = { button = '車', filename = true },
+      pinned = { button = "󰐃", filename = true },
     },
   },
   init = function()
