@@ -24,6 +24,7 @@ return {
       })
     end,
     init = function()
+      local neotest = require("neotest")
       local m = require("mapx")
 
       local function prompt_args()
@@ -35,22 +36,22 @@ return {
       end
 
       m.nname("<leader>t", "Tests")
-      m.nmap("<leader>ts", function() require("neotest").run.run() end, { silent = true }, "Run the closest test")
-      m.nmap("<leader>ta", function() require("neotest").run.run(vim.fn.expand("%")) end, { silent = true },
+      m.nmap("<leader>ts", function() neotest.run.run() end, { silent = true }, "Run the closest test")
+      m.nmap("<leader>ta", function() neotest.run.run(vim.fn.expand("%")) end, { silent = true },
         "Run all tests")
-      m.nmap("<leader>tS", function() require("neotest").run.run({ extra_args = prompt_args() }) end,
+      m.nmap("<leader>tS", function() neotest.run.run({ extra_args = prompt_args() }) end,
         { silent = true },
         "Run the closest test with extra arguments")
       m.nmap("<leader>tA",
-        function() require("neotest").run.run({ vim.fn.expand("%"), extra_args = prompt_args() }) end,
+        function() neotest.run.run({ vim.fn.expand("%"), extra_args = prompt_args() }) end,
         { silent = true },
         "Run all tests with extra arguments")
-      m.nmap("<leader>ds", function() require("neotest").run.run({ strategy = "dap" }) end, { silent = true },
+      m.nmap("<leader>ds", function() neotest.run.run({ strategy = "dap" }) end, { silent = true },
         "Debug the closest test")
-      m.nmap("<leader>dS", function() require("neotest").run.run({ strategy = "dap", extra_args = prompt_args() }) end,
+      m.nmap("<leader>dS", function() neotest.run.run({ strategy = "dap", extra_args = prompt_args() }) end,
         { silent = true },
         "Debug the closest test with extra arguments")
-      m.nmap("<leader>to", function() require("neotest").output_panel.toggle() end, { silent = true },
+      m.nmap("<leader>to", function() neotest.output_panel.toggle() end, { silent = true },
         "Toggle the test output panel")
 
       vim.cmd("hi! link NeotestAdapterName Macro")
