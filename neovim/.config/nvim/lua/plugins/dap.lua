@@ -66,11 +66,11 @@ return {
       local dapui = require("dapui")
 
       dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
+        dapui.open({ reset = true })
       end
 
       local m = require("mapx")
-      m.nmap("<leader>dd", function() dapui.toggle() end, "Toggle debugging view")
+      m.nmap("<leader>dd", function() dapui.toggle({ reset = true }) end, "Toggle debugging view")
 
       vim.cmd([[
         hi! link DapUIPlayPauseNC DapUIPlayPause
