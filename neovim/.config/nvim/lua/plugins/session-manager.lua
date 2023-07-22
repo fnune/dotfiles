@@ -9,7 +9,7 @@ return {
       sessions_dir = require("plenary.path"):new(vim.fn.stdpath("data"), "sessions"),
       autoload_mode = config.AutoloadMode.CurrentDir,
       autosave_last_session = true,
-      autosave_ignore_not_normal = true,
+      autosave_ignore_not_normal = false, -- Save the session even if it's empty
       autosave_ignore_filetypes = {
         "gitcommit",
         "gitrebase",
