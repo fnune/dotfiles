@@ -7,6 +7,7 @@ return {
         component_separators = { "│", "│" },
         globalstatus = true,
         section_separators = { "", "" },
+        theme = "vscode",
       },
       -- See defaults: https://github.com/nvim-lualine/lualine.nvim#default-configuration
       sections = {
