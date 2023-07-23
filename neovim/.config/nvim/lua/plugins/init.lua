@@ -1,5 +1,6 @@
 local constants = require("constants")
 return {
+  "LunarVim/bigfile.nvim",
   "antoinemadec/FixCursorHold.nvim",
   "b0o/SchemaStore.nvim",
   "christoomey/vim-tmux-navigator",
