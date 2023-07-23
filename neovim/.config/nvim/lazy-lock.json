@@ -11,6 +11,7 @@
   "dressing.nvim": { "branch": "master", "commit": "39611852fd7bbac117e939a26759bb37361f0c90" },
   "fidget.nvim": { "branch": "legacy", "commit": "90c22e47be057562ee9566bad313ad42d622c1d3" },
   "gitsigns.nvim": { "branch": "main", "commit": "adcf2c7f2f495f5df148683764bf7cba6a70f34c" },
+  "hardtime.nvim": { "branch": "main", "commit": "c1003d28dea8b81e491094bd96ecfa6da95eb430" },
   "lazy.nvim": { "branch": "main", "commit": "3ad55ae678876516156cca2f361c51f7952a924b" },
   "lsp-format.nvim": { "branch": "master", "commit": "ca0df5c8544e51517209ea7b86ecc522c98d4f0a" },
   "lsp_signature.nvim": { "branch": "master", "commit": "17ff7a405fea8376b015b8ea7910d2e59958bf68" },
