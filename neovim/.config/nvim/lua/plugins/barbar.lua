@@ -32,16 +32,16 @@ return {
 
     m.nmap("<M-p>", ":BufferPin<cr>", { silent = true }, "Pin buffer")
 
-    m.nmap("<M-1>", ":BufferGoto 1<cr>", "Open buffer 1")
-    m.nmap("<M-2>", ":BufferGoto 2<cr>", "Open buffer 2")
-    m.nmap("<M-3>", ":BufferGoto 3<cr>", "Open buffer 3")
-    m.nmap("<M-4>", ":BufferGoto 4<cr>", "Open buffer 4")
-    m.nmap("<M-5>", ":BufferGoto 5<cr>", "Open buffer 5")
-    m.nmap("<M-6>", ":BufferGoto 6<cr>", "Open buffer 6")
-    m.nmap("<M-7>", ":BufferGoto 7<cr>", "Open buffer 7")
-    m.nmap("<M-8>", ":BufferGoto 8<cr>", "Open buffer 8")
-    m.nmap("<M-9>", ":BufferGoto 9<cr>", "Open buffer 9")
-    m.nmap("<M-0>", ":BufferLast<cr>")
+    m.nmap("<M-1>", ":BufferGoto 1<cr>", { silent = true }, "Open buffer 1")
+    m.nmap("<M-2>", ":BufferGoto 2<cr>", { silent = true }, "Open buffer 2")
+    m.nmap("<M-3>", ":BufferGoto 3<cr>", { silent = true }, "Open buffer 3")
+    m.nmap("<M-4>", ":BufferGoto 4<cr>", { silent = true }, "Open buffer 4")
+    m.nmap("<M-5>", ":BufferGoto 5<cr>", { silent = true }, "Open buffer 5")
+    m.nmap("<M-6>", ":BufferGoto 6<cr>", { silent = true }, "Open buffer 6")
+    m.nmap("<M-7>", ":BufferGoto 7<cr>", { silent = true }, "Open buffer 7")
+    m.nmap("<M-8>", ":BufferGoto 8<cr>", { silent = true }, "Open buffer 8")
+    m.nmap("<M-9>", ":BufferGoto 9<cr>", { silent = true }, "Open buffer 9")
+    m.nmap("<M-0>", ":BufferLast<cr>", { silent = true }, "Open last buffer")
 
     m.nmap("<leader>q", ":quit<cr>", { silent = true }, "Quit")
 
