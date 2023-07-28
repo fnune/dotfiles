@@ -16,11 +16,10 @@ return {
   "tpope/vim-eunuch",
   "tpope/vim-repeat",
   { "folke/todo-comments.nvim", opts = {} },
-  { "m4xshen/hardtime.nvim",    opts = {} },
   "tpope/vim-rhubarb",
   "tpope/vim-surround",
   "windwp/nvim-ts-autotag",
-  { "folke/neodev.nvim",            opts = { library = { plugins = { "neotest" }, types = true } }, priority = 51 },
+  { "folke/neodev.nvim",        opts = { library = { plugins = { "neotest" }, types = true } }, priority = 51 },
   {
     "b0o/mapx.nvim",
     priority = 51,
@@ -39,8 +38,7 @@ return {
     opts = {
       preview = { winblend = 0 } }
   },
-  { "kristijanhusak/vim-dadbod-ui", lazy = true,                                                    cmd = "DBUI" },
-  { "lewis6991/gitsigns.nvim",      config = true },
+  { "kristijanhusak/vim-dadbod-ui", lazy = true,  cmd = "DBUI" },
   { "nvim-lua/plenary.nvim",        priority = 51 },
   { "tversteeg/registers.nvim",     lazy = true },
 }
