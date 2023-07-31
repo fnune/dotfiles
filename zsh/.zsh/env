@@ -3,5 +3,10 @@ export SUDO_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 export FNUNE_EDITOR=$EDITOR
 export SHELL=$(which zsh)
-export TERM=tmux-256color
 export KEYTIMEOUT=1
+
+if [ -n "$TMUX" ]; then
+    export TERM=tmux-256color
+else
+    export TERM=xterm-256color
+fi
