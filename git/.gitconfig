@@ -4,6 +4,10 @@
   editor = nvim
 [push]
   default = current
+  autoSetupRemote = true
+[branch]
+  autoSetupMerge = always
+  autoSetupRebase = always
 [init]
   defaultBranch = main
 [core]
