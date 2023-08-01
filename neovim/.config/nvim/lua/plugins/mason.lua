@@ -28,7 +28,7 @@ return {
           "eslint",
           "jsonls",
           "lua_ls",
-          "pyright",
+          "pylsp",
           "rnix",
           "ruff_lsp",
           "rust_analyzer",
@@ -94,21 +94,17 @@ return {
             settings = { yaml = { schemas = require('schemastore').yaml.schemas() } },
           }))
         end,
-        ["pyright"] = function(server)
+        ["pylsp"] = function(server)
           lspconfig[server].setup(vim.tbl_deep_extend("force", common, {
-            root_dir = function() return vim.fn.getcwd() end,
-            handlers = {
-              ["textDocument/publishDiagnostics"] = function()
-                -- noop: I get enough diagnostics from Ruff and mypy.
-              end,
-            },
             settings = {
-              python = {
-                analysis = {
-                  diagnosticMode = "off",
-                  typeCheckingMode = "off",
-                },
-              }
+              pylsp = {
+                plugins = {
+                  pylsp_mypy = { enabled = true, live_mode = false, dmypy = true, report_progress = true },
+                  mccabe = { enabled = false },
+                  pycodestyle = { enabled = false },
+                  pyflakes = { enabled = false },
+                }
+              },
             },
           }))
         end,

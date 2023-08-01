@@ -2,7 +2,7 @@ return {
   {
     "jay-babu/mason-null-ls.nvim",
     dependencies = { "williamboman/mason.nvim" },
-    automatic_installation = { exclude = { "mypy" } },
+    automatic_installation = true,
   },
   {
     "jose-elias-alvarez/typescript.nvim",
@@ -45,7 +45,6 @@ return {
           null_ls.builtins.code_actions.shellcheck,
           null_ls.builtins.diagnostics.eslint_d,
           null_ls.builtins.diagnostics.jsonlint,
-          null_ls.builtins.diagnostics.mypy.with({ extra_args = { "--ignore-missing-imports" } }),
           null_ls.builtins.diagnostics.shellcheck,
           null_ls.builtins.diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
           null_ls.builtins.diagnostics.stylelint,
