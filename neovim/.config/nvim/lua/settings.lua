@@ -11,6 +11,7 @@ vim.opt.encoding = 'utf-8'
 vim.opt.expandtab = true
 vim.opt.exrc = true
 vim.opt.hidden = true
+vim.opt.laststatus = 3
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.lazyredraw = true
