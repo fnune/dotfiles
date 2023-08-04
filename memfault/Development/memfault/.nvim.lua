@@ -8,8 +8,8 @@ local neotest = require("neotest")
 
 neotest.setup_project(vim.loop.cwd(), {
   adapters = {
-    require('neotest-jest')({ jestCommand = "yarn workspace @memfault/app-frontend test:jest" }),
-    require('neotest-python')({ python = memfault_python_bin }),
+    require("neotest-jest")({ jestCommand = "yarn workspace @memfault/app-frontend test:jest" }),
+    require("neotest-python")({ python = memfault_python_bin, args = { "-W", "ignore", "-vv" } }),
   },
 })
 
