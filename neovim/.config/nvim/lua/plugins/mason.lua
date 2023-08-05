@@ -67,6 +67,8 @@ return {
         capabilities = lsp_capabilities,
       }
 
+      lspconfig.gdscript.setup(common)
+
       mason_lspconfig.setup_handlers({
         function(server)
           lspconfig[server].setup(common)
