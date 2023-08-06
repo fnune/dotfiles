@@ -12,32 +12,8 @@ return {
     "jose-elias-alvarez/null-ls.nvim",
     dependencies = { "jose-elias-alvarez/typescript.nvim" },
     config = function()
-      local lsp_formatting = function(bufnr)
-        vim.lsp.buf.format({
-          filter = function(client)
-            -- apply whatever logic you want (in this example, we'll only use null-ls)
-            return client.name == "null-ls"
-          end,
-          bufnr = bufnr,
-        })
-      end
-
-      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-      local on_attach = function(client, bufnr)
-        if client.supports_method("textDocument/formatting") then
-          vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            group = augroup,
-            buffer = bufnr,
-            callback = function()
-              lsp_formatting(bufnr)
-            end,
-          })
-        end
-      end
-
       local null_ls = require("null-ls")
+      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
       null_ls.setup({
         sources = {
           null_ls.builtins.code_actions.eslint_d,
@@ -63,7 +39,18 @@ return {
           null_ls.builtins.formatting.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
           null_ls.builtins.formatting.stylelint,
         },
-        on_attach = on_attach,
+        on_attach = function(client, bufnr)
+          if client.supports_method("textDocument/formatting") then
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              group = augroup,
+              buffer = bufnr,
+              callback = function()
+                vim.lsp.buf.format({ async = false })
+              end,
+            })
+          end
+        end,
         temp_dir = "/tmp",
       })
     end,

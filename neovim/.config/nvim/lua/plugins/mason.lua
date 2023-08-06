@@ -5,16 +5,12 @@ return {
     dependencies = {
       "b0o/SchemaStore.nvim",
       "hrsh7th/cmp-nvim-lsp",
-      "lukas-reineke/lsp-format.nvim",
       "neovim/nvim-lspconfig",
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
       local m = require("mapx")
       local lspconfig = require("lspconfig")
-
-      local lspformat = require("lsp-format")
-      lspformat.setup({})
 
       local mason = require("mason")
       local mason_lspconfig = require("mason-lspconfig")
@@ -41,9 +37,7 @@ return {
       local cmp_lsp = require("cmp_nvim_lsp")
 
       local lsp_capabilities = cmp_lsp.default_capabilities()
-      local lsp_attach = function(client, bufnr)
-        lspformat.on_attach(client)
-
+      local lsp_attach = function(_, bufnr)
         local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
         m.nmap("K", function() vim.lsp.buf.hover() end, bufopts, "Show documentation")
