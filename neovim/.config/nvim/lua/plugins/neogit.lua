@@ -5,7 +5,11 @@ return {
   opts = {
     disable_commit_confirmation = true,
     disable_builtin_notifications = true,
-    kind = "split",
+    kind = "vsplit",
+    integrations = {
+      telescope = false, -- https://github.com/NeogitOrg/neogit/issues/727
+      diffview = true,
+    }
   },
   init = function()
     local m = require("mapx")
