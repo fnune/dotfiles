@@ -5,26 +5,6 @@ return {
     dependencies = { "williamboman/mason.nvim" },
     opts = {
       ensure_installed = { "python", "node2", "chrome", "firefox", "js" },
-      handlers = {
-        function(config)
-          require("mason-nvim-dap").default_setup(config)
-        end,
-        python = function(config)
-          config.configurations = {
-            {
-              type = "python",
-              request = "attach",
-              name = "Attach remote",
-              connect = function()
-                local host = vim.fn.input("Host [127.0.0.1]: ") or "127.0.0.1"
-                local port = tonumber(vim.fn.input("Port [5678]: ")) or 5678
-                return { host = host, port = port }
-              end,
-            },
-          }
-          require("mason-nvim-dap").default_setup(config)
-        end,
-      },
     },
   },
   {
@@ -114,5 +94,11 @@ return {
         hi! link DapUIWinSelect DiagnosticHint
       ]])
     end
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    config = function()
+      require("dap-python").setup("python")
+    end,
   },
 }
