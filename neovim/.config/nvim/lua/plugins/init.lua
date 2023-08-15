@@ -19,6 +19,13 @@ return {
   "tpope/vim-rhubarb",
   "tpope/vim-surround",
   "windwp/nvim-ts-autotag",
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = true,
+    init = function()
+      vim.cmd [[highlight IndentBlanklineChar guifg=#242424 gui=nocombine]]
+    end
+  },
   { "folke/neodev.nvim",        opts = { library = { plugins = { "neotest" }, types = true } }, priority = 51 },
   {
     "b0o/mapx.nvim",
