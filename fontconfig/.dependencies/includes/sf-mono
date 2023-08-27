@@ -7,6 +7,12 @@ FONT_PATCHER_ZIP="$TEMP_DIR/FontPatcher.zip"
 SF_MONO_DIR="$TEMP_DIR/SF-Mono-Font"
 PATCHED_FONTS_DIR="$TEMP_DIR/Patched-Fonts"
 LOCAL_FONTS_DIR="$HOME/.local/share/fonts"
+FONT_NAME="SFMono Nerd Font"
+
+if fc-list | grep "$FONT_NAME" > /dev/null; then
+  echo "Font $FONT_NAME is already installed. Exiting."
+  exit 0
+fi
 
 echo "Downloading font patcher..."
 wget -O "$FONT_PATCHER_ZIP" https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FontPatcher.zip
