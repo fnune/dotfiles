@@ -9,7 +9,7 @@ if [ -x "$(command -v pacman)" ]; then
 fi
 
 if [ -x "$(command -v apt)" ]; then
-  sudo apt install -y gzip scdoc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+  sudo apt install -y gzip scdoc cmake pkg-config libfreetype-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 fi
 
 BUILD_DIR=~/.alacritty.build
