@@ -9,6 +9,7 @@ return {
   "jxnblk/vim-mdx-js",
   "machakann/vim-swap",
   "matze/vim-move",
+  "felipec/vim-sanegx",
   "mbbill/undotree",
   "nvim-tree/nvim-web-devicons",
   "tpope/vim-abolish",
