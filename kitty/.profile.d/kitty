@@ -1,0 +1,2 @@
+# https://github.com/kovidgoyal/kitty/issues/469
+GLFW_IM_MODULE=ibus
