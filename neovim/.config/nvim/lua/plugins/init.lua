@@ -22,10 +22,11 @@ return {
   "windwp/nvim-ts-autotag",
   {
     "lukas-reineke/indent-blankline.nvim",
-    config = true,
-    init = function()
+    config = function()
+      local indent_blankline = require("indent_blankline")
+      indent_blankline.setup({})
       vim.cmd [[highlight IndentBlanklineChar guifg=#242424 gui=nocombine]]
-    end
+    end,
   },
   { "folke/neodev.nvim",        opts = { library = { plugins = { "neotest" }, types = true } }, priority = 51 },
   {
