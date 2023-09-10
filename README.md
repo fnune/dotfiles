@@ -10,8 +10,8 @@ My dotfiles, built to work with GNU stow in a `~/.dotfiles` directory.
 The main dependency is [GNU stow](https://www.gnu.org/software/stow/). Install it using your distribution's package manager.
 
 ```bash
-sudo pacman -S stow
-sudo apt-get install stow
+sudo pacman -S stow curl wget desktop-file-utils
+sudo apt-get install stow curl wget build-essential desktop-file-utils
 ```
 
 Then clone this repository into a directory that's directly under `~`, for example:
