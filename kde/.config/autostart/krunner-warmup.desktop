@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=krunner -d
+Name=Krunner Warm-up
+Type=Application
+X-KDE-AutostartScript=true
