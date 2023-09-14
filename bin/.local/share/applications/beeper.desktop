@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Beeper
-Comment=All your chats in one app
-Icon=/home/fausto/.local/share/applications/beeper.png
-Exec=/home/fausto/.local/bin/beeper
-Terminal=false
-Categories=Network;Chat
