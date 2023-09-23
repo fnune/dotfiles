@@ -44,6 +44,10 @@ return {
     init = function()
       local m = require("mapx")
       m.nmap("<leader>f", ":Telescope smart_open theme=ivy<CR>", { silent = true }, "Find files")
+      m.nmap("<leader>s", ":Telescope lsp_document_symbols theme=ivy<CR>", { silent = true },
+        "Find symbols in the document")
+      m.nmap("<leader>S", ":Telescope lsp_dynamic_workspace_symbols theme=ivy<CR>", { silent = true },
+        "Find symbols across the workspace")
     end,
   },
 }
