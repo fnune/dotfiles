@@ -7,6 +7,7 @@ return {
   "folke/trouble.nvim",
   "hrsh7th/vim-vsnip",
   "jxnblk/vim-mdx-js",
+  "kristijanhusak/vim-create-pr",
   "machakann/vim-swap",
   "matze/vim-move",
   "felipec/vim-sanegx",
@@ -25,10 +26,10 @@ return {
     config = function()
       local indent_blankline = require("indent_blankline")
       indent_blankline.setup({})
-      vim.cmd [[highlight IndentBlanklineChar guifg=#242424 gui=nocombine]]
+      vim.cmd([[highlight IndentBlanklineChar guifg=#242424 gui=nocombine]])
     end,
   },
-  { "folke/neodev.nvim",        opts = { library = { plugins = { "neotest" }, types = true } }, priority = 51 },
+  { "folke/neodev.nvim", opts = { library = { plugins = { "neotest" }, types = true } }, priority = 51 },
   {
     "b0o/mapx.nvim",
     priority = 51,
@@ -38,16 +39,18 @@ return {
     "folke/which-key.nvim",
     enabled = false,
     opts = {
-      window = { border = constants.floating_border, padding = { 0, 0, 0, 0 } } }
+      window = { border = constants.floating_border, padding = { 0, 0, 0, 0 } },
+    },
   },
   {
     "kevinhwang91/nvim-bqf",
     lazy = true,
     ft = "qf",
     opts = {
-      preview = { winblend = 0 } }
+      preview = { winblend = 0 },
+    },
   },
-  { "kristijanhusak/vim-dadbod-ui", lazy = true,  cmd = "DBUI" },
-  { "nvim-lua/plenary.nvim",        priority = 51 },
-  { "tversteeg/registers.nvim",     lazy = true },
+  { "kristijanhusak/vim-dadbod-ui", lazy = true, cmd = "DBUI" },
+  { "nvim-lua/plenary.nvim", priority = 51 },
+  { "tversteeg/registers.nvim", lazy = true },
 }
