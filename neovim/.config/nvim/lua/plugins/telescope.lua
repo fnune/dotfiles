@@ -19,10 +19,27 @@ return {
       local m = require("mapx")
       m.nmap("<leader>f", ":Telescope find_files theme=ivy<CR>", { silent = true }, "Find files")
       m.nmap("<leader>F", ":Telescope live_grep theme=ivy<CR>", { silent = true }, "Find text in files")
-      m.nmap("<leader>s", ":Telescope lsp_document_symbols theme=ivy<CR>", { silent = true },
-        "Find symbols in the document")
-      m.nmap("<leader>S", ":Telescope lsp_dynamic_workspace_symbols theme=ivy<CR>", { silent = true },
-        "Find symbols across the workspace")
+      m.nmap(
+        "<leader>s",
+        ":Telescope lsp_document_symbols theme=ivy<CR>",
+        { silent = true },
+        "Find symbols in the document"
+      )
+      m.nmap(
+        "<leader>S",
+        ":Telescope lsp_dynamic_workspace_symbols theme=ivy<CR>",
+        { silent = true },
+        "Find symbols across the workspace"
+      )
+    end,
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    init = function()
+      local telescope = require("telescope")
+      telescope.load_extension("fzf")
     end,
   },
 }
