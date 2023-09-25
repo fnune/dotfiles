@@ -119,6 +119,11 @@ return {
             settings = { yaml = { schemas = require("schemastore").yaml.schemas() } },
           }))
         end,
+        ["lua_ls"] = function(server)
+          lspconfig[server].setup(vim.tbl_deep_extend("force", common, {
+            settings = { Lua = { diagnostics = { globals = { "vim" } } } },
+          }))
+        end,
         ["pyright"] = function(server)
           lspconfig[server].setup(vim.tbl_deep_extend("force", common, {
             root_dir = function()
