@@ -9,7 +9,15 @@ return {
     integrations = {
       telescope = false, -- https://github.com/NeogitOrg/neogit/issues/727
       diffview = true,
-    }
+    },
+    ignored_settings = {
+      "NeogitCommitPopup--allow-empty",
+      "NeogitPullPopup--rebase",
+      "NeogitPushPopup--force",
+      "NeogitPushPopup--force-with-lease",
+      "NeogitRevertPopup--no-edit",
+      "NeogitRevertPopup--no-verify",
+    },
   },
   init = function()
     local m = require("mapx")
@@ -31,5 +39,5 @@ return {
     vim.cmd("hi def NeogitDiffContextHighlight guibg=" .. colors.vscLeftMid .. " guifg=" .. colors.vscPopupFront)
     vim.cmd("hi def NeogitDiffAddHighlight guibg=" .. colors.vscDiffGreenLight .. " guifg=" .. colors.vscGitAdded)
     vim.cmd("hi def NeogitDiffDeleteHighlight guibg=" .. colors.vscDiffRedLight .. " guifg=" .. colors.vscGitDeleted)
-  end
+  end,
 }
